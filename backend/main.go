@@ -68,6 +68,12 @@ func main() {
 	}
 
 	srv.Use(middleware.Logger())
+
+	srv.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{echo.GET, echo.PUT, echo.POST, echo.DELETE},
+	}))
+
 	srv.HTTPErrorHandler = func(err error, c echo.Context) {
 		code := http.StatusInternalServerError
 		if he, ok := err.(*echo.HTTPError); ok {

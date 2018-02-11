@@ -1,10 +1,10 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 
-import { fetchLogs } from './api';
+import api from './api';
 import { FETCH_LOGS, LOGS_RECEIVED } from './events';
 
 export function* fetchLogsSaga() {
-  const logs = yield call(fetchLogs);
+  const { logs } = yield call(api.fetchLogs);
   yield put({ type: LOGS_RECEIVED, logs });
 }
 
