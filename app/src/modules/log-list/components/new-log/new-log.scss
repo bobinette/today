@@ -1,0 +1,21 @@
+@import '../../../../style/base.scss';
+
+.NewLogInput {
+    width: 100%;
+    padding: 1rem;
+    background: white;
+
+    border: 1px solid $card-border-color;
+    border-radius: $card-border-radius;
+}
+
+.NewLogInput__Title {
+    width: 100%;
+}
+
+.NewLogInput__Content {
+    width: 100%;
+    resize: none;
+
+    margin-top: 0.5rem;
+}

@@ -10,6 +10,8 @@ import moment from 'moment';
 import { fetchLogs } from './actions';
 import { selectLogs } from './selectors';
 
+import NewLogInput from './components/new-log';
+
 import './log-list.scss';
 
 const mapStateToProps = state => ({
@@ -29,6 +31,7 @@ class LogList extends PureComponent {
     const { logs } = this.props;
     return (
       <div className="container">
+        <NewLogInput />
         {logs.map(log => (
           <div key={log.get('uuid')}>
             <LogList.LogItem log={log} />

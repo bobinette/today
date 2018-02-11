@@ -3,25 +3,58 @@
 
 // Make sure the page takes at least all the height
 html {
-    height: 100%;
+  height: 100%;
 }
 body {
-    min-height: 100%;
+  min-height: 100%;
 }
 
+// Space below the navbar
+#navbar {
+  margin-bottom: 1rem;
+}
+
+// Flex related classes
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .flex-space-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .flex-align-center {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
+.flex-align-right {
+  justify-content: flex-end;
+}
+
+// Color related classes
 .fg-white {
-    color: $white !important;
+  color: $white !important;
+}
+
+// Customize inputs
+input {
+  border: none;
+  border-bottom: 1px solid $input-border-color;
+
+  &:focus {
+    border-color: theme-color('primary');
+    outline: none;
+  }
+}
+
+textarea {
+  padding: 0.5rem;
+  border-color: $input-border-color;
+  min-height: 5rem;
+
+  &:focus {
+    border-color: theme-color('primary');
+    outline: none;
+  }
 }
