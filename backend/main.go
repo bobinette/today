@@ -95,6 +95,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// Assets
+	srv.Static("/", "../app/build")
+
 	if err := srv.Start(cfg.Web.Bind); err != nil {
 		log.Fatal(err)
 	}

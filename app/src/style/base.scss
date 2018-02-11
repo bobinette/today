@@ -1,0 +1,27 @@
+@import 'variables.scss';
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+// Make sure the page takes at least all the height
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.flex-align-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.fg-white {
+    color: $white !important;
+}
