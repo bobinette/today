@@ -9,10 +9,10 @@ import (
 	eh "github.com/looplab/eventhorizon"
 	aggregateStore "github.com/looplab/eventhorizon/aggregatestore/events"
 	bus "github.com/looplab/eventhorizon/eventbus/local"
-	store "github.com/looplab/eventhorizon/eventstore/memory"
 	publisher "github.com/looplab/eventhorizon/publisher/local"
 
 	"github.com/bobinette/today/backend/eventsourcing/logs"
+	"github.com/bobinette/today/backend/eventsourcing/mysql"
 )
 
 // Logger is a simple event handler for logging all events.
@@ -31,7 +31,7 @@ func Register(db *sql.DB, srv *echo.Echo) error {
 	bus := bus.NewEventBus()
 	bus.SetPublisher(publisher)
 
-	store := store.NewEventStore()
+	store := mysql.NewEventStore(db)
 	aggregateStore, err := aggregateStore.NewAggregateStore(store, bus)
 	if err != nil {
 		return err
