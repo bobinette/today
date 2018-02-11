@@ -2,11 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import classNames from 'classnames';
+
 import Textarea from 'react-textarea-autosize';
 
-import { createLog } from 'modules/log-list/actions';
-
 import { separateActions } from 'utils/redux';
+
+import { createLog } from 'modules/log-list/actions';
 
 import './new-log.scss';
 
@@ -26,7 +28,7 @@ class NewLog extends PureComponent {
     this.onBlur = this.onBlur.bind(this);
     this.onCreate = this.onCreate.bind(this);
 
-    this.state = { title: '', content: '', showContent: false };
+    this.state = { title: '', content: '', hasFocus: false };
   }
 
   onUpdateTitle(evt) {
@@ -39,19 +41,19 @@ class NewLog extends PureComponent {
 
   onFocus() {
     clearTimeout(this._timeoutID);
-    if (!this.state.showContent) {
+    if (!this.state.hasFocus) {
       this.setState({
-        showContent: true,
+        hasFocus: true,
       });
     }
   }
 
   onBlur() {
     this._timeoutID = setTimeout(() => {
-      if (this.state.showContent) {
-        this.setState({ showContent: false });
+      if (this.state.hasFocus) {
+        this.setState({ hasFocus: false });
         this.setState({
-          showContent: false,
+          hasFocus: false,
         });
       }
     }, 0);
@@ -63,15 +65,25 @@ class NewLog extends PureComponent {
   }
 
   render() {
-    const { title, content, showContent } = this.state;
+    const { title, content, hasFocus } = this.state;
+
+    const classes = {
+      NewLogInput: true,
+      'NewLogInput--focus': hasFocus,
+    };
+
     return (
-      <div className="NewLogInput" onFocus={this.onFocus} onBlur={this.onBlur}>
+      <div
+        className={classNames(classes)}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
+      >
         <input
           className="NewLogInput__Title"
           onChange={this.onUpdateTitle}
           placeholder="You don't know what happened today..."
         />
-        {showContent && (
+        {hasFocus && (
           <div>
             <Textarea
               className="NewLogInput__Content"

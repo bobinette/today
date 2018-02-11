@@ -33,6 +33,9 @@
     "dependencies": {
         "axios": "^0.17.1",
         "bootstrap": "^4.0.0",
+        "classnames": "^2.2.5",
+        "deepmerge": "^2.0.1",
+        "hast-util-sanitize": "^1.1.2",
         "immutable": "^3.8.2",
         "moment": "^2.20.1",
         "prop-types": "^15.6.0",
@@ -45,6 +48,9 @@
         "react-textarea-autosize": "^5.2.1",
         "redux": "^3.7.2",
         "redux-saga": "^0.16.0",
+        "remark": "^9.0.0",
+        "remark-emoji": "^2.0.1",
+        "remark-react": "^4.0.1",
         "reselect": "^3.0.1"
     }
 }

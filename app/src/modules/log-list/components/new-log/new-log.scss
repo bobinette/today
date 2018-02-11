@@ -7,6 +7,10 @@
 
     border: 1px solid $card-border-color;
     border-radius: $card-border-radius;
+
+    &--focus {
+        // border-color: theme-color('primary');
+    }
 }
 
 .NewLogInput__Title {
@@ -18,4 +22,6 @@
     resize: none;
 
     margin-top: 0.5rem;
+
+    border: none;
 }

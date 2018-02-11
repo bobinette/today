@@ -7,6 +7,8 @@ import { separateActions } from 'utils/redux';
 
 import moment from 'moment';
 
+import Markdown from 'components/markdown';
+
 import { fetchLogs } from './actions';
 import { selectLogs } from './selectors';
 
@@ -53,7 +55,7 @@ LogList.LogItem = ({ log }) => (
   <div className="card LogItem">
     <div className="card-body">
       <div className="card-title flex flex-space-between">
-        <h6>{log.get('title')}</h6>
+        <h5>{log.get('title')}</h5>
         <small className="text-muted">
           <em>
             {moment(log.get('createdAt')).format('L')}{' '}
@@ -61,7 +63,9 @@ LogList.LogItem = ({ log }) => (
           </em>
         </small>
       </div>
-      <div className="card-text">{log.get('content')}</div>
+      <div className="card-text">
+        <Markdown text={log.get('content')} />
+      </div>
     </div>
   </div>
 );
