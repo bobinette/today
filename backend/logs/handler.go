@@ -18,7 +18,10 @@ func Register(repo Repository, srv *echo.Echo) error {
 	handler := Handler{
 		service: &service,
 	}
+
 	srv.GET("/api/logs/:uuid", handler.get)
+	srv.GET("/api/logs", handler.list)
+
 	return nil
 }
 
@@ -30,4 +33,13 @@ func (h *Handler) get(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, log)
+}
+
+func (h *Handler) list(c echo.Context) error {
+	logs, err := h.service.List(c.Request().Context())
+	if err != nil {
+		return err
+	}
+
+	return c.JSON(http.StatusOK, logs)
 }

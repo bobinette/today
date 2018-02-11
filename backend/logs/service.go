@@ -15,8 +15,11 @@ func NewService(repo Repository) *Service {
 }
 
 func (s *Service) Find(ctx context.Context, uuid string) (Log, error) {
-	// panic("yolo")
 	return s.repo.Find(ctx, uuid)
+}
+
+func (s *Service) List(ctx context.Context) ([]Log, error) {
+	return s.repo.List(ctx)
 }
 
 func (s *Service) Save(ctx context.Context, log Log) error {

@@ -25,10 +25,18 @@ func TestLogRepository(t *testing.T, repo logs.Repository) {
 	_, err = repo.Find(ctx, "123")
 	assert.Equal(t, logs.ErrLogNotFound, err)
 
+	all, err := repo.List(ctx)
+	assert.Equal(t, 0, len(all))
+	assert.NoError(t, err)
+
 	err = repo.Save(ctx, log)
 	assert.NoError(t, err)
 
 	retrieved, err := repo.Find(ctx, log.UUID)
 	assert.NoError(t, err)
 	assert.Equal(t, log, retrieved)
+
+	all, err = repo.List(ctx)
+	assert.NoError(t, err)
+	assert.Equal(t, []logs.Log{log}, all)
 }
