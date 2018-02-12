@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
 
-import { separateActions } from 'utils/redux';
-
 import moment from 'moment';
 
 import Markdown from 'components/markdown';
+import { separateActions } from 'utils/redux';
 
 import { fetchLogs } from './actions';
 import { selectLogs } from './selectors';
@@ -24,13 +23,14 @@ const mapDispatchToProps = {
   fetchLogs,
 };
 
-class LogList extends PureComponent {
+export class LogList extends PureComponent {
   componentDidMount() {
-    this.props.fetchLogs();
+    this.props.actions.fetchLogs();
   }
 
   render() {
     const { logs } = this.props;
+
     return (
       <div className="container">
         <NewLogInput />
@@ -70,4 +70,6 @@ LogList.LogItem = ({ log }) => (
   </div>
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(LogList);
+export default connect(mapStateToProps, mapDispatchToProps, separateActions)(
+  LogList,
+);

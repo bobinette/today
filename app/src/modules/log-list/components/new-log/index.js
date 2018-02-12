@@ -16,7 +16,7 @@ const mapDispatchToProps = {
   createLog,
 };
 
-class NewLog extends PureComponent {
+export class NewLogInput extends PureComponent {
   _timeoutID;
 
   constructor(props) {
@@ -106,10 +106,12 @@ class NewLog extends PureComponent {
   }
 }
 
-NewLog.propTypes = {
+NewLogInput.propTypes = {
   actions: PropTypes.shape({
     createLog: PropTypes.func.isRequired,
   }),
 };
 
-export default connect(() => ({}), mapDispatchToProps, separateActions)(NewLog);
+export default connect(() => ({}), mapDispatchToProps, separateActions)(
+  NewLogInput,
+);
