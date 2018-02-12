@@ -50,6 +50,7 @@ func (a *Aggregate) HandleCommand(ctx context.Context, cmd eh.Command) error {
 	switch cmd := cmd.(type) {
 	case *Create:
 		a.StoreEvent(Created, &CreatedData{
+			UUID:    cmd.AggregateID(),
 			Title:   cmd.Title,
 			Content: cmd.Content,
 		}, timeNow())
