@@ -5,4 +5,5 @@ module.exports = {
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(scss|less)$': '<rootDir>/__mocks__/styleMock.js',
   },
+  setupTestFrameworkScriptFile: '<rootDir>/tests/setup.js',
 };

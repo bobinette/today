@@ -1,12 +1,8 @@
 import React from 'react';
 import { fromJS } from 'immutable';
-
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 
 import { Markdown } from '.';
-
-configure({ adapter: new Adapter() });
 
 test('render the log list', () => {
   const fetchLogs = jest.fn();
