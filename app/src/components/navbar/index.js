@@ -2,7 +2,7 @@ import React from 'react';
 
 import './navbar.scss';
 
-const NavBar = () => (
+export const NavBar = () => (
   <nav
     id="navbar"
     className="navbar navbar-row navbar-top navbar-inverse bg-primary"

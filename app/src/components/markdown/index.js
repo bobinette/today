@@ -22,7 +22,7 @@ const createElement = (name, attrs, children) => {
   return React.createElement(name, attrs, children);
 };
 
-const Markdown = ({ text, className }) => {
+export const Markdown = ({ text, className }) => {
   const sanitize = merge(githubSanitize, {
     attributes: { '*': ['className'] },
   });
