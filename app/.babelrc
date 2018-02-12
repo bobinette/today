@@ -12,7 +12,7 @@
   "plugins": ["react-hot-loader/babel"],
   "env": {
     "test": {
-      "presets": ["env", "stage-2"],
+      "presets": ["env", "stage-3"],
       "plugins": []
     }
   }
