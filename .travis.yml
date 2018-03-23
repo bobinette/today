@@ -48,7 +48,7 @@ install:
       -l today \
       -p today \
       -d tonight_test \
-      -m ./today/mysql/migrations \
+      -m ./backend/mysql/migrations \
       up
 
 script:
