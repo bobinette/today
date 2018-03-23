@@ -1,5 +1,5 @@
 [client]
-user = tonight
-password = tonight
+user = today
+password = today
 host = 127.0.0.1
 port = 3307

@@ -47,7 +47,7 @@ install:
       -P 3307 \
       -l today \
       -p today \
-      -d tonight_test \
+      -d today_test \
       -m ./backend/mysql/migrations \
       up
 
