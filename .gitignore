@@ -15,3 +15,5 @@
 
 # Config file with the oauth secrets
 oauth2_proxy.cfg
+
+*/vendor/*/*
