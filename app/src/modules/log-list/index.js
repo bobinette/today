@@ -6,12 +6,11 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 
 import Markdown from 'components/markdown';
+import NewLogInput from 'modules/new-log';
 import { separateActions } from 'utils/redux';
 
 import { fetchLogs } from './actions';
 import { selectLogs } from './selectors';
-
-import NewLogInput from './components/new-log';
 
 import './log-list.scss';
 
@@ -48,14 +47,14 @@ LogList.propTypes = {
   logs: ImmutablePropTypes.list.isRequired,
   actions: PropTypes.shape({
     fetchLogs: PropTypes.func.isRequired,
-  }),
+  }).isRequired,
 };
 
 LogList.LogItem = ({ log }) => (
   <div className="card LogItem">
     <div className="card-body">
-      <div className="card-title flex flex-space-between">
-        <h5>{log.get('title')}</h5>
+      <div className="card-text">
+        <Markdown text={log.get('content')} />
         <small className="text-muted">
           <em>
             {moment(log.get('createdAt')).format('L')}{' '}
@@ -63,12 +62,13 @@ LogList.LogItem = ({ log }) => (
           </em>
         </small>
       </div>
-      <div className="card-text">
-        <Markdown text={log.get('content')} />
-      </div>
     </div>
   </div>
 );
+
+LogList.LogItem.propTypes = {
+  log: ImmutablePropTypes.map.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps, separateActions)(
   LogList,

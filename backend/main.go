@@ -68,6 +68,12 @@ func main() {
 	}
 
 	srv.Use(middleware.Logger())
+	srv.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
+		return func(c echo.Context) error {
+			log.Println(c.Request().Header)
+			return next(c)
+		}
+	})
 
 	srv.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"*"},

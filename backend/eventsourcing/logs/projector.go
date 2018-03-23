@@ -33,7 +33,6 @@ func (p *Projector) Project(ctx context.Context, event eh.Event, entity eh.Entit
 		}
 		// Set the ID when first created.
 		model.UUID = event.AggregateID()
-		model.Title = data.Title
 		model.Content = data.Content
 		model.CreatedAt = timeNow()
 	default:

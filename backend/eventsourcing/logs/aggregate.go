@@ -51,7 +51,6 @@ func (a *Aggregate) HandleCommand(ctx context.Context, cmd eh.Command) error {
 	case *Create:
 		a.StoreEvent(Created, &CreatedData{
 			UUID:    cmd.AggregateID(),
-			Title:   cmd.Title,
 			Content: cmd.Content,
 		}, timeNow())
 	default:

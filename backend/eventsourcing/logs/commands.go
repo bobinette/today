@@ -17,7 +17,6 @@ const (
 type Create struct {
 	UUID eh.UUID `json:"-"`
 
-	Title   string `json:"title"`
 	Content string `json:"content"`
 }
 

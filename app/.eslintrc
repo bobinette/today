@@ -1,0 +1,33 @@
+---
+extends: eslint-config-airbnb
+plugins:
+  - react
+  - import
+
+settings:
+  import/parser: babel-eslint
+  import/resolver:
+      webpack:
+        config: webpack/webpack.dev.js
+
+parser: babel-eslint
+env:
+  browser: true
+  jest: true
+
+rules:
+  react/jsx-filename-extension:
+    - 1
+    - extensions:
+      - .js
+      - .jsx
+  import/no-named-as-default:
+    - 0
+  react/no-typos:
+    # Raises an error when used with ImmutablePropTypes...
+    - 0
+  function-paren-newline:
+    # Does not work well with prettier and max len
+    - 0
+  import/prefer-default-export:
+    - 0

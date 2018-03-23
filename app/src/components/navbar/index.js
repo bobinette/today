@@ -10,7 +10,7 @@ export const NavBar = () => (
     <div className="container">
       <div className="row flex-align-center">
         <h5 className="NavBar__AppName fg-white">
-          <img src="/assets/leaf-inverse.png" height="24" width="24" />
+          <img src="/assets/leaf-inverse.png" alt="" height="24" width="24" />
           Today
         </h5>
       </div>

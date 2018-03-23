@@ -32,13 +32,11 @@ func TestProjector(t *testing.T) {
 		"created": {
 			&Log{},
 			eh.NewEventForAggregate(Created, &CreatedData{
-				Title:   "title",
 				Content: "content",
 			}, timeNow(), AggregateType, id, 1),
 			&Log{
 				UUID:      id,
 				Version:   1,
-				Title:     "title",
 				Content:   "content",
 				CreatedAt: timeNow(),
 				UpdatedAt: timeNow(),

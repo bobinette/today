@@ -6,8 +6,6 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 
-// Toastr
-
 // Init style before importing components
 import 'style/base.scss';
 
@@ -22,12 +20,16 @@ import rootSaga from 'sagas';
 
 // Reducers
 import logListReducer from 'modules/log-list/reducer';
+import newLogReducer from 'modules/new-log/reducer';
 
 // Create store
 const reducers = {
   logList: logListReducer,
+  newLog: newLogReducer,
 };
 const reducer = combineReducers(reducers);
+
+// Install the saga middleware
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = compose(
   applyMiddleware(sagaMiddleware),

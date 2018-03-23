@@ -18,17 +18,14 @@ ShallowWrapper {
       Immutable.List [
         Immutable.Map {
           "uuid": "1",
-          "title": "title 1",
           "content": "content 1",
         },
         Immutable.Map {
           "uuid": "2",
-          "title": "title 2",
           "content": "content 2",
         },
         Immutable.Map {
           "uuid": "3",
-          "title": "title 3",
           "content": "content 3",
         },
       ]
@@ -54,7 +51,6 @@ ShallowWrapper {
               log={
                 Immutable.Map {
                   "uuid": "1",
-                  "title": "title 1",
                   "content": "content 1",
                 }
               }
@@ -65,7 +61,6 @@ ShallowWrapper {
               log={
                 Immutable.Map {
                   "uuid": "2",
-                  "title": "title 2",
                   "content": "content 2",
                 }
               }
@@ -76,7 +71,6 @@ ShallowWrapper {
               log={
                 Immutable.Map {
                   "uuid": "3",
-                  "title": "title 3",
                   "content": "content 3",
                 }
               }
@@ -106,7 +100,6 @@ ShallowWrapper {
             log={
               Immutable.Map {
                 "uuid": "1",
-                "title": "title 1",
                 "content": "content 1",
               }
             }
@@ -120,7 +113,6 @@ ShallowWrapper {
           "props": Object {
             "log": Immutable.Map {
               "uuid": "1",
-              "title": "title 1",
               "content": "content 1",
             },
           },
@@ -139,7 +131,6 @@ ShallowWrapper {
             log={
               Immutable.Map {
                 "uuid": "2",
-                "title": "title 2",
                 "content": "content 2",
               }
             }
@@ -153,7 +144,6 @@ ShallowWrapper {
           "props": Object {
             "log": Immutable.Map {
               "uuid": "2",
-              "title": "title 2",
               "content": "content 2",
             },
           },
@@ -172,7 +162,6 @@ ShallowWrapper {
             log={
               Immutable.Map {
                 "uuid": "3",
-                "title": "title 3",
                 "content": "content 3",
               }
             }
@@ -186,7 +175,6 @@ ShallowWrapper {
           "props": Object {
             "log": Immutable.Map {
               "uuid": "3",
-              "title": "title 3",
               "content": "content 3",
             },
           },
@@ -213,7 +201,6 @@ ShallowWrapper {
                 log={
                   Immutable.Map {
                     "uuid": "1",
-                    "title": "title 1",
                     "content": "content 1",
                   }
                 }
@@ -224,7 +211,6 @@ ShallowWrapper {
                 log={
                   Immutable.Map {
                     "uuid": "2",
-                    "title": "title 2",
                     "content": "content 2",
                   }
                 }
@@ -235,7 +221,6 @@ ShallowWrapper {
                 log={
                   Immutable.Map {
                     "uuid": "3",
-                    "title": "title 3",
                     "content": "content 3",
                   }
                 }
@@ -265,7 +250,6 @@ ShallowWrapper {
               log={
                 Immutable.Map {
                   "uuid": "1",
-                  "title": "title 1",
                   "content": "content 1",
                 }
               }
@@ -279,7 +263,6 @@ ShallowWrapper {
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "1",
-                "title": "title 1",
                 "content": "content 1",
               },
             },
@@ -298,7 +281,6 @@ ShallowWrapper {
               log={
                 Immutable.Map {
                   "uuid": "2",
-                  "title": "title 2",
                   "content": "content 2",
                 }
               }
@@ -312,7 +294,6 @@ ShallowWrapper {
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "2",
-                "title": "title 2",
                 "content": "content 2",
               },
             },
@@ -331,7 +312,6 @@ ShallowWrapper {
               log={
                 Immutable.Map {
                   "uuid": "3",
-                  "title": "title 3",
                   "content": "content 3",
                 }
               }
@@ -345,7 +325,6 @@ ShallowWrapper {
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "3",
-                "title": "title 3",
                 "content": "content 3",
               },
             },

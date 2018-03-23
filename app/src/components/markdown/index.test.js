@@ -1,11 +1,9 @@
 import React from 'react';
-import { fromJS } from 'immutable';
 import { shallow } from 'enzyme';
 
 import { Markdown } from '.';
 
-test('render the log list', () => {
-  const fetchLogs = jest.fn();
+test('render markdown', () => {
   const props = {
     text: `# Title
 

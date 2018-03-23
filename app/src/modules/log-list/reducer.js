@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 
-import { LOGS_RECEIVED } from './events';
+import * as events from './events';
 
 const initialState = fromJS({
   logs: [],
@@ -8,7 +8,7 @@ const initialState = fromJS({
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case LOGS_RECEIVED:
+    case events.LOGS_RECEIVED:
       return state.set('logs', fromJS(action.logs));
     default:
       return state;
