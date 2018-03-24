@@ -60,7 +60,7 @@ script:
 
   # JS
   - >
-    cd /home/travis/build/bobinette/today/app anpm run test &&
+    cd /home/travis/build/bobinette/today/app npm run test &&
     npm run test &&
     cd /home/travis/build/bobinette/today
 
@@ -81,8 +81,6 @@ before_deploy:
     cd /home/travis/build/bobinette/today
 
   # bundle it all
-  - mkdir bin/bleve
-  - cp today/bleve/mapping.json bin/bleve/mapping.json
   - cd bin
   - tar -zcvf ../today-linux.tar.gz .
   - cd /home/travis/build/bobinette/today

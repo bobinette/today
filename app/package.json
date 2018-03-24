@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
+        "build": "webpack --config webpack/webpack.prod.js -p",
         "dev": "webpack --config webpack/webpack.dev.js --watch",
         "jest": "jest",
         "jest:update": "jest -u",
