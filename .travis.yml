@@ -1,0 +1,110 @@
+sudo: required
+dist: trusty
+
+services:
+  - docker
+
+env:
+  ENV=travis
+
+install:
+  # Inspect some variables
+  - pwd
+  - ls -lash
+
+  # Node
+  - npm -v
+  - node -v
+
+  # Go
+  - eval "$(gimme 1.9.4)"
+  - go version
+  - go env
+  - mkdir -p /home/travis/gopath/src/github.com/bobinette
+  - ln -s /home/travis/build/bobinette/today /home/travis/gopath/src/github.com/bobinette/today
+
+  # Install mysql 5.7 via docker
+  - .travis/install_mysql.sh
+
+  # Install Go dependencies
+  - go get -u -v github.com/kardianos/govendor/...
+  - cd /home/travis/gopath/src/github.com/bobinette/today/backend
+  - govendor sync -v
+  - cd /home/travis/build/bobinette/today
+
+  # Install front dependencies
+  - cd /home/travis/build/bobinette/today/app
+  - npm install
+  - cd /home/travis/build/bobinette/today
+
+  # Wait for mysql to be up
+  - ".travis/wait_mysql.sh"
+  - git clone https://github.com/mbucc/shmig.git ./mysql/shmig
+  - |
+    ./mysql/shmig/shmig \
+      -t mysql \
+      -H 127.0.0.1 \
+      -P 3307 \
+      -l today \
+      -p today \
+      -d today_test \
+      -m ./backend/mysql/migrations \
+      up
+
+script:
+  # Go
+  - >
+    cd /home/travis/gopath/src/github.com/bobinette/today/backend &&
+    go test ./... -v &&
+    cd /home/travis/build/bobinette/today
+
+  # JS
+  - >
+    cd /home/travis/build/bobinette/today/app anpm run test &&
+    npm run test &&
+    cd /home/travis/build/bobinette/today
+
+before_deploy:
+  # Create bin directory
+  - mkdir bin
+
+  # Build web server linux
+  - >
+    cd /home/travis/gopath/src/github.com/bobinette/today/backend &&
+    GOOS=linux GOARCH=amd64 go build -o ../bin/today ./cmd/main.go &&
+    cd /home/travis/build/bobinette/today
+
+  # Build front
+  - >
+    cd /home/travis/build/bobinette/today/app &&
+    npm run build &&
+    cd /home/travis/build/bobinette/today
+
+  # bundle it all
+  - mkdir bin/bleve
+  - cp today/bleve/mapping.json bin/bleve/mapping.json
+  - cd bin
+  - tar -zcvf ../today-linux.tar.gz .
+  - cd /home/travis/build/bobinette/today
+
+deploy:
+  provider: releases
+  api_key:
+    secure: bLTgxechIeF8mg+01QUszRGFNLWShNwmvz3DKATSjykn7REBwQ/fT/e1yfAK1LESIf3LYbBkq4mf0kGm5nwwKMq9/yElxrtHslFXGzaxI3nTDYy44xeIx58AtPZaVqh+4uwwh17YGiwpB70hw/m+A+UDFWtO6jHj1wq4VJWtQ8tTn5/JB1jULZB0Ir+cGeTE+G+yGvEaoLA86jjiQlaBsBsNy2HkXy/5oUkc+tOGWBb9o/Vz7q5l+vOluQFgDo7FdDB5sbarSSqQkw4tr3H2WsUTWj4bmavk/38p+1bzY3sbhUb14+9908Myt0K8lSIA7FTwH1Y/BafNbcKLzDUWXQp0c7mF/ikeAkp9jtPJWhfjBw0jhWN3LC7I2LvzglbY0p7InqOxXiMNf1TJ4LrbPd8trKpp+4Uwu/WNnc6kozGm3WindKCSWp7tM9wwgo+J8zwmwSWKiTHUKuwphmfZTEsNSV5WY+oCAHIkFiuvlbKYyFu1YiXvvthiJrl8kzfC9N6ugePAVygQJ2/9s8I+FoqZCHskzW9UGqfCWUtQ1BCvfzUSkWOx+uNJ/K+MJxh3RS4EGpR3jZnOLgW5hxO5zbgivsgpfiZvvivjk4OPYHVqqD4THHnWJIwPtexque8VljSLx7sgLZPlIapsOSt61WSle4YSjxHtTjdfvWrkIWo=
+  file:
+    - today-linux.tar.gz
+  on:
+    tags: true
+    repo: bobinette/today
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+
+# Build only the master branch. The PRs will still be built
+branches:
+  only:
+    - master
+    # Regex for tags, needed for releases
+    - /^\d+\.\d+(\.\d+)?(-\S*)?$/
