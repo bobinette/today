@@ -35,6 +35,10 @@ func main() {
 		Web struct {
 			Bind string
 		}
+
+		App struct {
+			Dir string `toml:"dir"`
+		} `toml:"app"`
 	}
 
 	if err := toml.Unmarshal(cfgData, &cfg); err != nil {
@@ -108,7 +112,7 @@ func main() {
 	}
 
 	// Assets
-	srv.Static("/", "../app/build")
+	srv.Static("/", cfg.App.Dir)
 
 	if err := srv.Start(cfg.Web.Bind); err != nil {
 		log.Fatal(err)
