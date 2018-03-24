@@ -1,18 +1,11 @@
 import axios from 'axios';
 
+import apiUrl from 'utils/apiUrl';
+
 export default {
-  async createLog({ title, content }) {
-    try {
-      await axios.post('http://127.0.0.1:9091/api/logs', { title, content });
-      return {};
-    } catch (error) {
-      console.error('error getting logs', error);
-      return { error };
-    }
-  },
   async fetchLogs() {
     try {
-      const response = await axios.get('http://127.0.0.1:9091/api/logs');
+      const response = await axios.get(`${apiUrl}/api/logs`);
       return { logs: response.data };
     } catch (error) {
       console.error('error getting logs', error);

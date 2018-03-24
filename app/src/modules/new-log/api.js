@@ -1,9 +1,11 @@
 import axios from 'axios';
 
+import apiUrl from 'utils/apiUrl';
+
 export default {
   async createLog({ title, content }) {
     try {
-      await axios.post('http://127.0.0.1:9091/api/logs', { title, content });
+      await axios.post(`${apiUrl}/api/logs`, { title, content });
       return {};
     } catch (error) {
       console.error('error getting logs', error);
