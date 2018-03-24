@@ -1,0 +1,100 @@
+- name: Install packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: true
+  with_items:
+    - nginx
+    - jq
+    - unzip
+
+- name: Copy nginx configuration
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/sites-available/today.conf
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644
+  become: true
+
+- name: Symlink the nginx configuration
+  file:
+    src: /etc/nginx/sites-available/today.conf
+    dest: /etc/nginx/sites-enabled/today.conf
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    state: link
+  become: true
+
+- name: Create needed directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+  become: true
+  with_items:
+    - /var/www/today
+    - /var/www/today/configuration
+
+- name: Put today in systemd
+  copy:
+    src: today.service
+    dest: /lib/systemd/system/today.service
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 644
+  become: true
+
+# A smarter way would be to download, extract, stop, rename, restart.
+# Right now, there is a downtime during the download of the release
+- name: Stop today
+  service:
+    name: today
+    state: stopped
+  become: true
+
+- name: Push download script
+  template:
+    src: get_release.sh.j2
+    dest: /var/www/today/get_release.sh
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0744
+  become: true
+
+- name: Execute download script
+  shell: /var/www/today/get_release.sh
+  args:
+    chdir: /var/www/today
+
+- name: Unzip the app
+  unarchive:
+    src: /var/www/today/today-linux.tar.gz
+    dest: /var/www/today/.
+    remote_src: yes
+
+- name: Make binary executable
+  file:
+    path: /var/www/today/today
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0744
+
+- name: Copy configuration templates
+  template:
+    src: conf.toml.j2
+    dest: /var/www/today/conf.toml
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644
+
+- name: Restart nginx and today
+  service:
+    name: "{{ item }}"
+    state: restarted
+  with_items:
+    - nginx
+    - today
+  become: true

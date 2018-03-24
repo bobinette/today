@@ -1,0 +1,12 @@
+[mysql]
+username = "{{ mysql.user }}"
+password = "{{ mysql.password }}"
+host = "{{ mysql.host }}"
+port = "3306"
+database = "today"
+
+[web]
+bind = "127.0.0.1:9091"
+
+[app]
+dir = "./app"
