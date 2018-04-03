@@ -37,6 +37,60 @@
   with_items:
     - /var/www/today
     - /var/www/today/configuration
+    - /var/www/today/bitly_oauth2_proxy
+
+# ------------------------------------------------
+# OAuth2 proxy
+
+- name: Put the proxy in systemd
+  copy:
+    src: today_oauth2.service
+    dest: /lib/systemd/system/today_oauth2.service
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644
+  become: true
+
+- name: Stop the oauth proxy
+  service:
+    name: today_oauth2
+    state: stopped
+  become: true
+
+- name: Download the oauth2 proxy
+  get_url:
+    url: https://github.com/bitly/oauth2_proxy/releases/download/v2.2/oauth2_proxy-2.2.0.linux-amd64.go1.8.1.tar.gz
+    dest: /var/www/today/bitly_oauth2_proxy.tar.gz
+  become: true
+
+- name: Unzip the proxy
+  unarchive:
+    src: /var/www/today/bitly_oauth2_proxy.tar.gz
+    dest: /var/www/today
+    remote_src: yes
+
+- name: Remove the current proxy directory
+  file:
+    path: /var/www/today/bitly_oauth2_proxy
+    state: absent
+
+- name: Rename the oauth2 proxy folder
+  command: >
+    mv
+    /var/www/today/oauth2_proxy-2.2.0.linux-amd64.go1.8.1
+    /var/www/today/bitly_oauth2_proxy
+
+- name: Copy the proxy config
+  template:
+    src: oauth2_proxy.j2
+    dest: /var/www/today/bitly_oauth2_proxy/oauth2_proxy.cfg
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644
+  become: true
+
+# end: OAuth2 proxy
+# ------------------------------------------------
 
 - name: Put today in systemd
   copy:
@@ -44,7 +98,7 @@
     dest: /lib/systemd/system/today.service
     owner: "{{ user }}"
     group: "{{ user }}"
-    mode: 644
+    mode: 0644
   become: true
 
 # A smarter way would be to download, extract, stop, rename, restart.
@@ -90,11 +144,12 @@
     group: "{{ user }}"
     mode: 0644
 
-- name: Restart nginx and today
+- name: Restart the services
   service:
     name: "{{ item }}"
     state: restarted
   with_items:
     - nginx
     - today
+    - today_oauth2
   become: true

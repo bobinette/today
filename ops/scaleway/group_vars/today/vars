@@ -6,16 +6,22 @@ mysql:
   password: today
   host: "127.0.0.1"
 
-jwt:
-  key: today_secret
-
-google:
-  cookie_secret: cookie_secret
-  client_id: client_id
-  client_secret: client_secret
-  redirect_url: redirect_url
-
 github:
   username: bobinette
   repository: today
   filename: today-linux.tar.gz
+
+oauth2_proxy:
+  callback: http://127.0.0.1:9092/oauth2/callback
+  provider:
+    name: google
+    client_id: client_id
+    client_secret: client_secret
+  cookie:
+    name: name
+    secret: secret 
+    domain: domain
+    expire: expire
+    refresh: refresh
+    secure: false
+    httponly: true
