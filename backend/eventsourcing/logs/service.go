@@ -33,6 +33,7 @@ func (s *Service) Find(ctx context.Context, uuid eh.UUID) (eh.Entity, error) {
 
 	ll := &Log{
 		UUID:      eh.UUID(l.UUID),
+		User:      l.User,
 		Content:   l.Content,
 		CreatedAt: l.CreatedAt,
 		UpdatedAt: l.UpdatedAt,
@@ -42,22 +43,7 @@ func (s *Service) Find(ctx context.Context, uuid eh.UUID) (eh.Entity, error) {
 
 // FindAll returns all entities in the repository.
 func (s *Service) FindAll(ctx context.Context) ([]eh.Entity, error) {
-	ls, err := s.service.List(ctx)
-	if err != nil {
-		return nil, err
-	}
-
-	lls := make([]eh.Entity, len(ls))
-	for i, l := range ls {
-		lls[i] = &Log{
-			UUID:      eh.UUID(l.UUID),
-			Content:   l.Content,
-			CreatedAt: l.CreatedAt,
-			UpdatedAt: l.UpdatedAt,
-		}
-	}
-
-	return lls, nil
+	return nil, errors.New("not implemented")
 }
 
 // Save saves a entity in the storage.
@@ -69,6 +55,7 @@ func (s *Service) Save(ctx context.Context, entity eh.Entity) error {
 
 	l := logs.Log{
 		UUID:      string(ll.UUID),
+		User:      ll.User,
 		Content:   ll.Content,
 		CreatedAt: ll.CreatedAt,
 		UpdatedAt: ll.UpdatedAt,

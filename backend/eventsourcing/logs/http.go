@@ -24,6 +24,9 @@ func (h *httpHandler) create(c echo.Context) error {
 		return err
 	}
 
+	user := c.Request().Header.Get("X-Forwarded-Email")
+	cmd.(*Create).User = user
+
 	// New context to prevent long running tasks from being canceled when the request
 	// is over.
 	ctx := context.Background()

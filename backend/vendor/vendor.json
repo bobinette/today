@@ -9,6 +9,12 @@
 			"revisionTime": "2017-06-26T11:06:00Z"
 		},
 		{
+			"checksumSHA1": "WHo6uRPdJpUt63HDHkQ5nI/tc0E=",
+			"path": "github.com/Sirupsen/logrus",
+			"revision": "181d419aa9e2223811b824e8f0b4af96f9ba9302",
+			"revisionTime": "2017-07-28T07:42:14Z"
+		},
+		{
 			"checksumSHA1": "OFu4xJEIjiI8Suu+j/gabfp+y6Q=",
 			"origin": "github.com/stretchr/testify/vendor/github.com/davecgh/go-spew/spew",
 			"path": "github.com/davecgh/go-spew/spew",
@@ -173,6 +179,12 @@
 			"revisionTime": "2017-01-30T11:31:45Z"
 		},
 		{
+			"checksumSHA1": "7UPxuMmYvXF6KmOiq2EB2qjOkZE=",
+			"path": "github.com/sandalwing/echo-logrusmiddleware",
+			"revision": "1d7700fcf2d3785a9fa77dc1a89a60df4789cdb2",
+			"revisionTime": "2016-12-26T03:42:27Z"
+		},
+		{
 			"checksumSHA1": "8rxOh1Vlti1bzoIy6mH5eL0RYsI=",
 			"path": "github.com/stretchr/testify/assert",
 			"revision": "4d4bfba8f1d1027c4fdbe371823030df51419987",
@@ -210,8 +222,20 @@
 			"revisionTime": "2017-09-21T17:41:56Z"
 		},
 		{
+			"checksumSHA1": "EE4+FW4g5f/VgenL4BnY8qPvpnk=",
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": "9f005a07e0d31d45e6656d241bb5c0f2efd4bc94",
+			"revisionTime": "2017-09-21T17:41:56Z"
+		},
+		{
 			"checksumSHA1": "88b2z77oir+buS4o+D6WN5zUPIo=",
 			"path": "golang.org/x/sys/unix",
+			"revision": "8eb05f94d449fdf134ec24630ce69ada5b469c1c",
+			"revisionTime": "2017-11-04T16:30:55Z"
+		},
+		{
+			"checksumSHA1": "TP6BGdkbRcUS/dGPEj45gzmUoTM=",
+			"path": "golang.org/x/sys/windows",
 			"revision": "8eb05f94d449fdf134ec24630ce69ada5b469c1c",
 			"revisionTime": "2017-11-04T16:30:55Z"
 		},

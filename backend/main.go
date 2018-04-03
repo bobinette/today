@@ -8,9 +8,11 @@ import (
 	"net/http"
 
 	"github.com/BurntSushi/toml"
+	"github.com/Sirupsen/logrus"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
+	"github.com/sandalwing/echo-logrusmiddleware"
 
 	"github.com/bobinette/today/backend/eventsourcing"
 	"github.com/bobinette/today/backend/logs"
@@ -71,13 +73,9 @@ func main() {
 		return fmt.Errorf("route %s (method %s) not found", c.Request().URL, c.Request().Method)
 	}
 
-	srv.Use(middleware.Logger())
-	srv.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
-		return func(c echo.Context) error {
-			log.Println(c.Request().Header)
-			return next(c)
-		}
-	})
+	// Easier to read logger
+	srv.Logger = logrusmiddleware.Logger{logrus.StandardLogger()}
+	srv.Use(logrusmiddleware.Hook())
 
 	srv.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"*"},

@@ -71,7 +71,7 @@ before_deploy:
   # Build web server linux
   - >
     cd /home/travis/gopath/src/github.com/bobinette/today/backend &&
-    GOOS=linux GOARCH=amd64 go build -o ../bin/today ./cmd/main.go &&
+    GOOS=linux GOARCH=amd64 go build -o ../bin/today ./main.go &&
     cd /home/travis/build/bobinette/today
 
   # Build front
@@ -87,6 +87,7 @@ before_deploy:
 
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: bLTgxechIeF8mg+01QUszRGFNLWShNwmvz3DKATSjykn7REBwQ/fT/e1yfAK1LESIf3LYbBkq4mf0kGm5nwwKMq9/yElxrtHslFXGzaxI3nTDYy44xeIx58AtPZaVqh+4uwwh17YGiwpB70hw/m+A+UDFWtO6jHj1wq4VJWtQ8tTn5/JB1jULZB0Ir+cGeTE+G+yGvEaoLA86jjiQlaBsBsNy2HkXy/5oUkc+tOGWBb9o/Vz7q5l+vOluQFgDo7FdDB5sbarSSqQkw4tr3H2WsUTWj4bmavk/38p+1bzY3sbhUb14+9908Myt0K8lSIA7FTwH1Y/BafNbcKLzDUWXQp0c7mF/ikeAkp9jtPJWhfjBw0jhWN3LC7I2LvzglbY0p7InqOxXiMNf1TJ4LrbPd8trKpp+4Uwu/WNnc6kozGm3WindKCSWp7tM9wwgo+J8zwmwSWKiTHUKuwphmfZTEsNSV5WY+oCAHIkFiuvlbKYyFu1YiXvvthiJrl8kzfC9N6ugePAVygQJ2/9s8I+FoqZCHskzW9UGqfCWUtQ1BCvfzUSkWOx+uNJ/K+MJxh3RS4EGpR3jZnOLgW5hxO5zbgivsgpfiZvvivjk4OPYHVqqD4THHnWJIwPtexque8VljSLx7sgLZPlIapsOSt61WSle4YSjxHtTjdfvWrkIWo=
   file:
