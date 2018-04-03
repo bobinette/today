@@ -9,6 +9,8 @@ const (
 )
 
 type CreatedData struct {
-	UUID    eh.UUID `json:"uuid"`
-	Content string  `json:"content"`
+	UUID eh.UUID `json:"uuid"`
+
+	User    string `json:"user"`
+	Content string `json:"content"`
 }

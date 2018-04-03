@@ -13,8 +13,10 @@ import (
 func TestLogRepository(t *testing.T, repo logs.Repository) {
 	var err error
 	ctx := context.Background()
+	user := "user"
 	log := logs.Log{
 		UUID:    "123",
+		User:    user,
 		Content: "This is a test log",
 
 		CreatedAt: time.Date(1991, 5, 17, 0, 0, 0, 0, time.UTC),
@@ -24,7 +26,7 @@ func TestLogRepository(t *testing.T, repo logs.Repository) {
 	_, err = repo.Find(ctx, "123")
 	assert.Equal(t, logs.ErrLogNotFound, err)
 
-	all, err := repo.List(ctx)
+	all, err := repo.List(ctx, user)
 	assert.Equal(t, 0, len(all))
 	assert.NoError(t, err)
 
@@ -35,7 +37,7 @@ func TestLogRepository(t *testing.T, repo logs.Repository) {
 	assert.NoError(t, err)
 	assert.Equal(t, log, retrieved)
 
-	all, err = repo.List(ctx)
+	all, err = repo.List(ctx, user)
 	assert.NoError(t, err)
 	assert.Equal(t, []logs.Log{log}, all)
 }

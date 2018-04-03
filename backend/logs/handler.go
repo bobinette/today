@@ -1,6 +1,7 @@
 package logs
 
 import (
+	// "fmt"
 	"net/http"
 
 	"github.com/labstack/echo"
@@ -36,7 +37,10 @@ func (h *Handler) get(c echo.Context) error {
 }
 
 func (h *Handler) list(c echo.Context) error {
-	logs, err := h.service.List(c.Request().Context())
+	user := c.Request().Header.Get("X-Forwarded-Email")
+	// fmt.Println(c.Request().Header, "\n")
+
+	logs, err := h.service.List(c.Request().Context(), user)
 	if err != nil {
 		return err
 	}

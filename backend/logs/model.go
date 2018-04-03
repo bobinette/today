@@ -13,6 +13,7 @@ var (
 type Log struct {
 	UUID string `json:"uuid"`
 
+	User    string `json:"user"`
 	Content string `json:"content"`
 
 	CreatedAt time.Time `json:"createdAt"`
@@ -22,7 +23,8 @@ type Log struct {
 type Repository interface {
 	// Read
 	Find(ctx context.Context, uuid string) (Log, error)
-	List(ctx context.Context) ([]Log, error)
+	List(ctx context.Context, user string) ([]Log, error)
+	All(ctx context.Context) ([]Log, error)
 
 	// Write
 	Save(ctx context.Context, log Log) error

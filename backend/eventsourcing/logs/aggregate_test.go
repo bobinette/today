@@ -41,10 +41,11 @@ func TestAggregate_HandleCommand(t *testing.T) {
 				AggregateBase: as.NewAggregateBase(AggregateType, id),
 				created:       false,
 			},
-			cmd: &Create{UUID: id, Content: "content"},
+			cmd: &Create{UUID: id, User: "user", Content: "content"},
 			events: []eh.Event{
 				eh.NewEventForAggregate(Created, &CreatedData{
 					UUID:    id,
+					User:    "user",
 					Content: "content",
 				}, timeNow(), AggregateType, id, 1),
 			},
@@ -55,7 +56,7 @@ func TestAggregate_HandleCommand(t *testing.T) {
 				AggregateBase: as.NewAggregateBase(AggregateType, id),
 				created:       true,
 			},
-			cmd:    &Create{UUID: id, Content: "content"},
+			cmd:    &Create{UUID: id, User: "user", Content: "content"},
 			events: nil,
 			err:    errors.New("already created"),
 		},
