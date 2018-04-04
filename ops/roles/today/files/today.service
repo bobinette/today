@@ -1,0 +1,9 @@
+[Unit]
+Description=Job that runs the today server
+
+[Service]
+WorkingDirectory=/var/www/today
+ExecStart=/var/www/today/today -env=prod
+
+[Install]
+WantedBy=multi-user.target

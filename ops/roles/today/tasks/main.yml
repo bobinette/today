@@ -1,0 +1,155 @@
+- name: Install packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: true
+  with_items:
+    - nginx
+    - jq
+    - unzip
+
+- name: Copy nginx configuration
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/sites-available/today.conf
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644
+  become: true
+
+- name: Symlink the nginx configuration
+  file:
+    src: /etc/nginx/sites-available/today.conf
+    dest: /etc/nginx/sites-enabled/today.conf
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    state: link
+  become: true
+
+- name: Create needed directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+  become: true
+  with_items:
+    - /var/www/today
+    - /var/www/today/configuration
+    - /var/www/today/bitly_oauth2_proxy
+
+# ------------------------------------------------
+# OAuth2 proxy
+
+- name: Put the proxy in systemd
+  copy:
+    src: today_oauth2.service
+    dest: /lib/systemd/system/today_oauth2.service
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644
+  become: true
+
+- name: Stop the oauth proxy
+  service:
+    name: today_oauth2
+    state: stopped
+  become: true
+
+- name: Download the oauth2 proxy
+  get_url:
+    url: https://github.com/bitly/oauth2_proxy/releases/download/v2.2/oauth2_proxy-2.2.0.linux-amd64.go1.8.1.tar.gz
+    dest: /var/www/today/bitly_oauth2_proxy.tar.gz
+  become: true
+
+- name: Unzip the proxy
+  unarchive:
+    src: /var/www/today/bitly_oauth2_proxy.tar.gz
+    dest: /var/www/today
+    remote_src: yes
+
+- name: Remove the current proxy directory
+  file:
+    path: /var/www/today/bitly_oauth2_proxy
+    state: absent
+
+- name: Rename the oauth2 proxy folder
+  command: >
+    mv
+    /var/www/today/oauth2_proxy-2.2.0.linux-amd64.go1.8.1
+    /var/www/today/bitly_oauth2_proxy
+
+- name: Copy the proxy config
+  template:
+    src: oauth2_proxy.j2
+    dest: /var/www/today/bitly_oauth2_proxy/oauth2_proxy.cfg
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644
+  become: true
+
+# end: OAuth2 proxy
+# ------------------------------------------------
+
+- name: Put today in systemd
+  copy:
+    src: today.service
+    dest: /lib/systemd/system/today.service
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644
+  become: true
+
+# A smarter way would be to download, extract, stop, rename, restart.
+# Right now, there is a downtime during the download of the release
+- name: Stop today
+  service:
+    name: today
+    state: stopped
+  become: true
+
+- name: Push download script
+  template:
+    src: get_release.sh.j2
+    dest: /var/www/today/get_release.sh
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0744
+  become: true
+
+- name: Execute download script
+  shell: /var/www/today/get_release.sh
+  args:
+    chdir: /var/www/today
+
+- name: Unzip the app
+  unarchive:
+    src: /var/www/today/today-linux.tar.gz
+    dest: /var/www/today/.
+    remote_src: yes
+
+- name: Make binary executable
+  file:
+    path: /var/www/today/today
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0744
+
+- name: Copy configuration templates
+  template:
+    src: conf.toml.j2
+    dest: /var/www/today/conf.toml
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644
+
+- name: Restart the services
+  service:
+    name: "{{ item }}"
+    state: restarted
+  with_items:
+    - nginx
+    - today
+    - today_oauth2
+  become: true

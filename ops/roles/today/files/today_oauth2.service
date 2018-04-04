@@ -1,0 +1,9 @@
+[Unit]
+Description=Job that runs the oauth2 proxy for today
+
+[Service]
+WorkingDirectory=/var/www/today/bitly_oauth2_proxy
+ExecStart=/var/www/today/bitly_oauth2_proxy/oauth2_proxy --config=oauth2_proxy.cfg
+
+[Install]
+WantedBy=multi-user.target
