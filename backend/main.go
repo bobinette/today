@@ -3,16 +3,16 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
+	"strings"
 
-	"github.com/BurntSushi/toml"
 	"github.com/Sirupsen/logrus"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/sandalwing/echo-logrusmiddleware"
+	"github.com/spf13/viper"
 
 	"github.com/bobinette/today/backend/eventsourcing"
 	"github.com/bobinette/today/backend/logs"
@@ -20,30 +20,45 @@ import (
 )
 
 func main() {
-	cfgData, err := ioutil.ReadFile("conf.toml")
-	if err != nil {
-		log.Fatalln("could not open config file:", err)
-	}
+	vp := viper.New()
+	vp.SetConfigFile("conf.toml")
+
+	// Parse env variables: replace the "." in th epath
+	vp.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
+	vp.AutomaticEnv()
+
+	// Set default values
+	vp.SetDefault("mysql.host", "127.0.0.1")
+	vp.SetDefault("mysql.port", "3306")
+	vp.SetDefault("mysql.username", "root")
+	vp.SetDefault("mysql.password", "root")
+	vp.SetDefault("mysql.database", "today")
+
+	vp.SetDefault("web.bind", ":9091")
+
+	vp.SetDefault("app.dir", "")
+
+	vp.ReadInConfig()
 
 	var cfg struct {
 		MySQL struct {
-			Host     string
-			Port     string
-			Username string
-			Password string
-			Database string
-		} `toml:"mysql"`
+			Host     string `mapstructure:"host"`
+			Port     string `mapstructure:"port"`
+			Username string `mapstructure:"username"`
+			Password string `mapstructure:"password"`
+			Database string `mapstructure:"database"`
+		} `mapstructure:"mysql"`
 
 		Web struct {
 			Bind string
 		}
 
 		App struct {
-			Dir string `toml:"dir"`
-		} `toml:"app"`
+			Dir string `mapstructure:"dir"`
+		} `mapstructure:"app"`
 	}
 
-	if err := toml.Unmarshal(cfgData, &cfg); err != nil {
+	if err := vp.Unmarshal(&cfg); err != nil {
 		log.Fatalln("could not read config file:", err)
 	}
 
@@ -74,7 +89,7 @@ func main() {
 	}
 
 	// Easier to read logger
-	srv.Logger = logrusmiddleware.Logger{logrus.StandardLogger()}
+	srv.Logger = logrusmiddleware.Logger{Logger: logrus.StandardLogger()}
 	srv.Use(logrusmiddleware.Hook())
 
 	srv.Use(middleware.CORSWithConfig(middleware.CORSConfig{
@@ -109,8 +124,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// Assets
-	srv.Static("/", cfg.App.Dir)
+	// Assets - might be served by someone else.
+	// Typically for the docker-compose the nginx container will serve the front
+	if cfg.App.Dir != "" {
+		srv.Static("/", cfg.App.Dir)
+	}
 
 	if err := srv.Start(cfg.Web.Bind); err != nil {
 		log.Fatal(err)
