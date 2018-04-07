@@ -17,3 +17,6 @@
 oauth2_proxy.cfg
 
 */vendor/*/*
+
+backend/*/bleve/index
+conf.*toml

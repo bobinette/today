@@ -9,8 +9,13 @@ import (
 	"github.com/bobinette/today/backend/logs"
 )
 
+type LogService interface {
+	Find(ctx context.Context, uuid string) (logs.Log, error)
+	Save(ctx context.Context, log logs.Log) error
+}
+
 type Service struct {
-	service *logs.Service
+	service LogService
 }
 
 // Parent returns the parent read repository, if there is one.
@@ -66,5 +71,5 @@ func (s *Service) Save(ctx context.Context, entity eh.Entity) error {
 
 // Remove removes a entity by ID from the storage.
 func (s *Service) Remove(ctx context.Context, uuid eh.UUID) error {
-	return nil
+	return errors.New("not implemented")
 }
