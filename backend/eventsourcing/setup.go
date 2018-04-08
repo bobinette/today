@@ -11,8 +11,9 @@ import (
 	bus "github.com/looplab/eventhorizon/eventbus/local"
 	publisher "github.com/looplab/eventhorizon/publisher/local"
 
-	"github.com/bobinette/today/backend/eventsourcing/logs"
+	eslogs "github.com/bobinette/today/backend/eventsourcing/logs"
 	"github.com/bobinette/today/backend/eventsourcing/mysql"
+	"github.com/bobinette/today/backend/logs"
 )
 
 // Logger is a simple event handler for logging all events.
@@ -23,7 +24,7 @@ func (l *Logger) Notify(ctx context.Context, event eh.Event) {
 	log.Printf("EVENT %s", event)
 }
 
-func Register(db *sql.DB, srv *echo.Echo) error {
+func Register(db *sql.DB, logService *logs.Service, srv *echo.Echo) error {
 	// Let's use the local publisher to start with
 	publisher := publisher.NewEventPublisher()
 	publisher.AddObserver(&Logger{})
@@ -37,7 +38,7 @@ func Register(db *sql.DB, srv *echo.Echo) error {
 		return err
 	}
 
-	if err := logs.Register(db, bus, aggregateStore, srv); err != nil {
+	if err := eslogs.Register(logService, bus, aggregateStore, srv); err != nil {
 		return err
 	}
 

@@ -16,6 +16,7 @@ import (
 
 	"github.com/bobinette/today/backend/eventsourcing"
 	"github.com/bobinette/today/backend/logs"
+	"github.com/bobinette/today/backend/logs/bleve"
 	"github.com/bobinette/today/backend/logs/mysql"
 )
 
@@ -34,9 +35,13 @@ func main() {
 	vp.SetDefault("mysql.password", "root")
 	vp.SetDefault("mysql.database", "today")
 
+	vp.SetDefault("bleve.address", "./logs/bleve/index")
+
 	vp.SetDefault("web.bind", ":9091")
 
 	vp.SetDefault("app.dir", "")
+
+	vp.SetDefault("admins", "")
 
 	vp.ReadInConfig()
 
@@ -49,13 +54,19 @@ func main() {
 			Database string `mapstructure:"database"`
 		} `mapstructure:"mysql"`
 
+		Bleve struct {
+			Address string `mapstructure:"address"`
+		} `mapstructure:"bleve"`
+
 		Web struct {
-			Bind string
-		}
+			Bind string `mapstructure:"bind"`
+		} `mapstructure:"web"`
 
 		App struct {
 			Dir string `mapstructure:"dir"`
 		} `mapstructure:"app"`
+
+		Admins []string `mapstructure:"admins"`
 	}
 
 	if err := vp.Unmarshal(&cfg); err != nil {
@@ -80,6 +91,12 @@ func main() {
 	if err := db.Ping(); err != nil {
 		log.Fatalln("error pinging MySQL:", err)
 	}
+
+	index, err := bleve.Open(cfg.Bleve.Address)
+	if err != nil {
+		log.Fatalln("error opening bleve index:", err)
+	}
+	defer index.Close()
 
 	// Create server + register routes
 	srv := echo.New()
@@ -116,11 +133,12 @@ func main() {
 		c.JSON(code, map[string]interface{}{"error": err.Error()})
 	}
 
-	if err := eventsourcing.Register(db, srv); err != nil {
+	logService, err := logs.Register(mysql.NewLogRepository(db), index, cfg.Admins, srv)
+	if err != nil {
 		log.Fatal(err)
 	}
 
-	if err := logs.Register(mysql.NewLogRepository(db), srv); err != nil {
+	if err := eventsourcing.Register(db, logService, srv); err != nil {
 		log.Fatal(err)
 	}
 

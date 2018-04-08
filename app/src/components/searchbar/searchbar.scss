@@ -1,0 +1,27 @@
+@import '../../style/base.scss';
+
+.SearchBar {
+    background: white;
+    width: 100%;
+
+    border: 1px solid $card-border-color;
+    border-radius: $card-border-radius;
+    padding: 0.3rem;
+
+    display: flex;
+    align-items: center;
+
+    .fa-search {
+        color: theme-color('primary');
+        margin-right: 0.2rem;
+    }
+}
+
+.SearchBar__input {
+    border: none;
+    flex: 1;
+
+    &:focus {
+        outline: none;
+    }
+}

@@ -22,6 +22,9 @@ import rootSaga from 'sagas';
 import logListReducer from 'modules/log-list/reducer';
 import newLogReducer from 'modules/new-log/reducer';
 
+// Setup fontawesome
+import './fontawesome';
+
 // Create store
 const reducers = {
   logList: logListReducer,

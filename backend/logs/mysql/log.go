@@ -3,6 +3,8 @@ package mysql
 import (
 	"context"
 	"database/sql"
+	"fmt"
+	"sort"
 	"time"
 
 	"github.com/bobinette/today/backend/logs"
@@ -53,6 +55,46 @@ func (r *LogRepository) Find(ctx context.Context, uuid string) (logs.Log, error)
 	}, nil
 }
 
+func (r *LogRepository) GetMultiple(ctx context.Context, uuids []string) ([]logs.Log, error) {
+	if len(uuids) == 0 {
+		return []logs.Log{}, nil
+	}
+
+	query := fmt.Sprintf(`
+	SELECT uuid, user, content, created_at, updated_at
+	FROM logs
+	WHERE uuid IN (%s)
+`, join("?", ",", len(uuids)))
+
+	params := make([]interface{}, len(uuids))
+	for i, uuid := range uuids {
+		params[i] = uuid
+	}
+
+	rows, err := r.db.QueryContext(ctx, query, params...)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	logs, err := r.list(rows)
+	if err != nil {
+		return nil, err
+	}
+
+	uuidOrder := make(map[string]int)
+	for i, uuid := range uuids {
+		uuidOrder[uuid] = i
+	}
+
+	sort.Sort(&keepOrder{
+		uuidOrder: uuidOrder,
+		logs:      logs,
+	})
+
+	return logs, nil
+}
+
 func (r *LogRepository) List(ctx context.Context, user string) ([]logs.Log, error) {
 	query := `
 	SELECT uuid, user, content, created_at, updated_at
@@ -67,6 +109,30 @@ func (r *LogRepository) List(ctx context.Context, user string) ([]logs.Log, erro
 	defer rows.Close()
 
 	return r.list(rows)
+}
+
+func (r *LogRepository) ListUUIDs(ctx context.Context, user string) ([]string, error) {
+	query := "SELECT uuid FROM logs WHERE user = ?"
+	rows, err := r.db.QueryContext(ctx, query, user)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	uuids := make([]string, 0)
+	for rows.Next() {
+		var uuid string
+		if err := rows.Scan(&uuid); err != nil {
+			return nil, err
+		}
+		uuids = append(uuids, uuid)
+	}
+
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+
+	return uuids, nil
 }
 
 func (r *LogRepository) All(ctx context.Context) ([]logs.Log, error) {

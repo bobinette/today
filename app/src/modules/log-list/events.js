@@ -6,3 +6,5 @@ export const LOGS_RECEIVED = 'LOGS_RECEIVED';
 
 export const UPDATE_TITLE = 'UPDATE_TITLE';
 export const UPDATE_CONTENT = 'UPDATE_CONTENT';
+
+export const UPDATE_SEARCH = 'UPDATE_SEARCH';

@@ -11,3 +11,8 @@ export const updateContent = content => ({
   type: events.UPDATE_CONTENT,
   content,
 });
+
+export const onSearchChange = q => ({
+  type: events.UPDATE_SEARCH,
+  q,
+});
