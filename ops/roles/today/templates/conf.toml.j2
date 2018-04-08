@@ -1,3 +1,9 @@
+admins = [
+    {% for admin in admins %}
+    "{{ admin }}",
+    {% endfor %}
+]
+
 [mysql]
 username = "{{ mysql.user }}"
 password = "{{ mysql.password }}"

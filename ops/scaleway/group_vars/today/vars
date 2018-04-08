@@ -1,6 +1,8 @@
 ---
 user: papernet
 
+admins:
+
 mysql:
   user: today
   password: today
