@@ -6,7 +6,7 @@ password = "root"
 database = "today"
 
 [web]
-bind = "127.0.0.1:9091"
+bind = ":9091"
 
 [app]
 dir = "../app/build"
