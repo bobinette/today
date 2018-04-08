@@ -6,20 +6,24 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 
 import Markdown from 'components/markdown';
+import SearchBar from 'components/searchbar';
+
 import NewLogInput from 'modules/new-log';
 import { separateActions } from 'utils/redux';
 
-import { fetchLogs } from './actions';
-import { selectLogs } from './selectors';
+import { fetchLogs, onSearchChange } from './actions';
+import { selectLogs, selectQ } from './selectors';
 
 import './log-list.scss';
 
 const mapStateToProps = state => ({
   logs: selectLogs(state),
+  q: selectQ(state),
 });
 
 const mapDispatchToProps = {
   fetchLogs,
+  onSearchChange,
 };
 
 export class LogList extends PureComponent {
@@ -28,11 +32,16 @@ export class LogList extends PureComponent {
   }
 
   render() {
-    const { logs } = this.props;
+    const { q, actions, logs } = this.props;
 
     return (
       <div className="container">
         <NewLogInput />
+        <SearchBar
+          className="LogList__searchBar col-md-8 offset-md-2"
+          q={q}
+          onChange={actions.onSearchChange}
+        />
         {logs.map(log => (
           <div key={log.get('uuid')}>
             <LogList.LogItem log={log} />
@@ -45,8 +54,10 @@ export class LogList extends PureComponent {
 
 LogList.propTypes = {
   logs: ImmutablePropTypes.list.isRequired,
+  q: PropTypes.string.isRequired,
   actions: PropTypes.shape({
     fetchLogs: PropTypes.func.isRequired,
+    onSearchChange: PropTypes.func.isRequired,
   }).isRequired,
 };
 
