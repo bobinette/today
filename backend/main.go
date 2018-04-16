@@ -43,6 +43,8 @@ func main() {
 
 	vp.SetDefault("admins", "")
 
+	vp.SetDefault("dev.forwarded_email", "")
+
 	vp.ReadInConfig()
 
 	var cfg struct {
@@ -67,6 +69,10 @@ func main() {
 		} `mapstructure:"app"`
 
 		Admins []string `mapstructure:"admins"`
+
+		Dev struct {
+			ForwardedEmail string `mapstructure:"forwarded_email"`
+		} `mapstructure:"dev"`
 	}
 
 	if err := vp.Unmarshal(&cfg); err != nil {
@@ -113,6 +119,15 @@ func main() {
 		AllowOrigins: []string{"*"},
 		AllowMethods: []string{echo.GET, echo.PUT, echo.POST, echo.DELETE},
 	}))
+
+	if cfg.Dev.ForwardedEmail != "" {
+		srv.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
+			return func(c echo.Context) error {
+				c.Request().Header.Set("X-Forwarded-Email", cfg.Dev.ForwardedEmail)
+				return next(c)
+			}
+		})
+	}
 
 	srv.HTTPErrorHandler = func(err error, c echo.Context) {
 		code := http.StatusInternalServerError
