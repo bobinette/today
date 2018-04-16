@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"net/url"
 	"strings"
 
 	"github.com/Sirupsen/logrus"
@@ -40,6 +41,7 @@ func main() {
 	vp.SetDefault("web.bind", ":9091")
 
 	vp.SetDefault("app.dir", "")
+	vp.SetDefault("app.proxy_to", "")
 
 	vp.SetDefault("admins", "")
 
@@ -65,7 +67,8 @@ func main() {
 		} `mapstructure:"web"`
 
 		App struct {
-			Dir string `mapstructure:"dir"`
+			Dir     string `mapstructure:"dir"`
+			ProxyTo string `mapstructure:"proxy_to"`
 		} `mapstructure:"app"`
 
 		Admins []string `mapstructure:"admins"`
@@ -156,6 +159,13 @@ func main() {
 	// Typically for the docker-compose the nginx container will serve the front
 	if cfg.App.Dir != "" {
 		srv.Static("/", cfg.App.Dir)
+	} else if cfg.App.ProxyTo != "" {
+		proxyURL, err := url.Parse(cfg.App.ProxyTo)
+		if err != nil {
+			log.Fatal(err)
+		}
+		g := srv.Group("/")
+		g.Use(middleware.Proxy(middleware.NewRoundRobinBalancer([]*middleware.ProxyTarget{{URL: proxyURL}})))
 	}
 
 	if err := srv.Start(cfg.Web.Bind); err != nil {

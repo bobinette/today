@@ -4,6 +4,7 @@
     "description": "",
     "scripts": {
         "build": "webpack --config webpack/webpack.prod.js -p",
+        "build:docker": "webpack --config webpack/webpack.docker.js -p",
         "dev": "webpack --config webpack/webpack.dev.js --watch",
         "jest": "jest",
         "jest:update": "jest -u",

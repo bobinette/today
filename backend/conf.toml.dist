@@ -11,5 +11,8 @@ database = "today"
 [web]
 bind = ":9091"
 
+[bleve]
+address = "./logs/bleve/index"
+
 [app]
 dir = "../app/build"
