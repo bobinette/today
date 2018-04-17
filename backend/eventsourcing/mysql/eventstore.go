@@ -111,12 +111,12 @@ func (es *EventStore) Load(ctx context.Context, uuid eh.UUID) ([]eh.Event, error
 }
 
 type dbEvent struct {
-	aggregateType eh.AggregateType `json:"aggregateType"`
-	aggregateID   eh.UUID          `json:"uuid"`
-	version       int              `json:"version"`
-	eventType     eh.EventType     `json:"eventType"`
-	data          eh.EventData     `json:"data"`
-	timestamp     time.Time        `json:"timestamp"`
+	aggregateType eh.AggregateType
+	aggregateID   eh.UUID
+	version       int
+	eventType     eh.EventType
+	data          eh.EventData
+	timestamp     time.Time
 }
 
 // AggrgateID implements the AggrgateID method of the eventhorizon.Event interface.

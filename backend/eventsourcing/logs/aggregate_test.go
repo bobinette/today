@@ -60,6 +60,30 @@ func TestAggregate_HandleCommand(t *testing.T) {
 			events: nil,
 			err:    errors.New("already created"),
 		},
+		"update - not created": {
+			agg: &Aggregate{
+				AggregateBase: as.NewAggregateBase(AggregateType, id),
+				created:       false,
+			},
+			cmd:    &Update{UUID: id, User: "user", Content: "update content"},
+			events: nil,
+			err:    errors.New("not created"),
+		},
+		"update - created": {
+			agg: &Aggregate{
+				AggregateBase: as.NewAggregateBase(AggregateType, id),
+				created:       true,
+			},
+			cmd: &Update{UUID: id, User: "user", Content: "update content"},
+			events: []eh.Event{
+				eh.NewEventForAggregate(Updated, &UpdatedData{
+					UUID:    id,
+					User:    "user",
+					Content: "update content",
+				}, timeNow(), AggregateType, id, 1),
+			},
+			err: nil,
+		},
 	}
 
 	ctx := context.Background()
@@ -99,11 +123,22 @@ func TestAggregate_ApplyEvent(t *testing.T) {
 			&Aggregate{
 				AggregateBase: as.NewAggregateBase(AggregateType, id),
 			},
-			eh.NewEventForAggregate(Created, nil,
-				timeNow(), AggregateType, id, 1),
+			eh.NewEventForAggregate(Created, nil, timeNow(), AggregateType, id, 1),
 			&Aggregate{
 				AggregateBase: as.NewAggregateBase(AggregateType, id),
 				created:       true,
+			},
+			nil,
+		},
+		"updated": {
+			// This one does not do anything...
+			&Aggregate{
+				AggregateBase: as.NewAggregateBase(AggregateType, id),
+			},
+			eh.NewEventForAggregate(Updated, nil, timeNow(), AggregateType, id, 1),
+			&Aggregate{
+				AggregateBase: as.NewAggregateBase(AggregateType, id),
+				created:       false,
 			},
 			nil,
 		},
