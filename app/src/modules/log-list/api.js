@@ -18,4 +18,16 @@ export default {
       return { error };
     }
   },
+
+  async updateLog(uuid, content) {
+    try {
+      const response = await axios.post(`${apiUrl}/api/logs/${uuid}`, {
+        content,
+      });
+      return {};
+    } catch (error) {
+      console.log('error updating log', error);
+      return { error };
+    }
+  },
 };

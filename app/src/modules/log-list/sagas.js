@@ -18,9 +18,18 @@ export function* fetchLogsDebouncedSaga() {
   yield call(fetchLogsSaga);
 }
 
+export function* updateLogSaga({ uuid, content, done }) {
+  const { log } = yield call(api.updateLog, uuid, content);
+  yield put({ type: events.LOG_UPDATED });
+  if (done) {
+    yield call(done, log);
+  }
+}
+
 export default function* sagas() {
   yield [
     takeEvery([events.FETCH_LOGS, newLogEvents.LOG_CREATED], fetchLogsSaga),
     takeLatest([events.UPDATE_SEARCH], fetchLogsDebouncedSaga),
+    takeEvery([events.UPDATE_LOG], updateLogSaga),
   ];
 }

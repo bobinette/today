@@ -8,7 +8,7 @@ import SearchBar from 'components/searchbar';
 import NewLogInput from 'modules/new-log';
 import { separateActions } from 'utils/redux';
 
-import { fetchLogs, onSearchChange } from './actions';
+import { fetchLogs, onSearchChange, onUpdate } from './actions';
 import { selectLogs, selectQ } from './selectors';
 
 import LogItem from './components/log-item';
@@ -23,11 +23,24 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   fetchLogs,
   onSearchChange,
+  onUpdate,
 };
 
 export class LogList extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.onUpdate = this.onUpdate.bind(this);
+  }
+
   componentDidMount() {
     this.props.actions.fetchLogs();
+  }
+
+  onUpdate(uuid, content, done) {
+    console.log(uuid, content, done);
+    const { actions: { onUpdate } } = this.props;
+    onUpdate(uuid, content, done);
   }
 
   render() {
@@ -43,7 +56,7 @@ export class LogList extends PureComponent {
         />
         {logs.map(log => (
           <div key={log.get('uuid')}>
-            <LogItem log={log} />
+            <LogItem log={log} onUpdate={this.onUpdate} />
           </div>
         ))}
       </div>
@@ -57,6 +70,7 @@ LogList.propTypes = {
   actions: PropTypes.shape({
     fetchLogs: PropTypes.func.isRequired,
     onSearchChange: PropTypes.func.isRequired,
+    onUpdate: PropTypes.func.isRequired,
   }).isRequired,
 };
 
