@@ -21,7 +21,7 @@ type Index struct {
 func Open(path string) (*Index, error) {
 	index, err := bleve.Open(path)
 	if err != nil {
-		if err != bleve.ErrorIndexPathDoesNotExist {
+		if err != bleve.ErrorIndexPathDoesNotExist && err != bleve.ErrorIndexMetaMissing {
 			return nil, err
 		}
 

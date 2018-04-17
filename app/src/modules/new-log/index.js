@@ -9,12 +9,13 @@ import Textarea from 'react-textarea-autosize';
 import { separateActions } from 'utils/redux';
 
 import { createLog, updateContent } from './actions';
-import { selectContent } from './selectors';
+import { selectContent, selectTitleDetected } from './selectors';
 
 import './new-log.scss';
 
 const mapStateToProps = state => ({
   content: selectContent(state),
+  titleDetected: selectTitleDetected(state),
 });
 
 const mapDispatchToProps = {
@@ -39,7 +40,7 @@ export class NewLogInput extends PureComponent {
   }
 
   render() {
-    const { content } = this.props;
+    const { content, titleDetected } = this.props;
 
     const classes = {
       NewLogInput: true,
@@ -53,7 +54,20 @@ export class NewLogInput extends PureComponent {
           onChange={this.onUpdateContent}
           value={content}
         />
-        <div className="flex flex-align-right">
+        <div className="flex flex-space-between flex-align-items-center">
+          <small className="text-muted text-sm">
+            <a href="https://guides.github.com/features/mastering-markdown/">
+              Use markdown styling
+            </a>
+            &nbsp;(with no title)
+            {titleDetected && (
+              <span className="NewLogInput__TitleDetected">
+                <i className="fas fa-exclamation-triangle NewLogInput__TitleDetectedIcon" />A
+                title was detected. It will be used as a <strong>strong</strong>{' '}
+                tag
+              </span>
+            )}
+          </small>
           <button className="btn btn-primary btn-sm" onClick={this.onCreate}>
             Create
           </button>
@@ -65,6 +79,7 @@ export class NewLogInput extends PureComponent {
 
 NewLogInput.propTypes = {
   content: PropTypes.string.isRequired,
+  titleDetected: PropTypes.bool.isRequired,
   actions: PropTypes.shape({
     createLog: PropTypes.func.isRequired,
     updateContent: PropTypes.func.isRequired,
