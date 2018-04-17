@@ -1,0 +1,223 @@
+memo = "fb0d55fd81bd1ec9275e6125f72486df148637ef275f146bb42f1cdf763c012b"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/BurntSushi/toml"
+  packages = ["."]
+  revision = "a368813c5e648fee92e5f6c30e3944ff9d5e8895"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/Sirupsen/logrus"
+  packages = ["."]
+  revision = "181d419aa9e2223811b824e8f0b4af96f9ba9302"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/blevesearch/bleve"
+  packages = [".","analysis","analysis/analyzer/keyword","analysis/analyzer/simple","analysis/analyzer/standard","analysis/datetime/flexible","analysis/datetime/optional","analysis/lang/en","analysis/token/lowercase","analysis/token/porter","analysis/token/stop","analysis/tokenizer/character","analysis/tokenizer/letter","analysis/tokenizer/single","analysis/tokenizer/unicode","document","geo","index","index/store","index/store/boltdb","index/store/gtreap","index/upsidedown","mapping","numeric","registry","search","search/collector","search/facet","search/highlight","search/highlight/format/html","search/highlight/fragmenter/simple","search/highlight/highlighter/html","search/highlight/highlighter/simple","search/query","search/scorer","search/searcher"]
+  revision = "6eea5b78da004393b1d06b8c88d1bed9ca0a94b2"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/blevesearch/go-porterstemmer"
+  packages = ["."]
+  revision = "23a2c8e5cf1f380f27722c6d2ae8896431dc7d0e"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/blevesearch/segment"
+  packages = ["."]
+  revision = "762005e7a34fd909a84586299f1dd457371d36ee"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/boltdb/bolt"
+  packages = ["."]
+  revision = "fa5367d20c994db73282594be0146ab221657943"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/davecgh/go-spew"
+  packages = ["spew"]
+  revision = "db69d09d2c587e9b9677f991dfcab1fc24d9086e"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/dgrijalva/jwt-go"
+  packages = ["."]
+  revision = "dbeaa9332f19a944acb5736b4456cfcc02140e29"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/fsnotify/fsnotify"
+  packages = ["."]
+  revision = "c2828203cd70a50dcccfb2761f8b1f8ceef9a8e9"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/go-sql-driver/mysql"
+  packages = ["."]
+  revision = "cd4cb909ce1a31435164be29bf3682031f61539a"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/golang/protobuf"
+  packages = ["proto"]
+  revision = "1e59b77b52bf8e4b449a57e6f79f21226d571845"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/hashicorp/hcl"
+  packages = [".","hcl/ast","hcl/parser","hcl/printer","hcl/scanner","hcl/strconv","hcl/token","json/parser","json/scanner","json/token"]
+  revision = "ef8a98b0bbce4a65b5aa4c368430a80ddc533168"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/labstack/echo"
+  packages = [".","middleware"]
+  revision = "b28538b2e3f5446fe6e0e47ee34cd74b662ca2ab"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/labstack/gommon"
+  packages = ["bytes","color","log","random"]
+  revision = "57409ada9da0f2afad6664c49502f8c50fbd8476"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/looplab/eventhorizon"
+  packages = [".","aggregatestore/events","commandhandler/aggregate","eventbus/local","eventhandler/projector","eventstore/testutil","mocks","publisher/local"]
+  revision = "5e476e666e7823accf607371bc4c715f5ec0c168"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/magiconair/properties"
+  packages = ["."]
+  revision = "2c9e9502788518c97fe44e8955cd069417ee89df"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/mattn/go-colorable"
+  packages = ["."]
+  revision = "6fcc0c1fd9b620311d821b106a400b35dc95c497"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/mattn/go-isatty"
+  packages = ["."]
+  revision = "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/mitchellh/mapstructure"
+  packages = ["."]
+  revision = "00c29f56e2386353d58c599509e8dc3801b0d716"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/pelletier/go-toml"
+  packages = ["."]
+  revision = "66540cf1fcd2c3aee6f6787dfa32a6ae9a870f12"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/pmezard/go-difflib"
+  packages = ["difflib"]
+  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/sandalwing/echo-logrusmiddleware"
+  packages = ["."]
+  revision = "1d7700fcf2d3785a9fa77dc1a89a60df4789cdb2"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/spf13/afero"
+  packages = [".","mem"]
+  revision = "63644898a8da0bc22138abf860edaf5277b6102e"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/spf13/cast"
+  packages = ["."]
+  revision = "8965335b8c7107321228e3e3702cab9832751bac"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/spf13/jwalterweatherman"
+  packages = ["."]
+  revision = "7c0cea34c8ece3fbeb2b27ab9b59511d360fb394"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/spf13/pflag"
+  packages = ["."]
+  revision = "1ce0cc6db4029d97571db82f85092fccedb572ce"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/spf13/viper"
+  packages = ["."]
+  revision = "8dc2790b029dc41e2b8ff772c63c26adbb1db70d"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/steveyen/gtreap"
+  packages = ["."]
+  revision = "0abe01ef9be25c4aedc174758ec2d917314d6d70"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/stretchr/testify"
+  packages = ["assert","require"]
+  revision = "4d4bfba8f1d1027c4fdbe371823030df51419987"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/valyala/bytebufferpool"
+  packages = ["."]
+  revision = "e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/valyala/fasttemplate"
+  packages = ["."]
+  revision = "dcecefd839c4193db0d35b88ec65b4c12d360ab0"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = ["acme","acme/autocert","ssh/terminal"]
+  revision = "9f005a07e0d31d45e6656d241bb5c0f2efd4bc94"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/net"
+  packages = ["context"]
+  revision = "c7086645de248775cbf2373cf5ca4d2fa664b8c1"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/sys"
+  packages = ["unix","windows"]
+  revision = "3b87a42e500a6dc65dae1a55d0b641295971163e"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/text"
+  packages = ["internal/gen","internal/triegen","internal/ucd","transform","unicode/cldr","unicode/norm"]
+  revision = "2cb43934f0eece38629746959acc633cba083fe4"
+
+[[projects]]
+  branch = "master"
+  name = "google.golang.org/appengine"
+  packages = ["cloudsql"]
+  revision = "ca59ef35f409df61fa4a5f8290ff289b37eccfb8"
+
+[[projects]]
+  branch = "v2"
+  name = "gopkg.in/yaml.v2"
+  packages = ["."]
+  revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
