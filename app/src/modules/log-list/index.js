@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
 
-import moment from 'moment';
-
-import Markdown from 'components/markdown';
 import SearchBar from 'components/searchbar';
 
 import NewLogInput from 'modules/new-log';
@@ -13,6 +10,8 @@ import { separateActions } from 'utils/redux';
 
 import { fetchLogs, onSearchChange } from './actions';
 import { selectLogs, selectQ } from './selectors';
+
+import LogItem from './components/log-item';
 
 import './log-list.scss';
 
@@ -44,7 +43,7 @@ export class LogList extends PureComponent {
         />
         {logs.map(log => (
           <div key={log.get('uuid')}>
-            <LogList.LogItem log={log} />
+            <LogItem log={log} />
           </div>
         ))}
       </div>
@@ -59,26 +58,6 @@ LogList.propTypes = {
     fetchLogs: PropTypes.func.isRequired,
     onSearchChange: PropTypes.func.isRequired,
   }).isRequired,
-};
-
-LogList.LogItem = ({ log }) => (
-  <div className="card LogItem">
-    <div className="card-body">
-      <div className="card-text">
-        <Markdown text={log.get('content')} />
-        <small className="text-muted">
-          <em>
-            {moment(log.get('createdAt')).format('L')}{' '}
-            {moment(log.get('createdAt')).format('LT')}
-          </em>
-        </small>
-      </div>
-    </div>
-  </div>
-);
-
-LogList.LogItem.propTypes = {
-  log: ImmutablePropTypes.map.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps, separateActions)(

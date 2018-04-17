@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render the log list 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LogItem
+    log={
+      Immutable.Map {
+        "uuid": "1",
+        "content": "content 1",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="card-body"
+      >
+        <div
+          className="card-text"
+        >
+          <Markdown
+            className=""
+            text="content 1"
+          />
+          <small
+            className="text-muted"
+          >
+            <em>
+              04/17/2018
+               
+              7:50 PM
+            </em>
+          </small>
+        </div>
+      </div>,
+      "className": "card LogItem",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-text"
+        >
+          <Markdown
+            className=""
+            text="content 1"
+          />
+          <small
+            className="text-muted"
+          >
+            <em>
+              04/17/2018
+               
+              7:50 PM
+            </em>
+          </small>
+        </div>,
+        "className": "card-body",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Markdown
+              className=""
+              text="content 1"
+            />,
+            <small
+              className="text-muted"
+            >
+              <em>
+                04/17/2018
+                 
+                7:50 PM
+              </em>
+            </small>,
+          ],
+          "className": "card-text",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "",
+              "text": "content 1",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <em>
+                04/17/2018
+                 
+                7:50 PM
+              </em>,
+              "className": "text-muted",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "04/17/2018",
+                  " ",
+                  "7:50 PM",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "04/17/2018",
+                " ",
+                "7:50 PM",
+              ],
+              "type": "em",
+            },
+            "type": "small",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-body"
+        >
+          <div
+            className="card-text"
+          >
+            <Markdown
+              className=""
+              text="content 1"
+            />
+            <small
+              className="text-muted"
+            >
+              <em>
+                04/17/2018
+                 
+                7:50 PM
+              </em>
+            </small>
+          </div>
+        </div>,
+        "className": "card LogItem",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="card-text"
+          >
+            <Markdown
+              className=""
+              text="content 1"
+            />
+            <small
+              className="text-muted"
+            >
+              <em>
+                04/17/2018
+                 
+                7:50 PM
+              </em>
+            </small>
+          </div>,
+          "className": "card-body",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Markdown
+                className=""
+                text="content 1"
+              />,
+              <small
+                className="text-muted"
+              >
+                <em>
+                  04/17/2018
+                   
+                  7:50 PM
+                </em>
+              </small>,
+            ],
+            "className": "card-text",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "",
+                "text": "content 1",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <em>
+                  04/17/2018
+                   
+                  7:50 PM
+                </em>,
+                "className": "text-muted",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "04/17/2018",
+                    " ",
+                    "7:50 PM",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "04/17/2018",
+                  " ",
+                  "7:50 PM",
+                ],
+                "type": "em",
+              },
+              "type": "small",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
