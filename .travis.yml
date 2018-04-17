@@ -27,9 +27,9 @@ install:
   - .travis/install_mysql.sh
 
   # Install Go dependencies
-  - go get -u -v github.com/kardianos/govendor/...
+  - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
   - cd /home/travis/gopath/src/github.com/bobinette/today/backend
-  - govendor sync -v
+  - dep ensure
   - cd /home/travis/build/bobinette/today
 
   # Install front dependencies
