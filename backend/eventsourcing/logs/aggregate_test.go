@@ -84,6 +84,20 @@ func TestAggregate_HandleCommand(t *testing.T) {
 			},
 			err: nil,
 		},
+		"remove - created": {
+			agg: &Aggregate{
+				AggregateBase: as.NewAggregateBase(AggregateType, id),
+				created:       true,
+			},
+			cmd: &Remove{UUID: id, User: "user"},
+			events: []eh.Event{
+				eh.NewEventForAggregate(Removed, &RemovedData{
+					UUID: id,
+					User: "user",
+				}, timeNow(), AggregateType, id, 1),
+			},
+			err: nil,
+		},
 	}
 
 	ctx := context.Background()
@@ -136,6 +150,18 @@ func TestAggregate_ApplyEvent(t *testing.T) {
 				AggregateBase: as.NewAggregateBase(AggregateType, id),
 			},
 			eh.NewEventForAggregate(Updated, nil, timeNow(), AggregateType, id, 1),
+			&Aggregate{
+				AggregateBase: as.NewAggregateBase(AggregateType, id),
+				created:       false,
+			},
+			nil,
+		},
+		"removed": {
+			// This one does not do anything...
+			&Aggregate{
+				AggregateBase: as.NewAggregateBase(AggregateType, id),
+			},
+			eh.NewEventForAggregate(Removed, nil, timeNow(), AggregateType, id, 1),
 			&Aggregate{
 				AggregateBase: as.NewAggregateBase(AggregateType, id),
 				created:       false,
