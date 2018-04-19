@@ -62,7 +62,10 @@ func (h *httpHandler) update(c echo.Context) error {
 
 	user := c.Request().Header.Get("X-Forwarded-Email")
 	if log.User != user {
-		return c.JSON(http.StatusNotFound, map[string]string{"error": "log not found"})
+		return &echo.HTTPError{
+			Code:    http.StatusNotFound,
+			Message: "log not found",
+		}
 	}
 
 	cmd.(*Update).UUID = eh.UUID(uuid)
