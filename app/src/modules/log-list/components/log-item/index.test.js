@@ -6,7 +6,11 @@ import LogItem from '.';
 
 test('render a log item', () => {
   const props = {
-    log: fromJS({ uuid: '1', content: 'content 1' }),
+    log: fromJS({
+      uuid: '1',
+      content: 'content 1',
+      createdAt: '2018-04-03T17:55:03',
+    }),
     onUpdate: jest.fn(),
     onDelete: jest.fn(),
   };

@@ -9,6 +9,7 @@ ShallowWrapper {
       Immutable.Map {
         "uuid": "1",
         "content": "content 1",
+        "createdAt": "2018-04-03T17:55:03",
       }
     }
     onDelete={[MockFunction]}
@@ -40,9 +41,9 @@ ShallowWrapper {
                 className="text-muted flex-1"
               >
                 <em>
-                  04/19/2018
+                  04/03/2018
                    
-                  2:05 PM
+                  5:55 PM
                 </em>
               </small>
               <button
@@ -88,9 +89,9 @@ ShallowWrapper {
                 className="text-muted flex-1"
               >
                 <em>
-                  04/19/2018
+                  04/03/2018
                    
-                  2:05 PM
+                  5:55 PM
                 </em>
               </small>
               <button
@@ -133,9 +134,9 @@ ShallowWrapper {
                   className="text-muted flex-1"
                 >
                   <em>
-                    04/19/2018
+                    04/03/2018
                      
-                    2:05 PM
+                    5:55 PM
                   </em>
                 </small>
                 <button
@@ -179,9 +180,9 @@ ShallowWrapper {
                     className="text-muted flex-1"
                   >
                     <em>
-                      04/19/2018
+                      04/03/2018
                        
-                      2:05 PM
+                      5:55 PM
                     </em>
                   </small>
                   <button
@@ -219,9 +220,9 @@ ShallowWrapper {
                       className="text-muted flex-1"
                     >
                       <em>
-                        04/19/2018
+                        04/03/2018
                          
-                        2:05 PM
+                        5:55 PM
                       </em>
                     </small>,
                     <button
@@ -251,9 +252,9 @@ ShallowWrapper {
                     "nodeType": "host",
                     "props": Object {
                       "children": <em>
-                        04/19/2018
+                        04/03/2018
                          
-                        2:05 PM
+                        5:55 PM
                       </em>,
                       "className": "text-muted flex-1",
                     },
@@ -264,16 +265,16 @@ ShallowWrapper {
                       "nodeType": "host",
                       "props": Object {
                         "children": Array [
-                          "04/19/2018",
+                          "04/03/2018",
                           " ",
-                          "2:05 PM",
+                          "5:55 PM",
                         ],
                       },
                       "ref": null,
                       "rendered": Array [
-                        "04/19/2018",
+                        "04/03/2018",
                         " ",
-                        "2:05 PM",
+                        "5:55 PM",
                       ],
                       "type": "em",
                     },
@@ -375,9 +376,9 @@ ShallowWrapper {
                   className="text-muted flex-1"
                 >
                   <em>
-                    04/19/2018
+                    04/03/2018
                      
-                    2:05 PM
+                    5:55 PM
                   </em>
                 </small>
                 <button
@@ -423,9 +424,9 @@ ShallowWrapper {
                   className="text-muted flex-1"
                 >
                   <em>
-                    04/19/2018
+                    04/03/2018
                      
-                    2:05 PM
+                    5:55 PM
                   </em>
                 </small>
                 <button
@@ -468,9 +469,9 @@ ShallowWrapper {
                     className="text-muted flex-1"
                   >
                     <em>
-                      04/19/2018
+                      04/03/2018
                        
-                      2:05 PM
+                      5:55 PM
                     </em>
                   </small>
                   <button
@@ -514,9 +515,9 @@ ShallowWrapper {
                       className="text-muted flex-1"
                     >
                       <em>
-                        04/19/2018
+                        04/03/2018
                          
-                        2:05 PM
+                        5:55 PM
                       </em>
                     </small>
                     <button
@@ -554,9 +555,9 @@ ShallowWrapper {
                         className="text-muted flex-1"
                       >
                         <em>
-                          04/19/2018
+                          04/03/2018
                            
-                          2:05 PM
+                          5:55 PM
                         </em>
                       </small>,
                       <button
@@ -586,9 +587,9 @@ ShallowWrapper {
                       "nodeType": "host",
                       "props": Object {
                         "children": <em>
-                          04/19/2018
+                          04/03/2018
                            
-                          2:05 PM
+                          5:55 PM
                         </em>,
                         "className": "text-muted flex-1",
                       },
@@ -599,16 +600,16 @@ ShallowWrapper {
                         "nodeType": "host",
                         "props": Object {
                           "children": Array [
-                            "04/19/2018",
+                            "04/03/2018",
                             " ",
-                            "2:05 PM",
+                            "5:55 PM",
                           ],
                         },
                         "ref": null,
                         "rendered": Array [
-                          "04/19/2018",
+                          "04/03/2018",
                           " ",
-                          "2:05 PM",
+                          "5:55 PM",
                         ],
                         "type": "em",
                       },

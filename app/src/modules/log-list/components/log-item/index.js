@@ -52,7 +52,7 @@ class LogItem extends PureComponent {
   }
 
   render() {
-    const { log, onUpdate } = this.props;
+    const { log } = this.props;
     const { editedContent, editing, updating } = this.state;
 
     return (

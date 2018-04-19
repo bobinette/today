@@ -39,8 +39,8 @@ export class LogList extends PureComponent {
   }
 
   onUpdate(uuid, content, done) {
-    const { actions: { onUpdate } } = this.props;
-    onUpdate(uuid, content, done);
+    const { actions } = this.props;
+    actions.onUpdate(uuid, content, done);
   }
 
   render() {

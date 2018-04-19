@@ -31,7 +31,7 @@ export default {
     }
   },
 
-  async deleteLog(uuid, content) {
+  async deleteLog(uuid) {
     try {
       await axios.delete(`${apiUrl}/api/logs/${uuid}`);
       return {};

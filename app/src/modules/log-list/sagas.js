@@ -27,7 +27,7 @@ export function* updateLogSaga({ uuid, content, done }) {
 }
 
 export function* deleteLogSaga({ uuid }) {
-  const r = yield call(confirm, 'Do you really want to delete your log?');
+  const r = yield call(confirm, 'Do you really want to delete your log?'); // eslint-disable-line no-restricted-globals
   if (!r) return;
 
   yield call(api.deleteLog, uuid);

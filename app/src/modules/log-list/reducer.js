@@ -10,7 +10,7 @@ const initialState = fromJS({
 
 export default createReducer(initialState, {
   [events.LOGS_RECEIVED]: (state, { logs }) => state.set('logs', fromJS(logs)),
-  [events.UPDATE_SEARCH]: (state, { q }) => state.set('content', content),
+  [events.UPDATE_SEARCH]: (state, { q }) => state.set('q', q),
   [events.LOG_UPDATED]: (state, action) => {
     const log = fromJS(action.log);
     const index = state
