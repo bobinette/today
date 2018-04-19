@@ -1,6 +1,8 @@
 import { delay } from 'redux-saga';
 import { call, put, select, takeEvery, takeLatest } from 'redux-saga/effects';
 
+import { toastr } from 'react-redux-toastr';
+
 import * as newLogEvents from 'modules/new-log/events';
 
 import api from './api';
@@ -9,7 +11,15 @@ import { selectQ } from './selectors';
 
 export function* fetchLogsSaga() {
   const q = yield select(selectQ);
-  const { logs } = yield call(api.fetchLogs, q);
+  const { logs, error } = yield call(api.fetchLogs, q);
+  if (error) {
+    const { message } = error;
+    yield call(toastr.error, '', `Could not fetch your logs: ${message}`, {
+      icon: 'toto',
+    });
+    return;
+  }
+
   yield put({ type: events.LOGS_RECEIVED, logs });
 }
 
@@ -19,7 +29,15 @@ export function* fetchLogsDebouncedSaga() {
 }
 
 export function* updateLogSaga({ uuid, content, done }) {
-  const { log } = yield call(api.updateLog, uuid, content);
+  const { log, error } = yield call(api.updateLog, uuid, content);
+  if (error) {
+    const { message } = error;
+    yield call(toastr.error, '', `Could not fetch your logs: ${message}`, {
+      icon: 'toto',
+    });
+    return;
+  }
+
   yield put({ type: events.LOG_UPDATED, log });
   if (done) {
     yield call(done);
@@ -30,7 +48,15 @@ export function* deleteLogSaga({ uuid }) {
   const r = yield call(confirm, 'Do you really want to delete your log?'); // eslint-disable-line no-restricted-globals
   if (!r) return;
 
-  yield call(api.deleteLog, uuid);
+  const { error } = yield call(api.deleteLog, uuid);
+  if (error) {
+    const { message } = error;
+    yield call(toastr.error, '', `Could not fetch your logs: ${message}`, {
+      icon: 'toto',
+    });
+    return;
+  }
+
   yield put({ type: events.LOG_DELETED, uuid });
 }
 

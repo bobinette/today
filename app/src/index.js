@@ -6,6 +6,10 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 
+// Toastr
+import ReduxToastr, { reducer as toastrReducer } from 'react-redux-toastr';
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
+
 // Init style before importing components
 import 'style/base.scss';
 
@@ -29,6 +33,7 @@ import './fontawesome';
 const reducers = {
   logList: logListReducer,
   newLog: newLogReducer,
+  toastr: toastrReducer,
 };
 const reducer = combineReducers(reducers);
 
@@ -43,7 +48,16 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <div>
+      <App />
+      <ReduxToastr
+        newestOnTop
+        preventDuplicates
+        timeOut={3000}
+        transitionIn="fadeIn"
+        transitionOut="fadeOut"
+      />
+    </div>
   </Provider>,
   document.getElementById('app'),
 );
