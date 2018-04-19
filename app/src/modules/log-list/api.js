@@ -24,7 +24,7 @@ export default {
       const response = await axios.post(`${apiUrl}/api/logs/${uuid}`, {
         content,
       });
-      return {};
+      return { log: response.data };
     } catch (error) {
       console.log('error updating log', error);
       return { error };

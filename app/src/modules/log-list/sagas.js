@@ -20,9 +20,9 @@ export function* fetchLogsDebouncedSaga() {
 
 export function* updateLogSaga({ uuid, content, done }) {
   const { log } = yield call(api.updateLog, uuid, content);
-  yield put({ type: events.LOG_UPDATED });
+  yield put({ type: events.LOG_UPDATED, log });
   if (done) {
-    yield call(done, log);
+    yield call(done);
   }
 }
 
