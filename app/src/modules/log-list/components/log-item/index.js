@@ -19,11 +19,11 @@ class LogItem extends PureComponent {
     this.onEditContent = this.onEditContent.bind(this);
     this.onUpdate = this.onUpdate.bind(this);
 
-    this.state = { editing: false, editedContent: '' };
+    this.state = { editing: false, editedContent: '', updating: false };
   }
 
   onCloseEdit() {
-    this.setState({ editing: false, editedContent: '' });
+    this.setState({ editing: false, editedContent: '', updating: false });
   }
 
   onEdit() {
@@ -39,6 +39,7 @@ class LogItem extends PureComponent {
     const { log, onUpdate } = this.props;
     const { editedContent } = this.state;
 
+    this.setState({ updating: true });
     onUpdate(log.get('uuid'), editedContent, () => {
       this.onCloseEdit();
     });
@@ -46,7 +47,7 @@ class LogItem extends PureComponent {
 
   render() {
     const { log, onUpdate } = this.props;
-    const { editedContent, editing } = this.state;
+    const { editedContent, editing, updating } = this.state;
 
     return (
       <div className="card LogItem">
@@ -83,14 +84,19 @@ class LogItem extends PureComponent {
                   <button
                     className="btn btn-outline-secondary btn-sm"
                     onClick={this.onCloseEdit}
+                    disabled={updating}
                   >
                     Cancel
                   </button>
                   <button
                     className="btn btn-primary btn-sm"
                     onClick={this.onUpdate}
+                    disabled={updating}
                   >
-                    Update
+                    {updating ? 'Updating' : 'Update'}
+                    {updating && (
+                      <i className="fas fa-circle-notch fa-spin btn-spinner" />
+                    )}
                   </button>
                 </div>
               </div>
