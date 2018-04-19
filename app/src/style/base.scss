@@ -63,7 +63,8 @@ textarea {
     min-height: 5rem;
 
     &:focus {
-        outline: 3px auto theme-color('primary');
+        outline: none;
+        box-shadow: 0 0 2px 1px #34a166;
     }
 }
 

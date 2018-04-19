@@ -15,6 +15,10 @@
         color: theme-color('primary');
         margin-right: 0.2rem;
     }
+
+    &:focus-within {
+        box-shadow: 0 0 2px 1px #34a166;
+    }
 }
 
 .SearchBar__input {
