@@ -1,7 +1,6 @@
 package logs
 
 import (
-	"context"
 	"encoding/json"
 	"net/http"
 
@@ -29,10 +28,17 @@ func (h *httpHandler) create(c echo.Context) error {
 	user := c.Request().Header.Get("X-Forwarded-Email")
 	cmd.(*Create).User = user
 
-	// New context to prevent long running tasks from being canceled when the request
-	// is over.
-	ctx := context.Background()
-	return h.commandHandler.HandleCommand(ctx, cmd)
+	ctx := c.Request().Context()
+	if err := h.commandHandler.HandleCommand(ctx, cmd); err != nil {
+		return err
+	}
+
+	log, err := h.logService.Find(ctx, string(cmd.AggregateID()))
+	if err != nil {
+		return err
+	}
+
+	return c.JSON(http.StatusCreated, log)
 }
 
 func (h *httpHandler) update(c echo.Context) error {
@@ -48,7 +54,8 @@ func (h *httpHandler) update(c echo.Context) error {
 	}
 
 	uuid := c.Param("uuid")
-	log, err := h.logService.Find(c.Request().Context(), uuid)
+	ctx := c.Request().Context()
+	log, err := h.logService.Find(ctx, uuid)
 	if err != nil {
 		return err
 	}
@@ -61,8 +68,14 @@ func (h *httpHandler) update(c echo.Context) error {
 	cmd.(*Update).UUID = eh.UUID(uuid)
 	cmd.(*Update).User = user
 
-	// New context to prevent long running tasks from being canceled when the request
-	// is over.
-	ctx := context.Background()
-	return h.commandHandler.HandleCommand(ctx, cmd)
+	if err := h.commandHandler.HandleCommand(ctx, cmd); err != nil {
+		return err
+	}
+
+	log, err = h.logService.Find(ctx, string(cmd.AggregateID()))
+	if err != nil {
+		return err
+	}
+
+	return c.JSON(http.StatusCreated, log)
 }
