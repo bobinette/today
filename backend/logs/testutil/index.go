@@ -20,13 +20,20 @@ func TestLogIndex(t *testing.T, index logs.Index) {
 		{UUID: "3", Content: "Zidane scores again", CreatedAt: kickOff.Add((45 + 1) * time.Minute)},
 		{UUID: "4", Content: "Desailly gets sent off", CreatedAt: secondHalf.Add(22 * time.Minute)},
 		{UUID: "5", Content: "Petit scores, we are the champions", CreatedAt: secondHalf.Add((45 + 3) * time.Minute)},
+		{UUID: "6", Content: "Someone else scores ? No.", CreatedAt: secondHalf.Add((45 + 5) * time.Minute)},
 	}
 
 	ctx := context.Background()
-	for _, log := range indexedLogs {
+	allUUIDs := make([]string, len(indexedLogs))
+	for i, log := range indexedLogs {
 		err := index.Index(ctx, log)
 		require.NoError(t, err) // Come on, you can't change History...
+		allUUIDs[i] = log.UUID
 	}
+
+	// Delete 6. It is in allUUIDs so if not properly deleted it will appear
+	// in the search
+	index.Delete(ctx, "6")
 
 	cases := map[string]struct {
 		q        string
@@ -35,17 +42,17 @@ func TestLogIndex(t *testing.T, index logs.Index) {
 	}{
 		"all": {
 			q:        "",
-			uuids:    []string{"1", "2", "3", "4", "5"},
+			uuids:    allUUIDs,
 			expected: []string{"5", "4", "3", "2", "1"},
 		},
 		"goaaaaaal!": {
 			q:        "scores",
-			uuids:    []string{"1", "2", "3", "4", "5"},
+			uuids:    allUUIDs,
 			expected: []string{"5", "3", "2"},
 		},
 		"Zizou twice": {
 			q:        "scores Zidane",
-			uuids:    []string{"1", "2", "3", "4", "5"},
+			uuids:    allUUIDs,
 			expected: []string{"3", "2"},
 		},
 		"Only Zizou": {
