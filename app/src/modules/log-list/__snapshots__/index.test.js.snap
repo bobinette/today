@@ -7,12 +7,14 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <LogList
     actions={
       Object {
+        "deleteLog": [MockFunction],
         "fetchLogs": [MockFunction] {
           "calls": Array [
             Array [],
           ],
         },
         "onSearchChange": [MockFunction],
+        "onUpdate": [MockFunction],
       }
     }
     logs={
@@ -54,33 +56,39 @@ ShallowWrapper {
         />,
         Immutable.List [
           <div>
-            <Unknown
+            <LogItem
               log={
                 Immutable.Map {
                   "uuid": "1",
                   "content": "content 1",
                 }
               }
+              onDelete={[MockFunction]}
+              onUpdate={[Function]}
             />
           </div>,
           <div>
-            <Unknown
+            <LogItem
               log={
                 Immutable.Map {
                   "uuid": "2",
                   "content": "content 2",
                 }
               }
+              onDelete={[MockFunction]}
+              onUpdate={[Function]}
             />
           </div>,
           <div>
-            <Unknown
+            <LogItem
               log={
                 Immutable.Map {
                   "uuid": "3",
                   "content": "content 3",
                 }
               }
+              onDelete={[MockFunction]}
+              onUpdate={[Function]}
             />
           </div>,
         ],
@@ -116,25 +124,29 @@ ShallowWrapper {
         "key": "1",
         "nodeType": "host",
         "props": Object {
-          "children": <Unknown
+          "children": <LogItem
             log={
               Immutable.Map {
                 "uuid": "1",
                 "content": "content 1",
               }
             }
+            onDelete={[MockFunction]}
+            onUpdate={[Function]}
           />,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "1",
               "content": "content 1",
             },
+            "onDelete": [MockFunction],
+            "onUpdate": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -147,25 +159,29 @@ ShallowWrapper {
         "key": "2",
         "nodeType": "host",
         "props": Object {
-          "children": <Unknown
+          "children": <LogItem
             log={
               Immutable.Map {
                 "uuid": "2",
                 "content": "content 2",
               }
             }
+            onDelete={[MockFunction]}
+            onUpdate={[Function]}
           />,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "2",
               "content": "content 2",
             },
+            "onDelete": [MockFunction],
+            "onUpdate": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -178,25 +194,29 @@ ShallowWrapper {
         "key": "3",
         "nodeType": "host",
         "props": Object {
-          "children": <Unknown
+          "children": <LogItem
             log={
               Immutable.Map {
                 "uuid": "3",
                 "content": "content 3",
               }
             }
+            onDelete={[MockFunction]}
+            onUpdate={[Function]}
           />,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "3",
               "content": "content 3",
             },
+            "onDelete": [MockFunction],
+            "onUpdate": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -222,33 +242,39 @@ ShallowWrapper {
           />,
           Immutable.List [
             <div>
-              <Unknown
+              <LogItem
                 log={
                   Immutable.Map {
                     "uuid": "1",
                     "content": "content 1",
                   }
                 }
+                onDelete={[MockFunction]}
+                onUpdate={[Function]}
               />
             </div>,
             <div>
-              <Unknown
+              <LogItem
                 log={
                   Immutable.Map {
                     "uuid": "2",
                     "content": "content 2",
                   }
                 }
+                onDelete={[MockFunction]}
+                onUpdate={[Function]}
               />
             </div>,
             <div>
-              <Unknown
+              <LogItem
                 log={
                   Immutable.Map {
                     "uuid": "3",
                     "content": "content 3",
                   }
                 }
+                onDelete={[MockFunction]}
+                onUpdate={[Function]}
               />
             </div>,
           ],
@@ -284,25 +310,29 @@ ShallowWrapper {
           "key": "1",
           "nodeType": "host",
           "props": Object {
-            "children": <Unknown
+            "children": <LogItem
               log={
                 Immutable.Map {
                   "uuid": "1",
                   "content": "content 1",
                 }
               }
+              onDelete={[MockFunction]}
+              onUpdate={[Function]}
             />,
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "1",
                 "content": "content 1",
               },
+              "onDelete": [MockFunction],
+              "onUpdate": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -315,25 +345,29 @@ ShallowWrapper {
           "key": "2",
           "nodeType": "host",
           "props": Object {
-            "children": <Unknown
+            "children": <LogItem
               log={
                 Immutable.Map {
                   "uuid": "2",
                   "content": "content 2",
                 }
               }
+              onDelete={[MockFunction]}
+              onUpdate={[Function]}
             />,
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "2",
                 "content": "content 2",
               },
+              "onDelete": [MockFunction],
+              "onUpdate": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -346,25 +380,29 @@ ShallowWrapper {
           "key": "3",
           "nodeType": "host",
           "props": Object {
-            "children": <Unknown
+            "children": <LogItem
               log={
                 Immutable.Map {
                   "uuid": "3",
                   "content": "content 3",
                 }
               }
+              onDelete={[MockFunction]}
+              onUpdate={[Function]}
             />,
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "3",
                 "content": "content 3",
               },
+              "onDelete": [MockFunction],
+              "onUpdate": [Function],
             },
             "ref": null,
             "rendered": null,

@@ -69,13 +69,13 @@ class LogItem extends PureComponent {
                     </em>
                   </small>
                   <button
-                    className="btn btn-link btn-sm btn-icon LogItem__ActionIcon"
+                    className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
                     onClick={this.onEdit}
                   >
                     <i className="fas fa-edit" />
                   </button>
                   <button
-                    className="btn btn-link btn-sm btn-icon LogItem__ActionIcon"
+                    className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
                     onClick={this.onDelete}
                   >
                     <i className="fas fa-trash-alt" />

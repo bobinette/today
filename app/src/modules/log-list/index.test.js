@@ -5,8 +5,6 @@ import { shallow } from 'enzyme';
 import { LogList } from '.';
 
 test('render the log list', () => {
-  const fetchLogs = jest.fn();
-  const onSearchChange = jest.fn();
   const props = {
     logs: fromJS([
       { uuid: '1', content: 'content 1' },
@@ -15,12 +13,14 @@ test('render the log list', () => {
     ]),
     q: 'q',
     actions: {
-      fetchLogs,
-      onSearchChange,
+      deleteLog: jest.fn(),
+      fetchLogs: jest.fn(),
+      onUpdate: jest.fn(),
+      onSearchChange: jest.fn(),
     },
   };
 
   const tree = shallow(<LogList {...props} />);
   expect(tree).toMatchSnapshot();
-  expect(fetchLogs).toHaveBeenCalled();
+  expect(props.actions.fetchLogs).toHaveBeenCalled();
 });

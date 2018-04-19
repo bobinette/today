@@ -1,14 +1,28 @@
 import React from 'react';
 import { fromJS } from 'immutable';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import LogItem from '.';
 
-test('render the log list', () => {
+test('render a log item', () => {
   const props = {
     log: fromJS({ uuid: '1', content: 'content 1' }),
+    onUpdate: jest.fn(),
+    onDelete: jest.fn(),
   };
 
   const tree = shallow(<LogItem {...props} />);
   expect(tree).toMatchSnapshot();
+});
+
+test('call onDelete', () => {
+  const props = {
+    log: fromJS({ uuid: '1', content: 'content 1' }),
+    onUpdate: jest.fn(),
+    onDelete: jest.fn(),
+  };
+
+  const wrapper = mount(<LogItem {...props} />);
+  wrapper.find('.LogItem__ActionDelete').simulate('click');
+  expect(props.onDelete).toHaveBeenCalledWith('1');
 });
