@@ -13,3 +13,8 @@ export const onUpdate = (uuid, content, done) => ({
   content,
   done,
 });
+
+export const deleteLog = uuid => ({
+  type: events.DELETE_LOG,
+  uuid,
+});

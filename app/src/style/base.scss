@@ -19,6 +19,10 @@ body {
     display: flex;
 }
 
+.flex-1 {
+    flex: 1;
+}
+
 .flex-space-between {
     justify-content: space-between;
 }

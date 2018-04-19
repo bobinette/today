@@ -15,6 +15,7 @@ class LogItem extends PureComponent {
     super(props);
 
     this.onCloseEdit = this.onCloseEdit.bind(this);
+    this.onDelete = this.onDelete.bind(this);
     this.onEdit = this.onEdit.bind(this);
     this.onEditContent = this.onEditContent.bind(this);
     this.onUpdate = this.onUpdate.bind(this);
@@ -24,6 +25,11 @@ class LogItem extends PureComponent {
 
   onCloseEdit() {
     this.setState({ editing: false, editedContent: '', updating: false });
+  }
+
+  onDelete() {
+    const { log, onDelete } = this.props;
+    onDelete(log.get('uuid'));
   }
 
   onEdit() {
@@ -56,7 +62,7 @@ class LogItem extends PureComponent {
             {!editing && (
               <div>
                 <div className="flex flex-align-items-center flex-space-between">
-                  <small className="text-muted">
+                  <small className="text-muted flex-1">
                     <em>
                       {moment(log.get('createdAt')).format('L')}{' '}
                       {moment(log.get('createdAt')).format('LT')}
@@ -67,6 +73,12 @@ class LogItem extends PureComponent {
                     onClick={this.onEdit}
                   >
                     <i className="fas fa-edit" />
+                  </button>
+                  <button
+                    className="btn btn-link btn-sm btn-icon LogItem__ActionIcon"
+                    onClick={this.onDelete}
+                  >
+                    <i className="fas fa-trash-alt" />
                   </button>
                 </div>
                 <Markdown text={log.get('content')} />
@@ -111,6 +123,7 @@ class LogItem extends PureComponent {
 LogItem.propTypes = {
   log: ImmutablePropTypes.map.isRequired,
   onUpdate: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default LogItem;

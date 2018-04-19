@@ -20,4 +20,10 @@ export default createReducer(initialState, {
 
     return state.setIn(['logs', index], log);
   },
+  [events.LOG_DELETED]: (state, { uuid }) => {
+    const index = state.get('logs').findIndex(l => l.get('uuid') === uuid);
+    if (index === -1) return state;
+
+    return state.deleteIn(['logs', index]);
+  },
 });

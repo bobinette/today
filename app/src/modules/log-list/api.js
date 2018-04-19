@@ -30,4 +30,14 @@ export default {
       return { error };
     }
   },
+
+  async deleteLog(uuid, content) {
+    try {
+      await axios.delete(`${apiUrl}/api/logs/${uuid}`);
+      return {};
+    } catch (error) {
+      console.log('error deleting log', error);
+      return { error };
+    }
+  },
 };

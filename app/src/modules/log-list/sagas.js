@@ -26,10 +26,19 @@ export function* updateLogSaga({ uuid, content, done }) {
   }
 }
 
+export function* deleteLogSaga({ uuid }) {
+  const r = yield call(confirm, 'Do you really want to delete your log?');
+  if (!r) return;
+
+  yield call(api.deleteLog, uuid);
+  yield put({ type: events.LOG_DELETED, uuid });
+}
+
 export default function* sagas() {
   yield [
     takeEvery([events.FETCH_LOGS, newLogEvents.LOG_CREATED], fetchLogsSaga),
     takeLatest([events.UPDATE_SEARCH], fetchLogsDebouncedSaga),
     takeEvery([events.UPDATE_LOG], updateLogSaga),
+    takeEvery([events.DELETE_LOG], deleteLogSaga),
   ];
 }
