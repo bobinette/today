@@ -4,11 +4,11 @@ import (
 	eh "github.com/looplab/eventhorizon"
 )
 
+// Events that can happen on a log
 const (
-	// A Created event is used to signal that a log was created
 	Created eh.EventType = "logs:created"
-	// An Updated event is used to signal that a log was updated
-	Updated eh.EventType = "logs:updated"
+	Updated              = "logs:updated"
+	Removed              = "logs:removed"
 )
 
 type CreatedData struct {
@@ -23,4 +23,9 @@ type UpdatedData struct {
 
 	User    string `json:"user"`
 	Content string `json:"content"`
+}
+
+type RemovedData struct {
+	UUID eh.UUID `json:"uuid"`
+	User string  `json:"user"`
 }

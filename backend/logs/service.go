@@ -51,6 +51,14 @@ func (s *Service) Save(ctx context.Context, log Log) error {
 	return s.index.Index(ctx, log)
 }
 
+func (s *Service) Delete(ctx context.Context, uuid string) error {
+	if err := s.repo.Delete(ctx, uuid); err != nil {
+		return err
+	}
+
+	return s.index.Delete(ctx, uuid)
+}
+
 func (s *Service) indexAll(ctx context.Context) error {
 	logs, err := s.repo.All(ctx)
 	if err != nil {

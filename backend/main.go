@@ -123,7 +123,9 @@ func main() {
 	if cfg.Dev.ForwardedEmail != "" {
 		srv.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
 			return func(c echo.Context) error {
-				c.Request().Header.Set("X-Forwarded-Email", cfg.Dev.ForwardedEmail)
+				if c.Request().Header.Get("X-Forwarded-Email") == "" {
+					c.Request().Header.Set("X-Forwarded-Email", cfg.Dev.ForwardedEmail)
+				}
 				return next(c)
 			}
 		})
@@ -131,21 +133,14 @@ func main() {
 
 	srv.HTTPErrorHandler = func(err error, c echo.Context) {
 		code := http.StatusInternalServerError
+		var msg interface{} = err.Error()
+
 		if he, ok := err.(*echo.HTTPError); ok {
 			code = he.Code
+			msg = he.Message
 		}
 
-		if err == middleware.ErrJWTMissing {
-			c.Redirect(http.StatusSeeOther, "/login")
-			return
-		}
-
-		if code == http.StatusUnauthorized {
-			c.Render(code, "login", nil)
-			return
-		}
-
-		c.JSON(code, map[string]interface{}{"error": err.Error()})
+		c.JSON(code, map[string]interface{}{"error": msg})
 	}
 
 	logService, err := logs.Register(mysql.NewLogRepository(db), index, cfg.Admins, srv)

@@ -60,6 +60,11 @@ func (a *Aggregate) HandleCommand(ctx context.Context, cmd eh.Command) error {
 			User:    cmd.User,
 			Content: cmd.Content,
 		}, timeNow())
+	case *Remove:
+		a.StoreEvent(Removed, &RemovedData{
+			UUID: cmd.AggregateID(),
+			User: cmd.User,
+		}, timeNow())
 	default:
 		return fmt.Errorf("could not handle command: %s", cmd.CommandType())
 	}
@@ -72,7 +77,7 @@ func (a *Aggregate) ApplyEvent(ctx context.Context, event eh.Event) error {
 	switch event.EventType() {
 	case Created:
 		a.created = true
-	case Updated:
+	case Updated, Removed:
 		// Nothing to do on it really...
 	default:
 		return fmt.Errorf("could not apply event: %s", event.EventType())
