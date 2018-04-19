@@ -19,6 +19,8 @@ func Register(
 	projector := projector.NewEventHandler(&Projector{}, &logsService)
 	projector.SetEntityFactory(func() eh.Entity { return &Log{} })
 	bus.AddHandler(projector, Created)
+	bus.AddHandler(projector, Updated)
+	bus.AddHandler(projector, Removed)
 
 	commandHandler, err := aggregate.NewCommandHandler(AggregateType, store)
 	if err != nil {
@@ -27,7 +29,10 @@ func Register(
 
 	handler := httpHandler{
 		commandHandler: commandHandler,
+		logService:     service,
 	}
 	srv.POST("/api/logs", handler.create)
+	srv.POST("/api/logs/:uuid", handler.update)
+	srv.DELETE("/api/logs/:uuid", handler.remove)
 	return nil
 }

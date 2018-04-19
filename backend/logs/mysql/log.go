@@ -21,15 +21,49 @@ func NewLogRepository(db *sql.DB) *LogRepository {
 }
 
 func (r *LogRepository) Save(ctx context.Context, log logs.Log) error {
-	query := `INSERT INTO logs (uuid, user, content, created_at, updated_at) VALUES (?, ?, ?, ?, ?)`
-	params := []interface{}{log.UUID, log.User, log.Content, log.CreatedAt, log.UpdatedAt}
+	var query string
+	var params []interface{}
 
-	_, err := r.db.ExecContext(ctx, query, params...)
+	isInsert, err := r.isInsert(ctx, log.UUID)
+	if err != nil {
+		return err
+	}
+
+	if isInsert {
+		query = `INSERT INTO logs (uuid, user, content, deleted, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)`
+		params = []interface{}{log.UUID, log.User, log.Content, false, log.CreatedAt, log.UpdatedAt}
+	} else {
+		// Updating a deleted row restores it.
+		query = `UPDATE logs SET content = ?, deleted = 0 WHERE uuid = ?`
+		params = []interface{}{log.Content, log.UUID}
+	}
+
+	_, err = r.db.ExecContext(ctx, query, params...)
+	return err
+}
+
+func (r *LogRepository) isInsert(ctx context.Context, uuid string) (bool, error) {
+	query := `SELECT 1 FROM logs WHERE uuid = ?`
+	row := r.db.QueryRowContext(ctx, query, uuid)
+
+	var c int
+	if err := row.Scan(&c); err != nil {
+		if err == sql.ErrNoRows {
+			return true, nil
+		}
+		return false, err
+	}
+	return false, nil
+}
+
+func (r *LogRepository) Delete(ctx context.Context, uuid string) error {
+	query := `UPDATE logs SET deleted = 1 WHERE uuid = ?`
+	_, err := r.db.ExecContext(ctx, query, uuid)
 	return err
 }
 
 func (r *LogRepository) Find(ctx context.Context, uuid string) (logs.Log, error) {
-	query := `SELECT user, content, created_at, updated_at FROM logs WHERE uuid = ?`
+	query := `SELECT user, content, created_at, updated_at FROM logs WHERE uuid = ? AND deleted = 0`
 	res := r.db.QueryRowContext(ctx, query, uuid)
 
 	var (
@@ -64,6 +98,7 @@ func (r *LogRepository) GetMultiple(ctx context.Context, uuids []string) ([]logs
 	SELECT uuid, user, content, created_at, updated_at
 	FROM logs
 	WHERE uuid IN (%s)
+	  AND deleted = 0
 `, join("?", ",", len(uuids)))
 
 	params := make([]interface{}, len(uuids))
@@ -100,6 +135,7 @@ func (r *LogRepository) List(ctx context.Context, user string) ([]logs.Log, erro
 	SELECT uuid, user, content, created_at, updated_at
 	FROM logs
 	WHERE user = ?
+	  AND deleted = 0
 	ORDER BY created_at DESC
 `
 	rows, err := r.db.QueryContext(ctx, query, user)
@@ -112,7 +148,7 @@ func (r *LogRepository) List(ctx context.Context, user string) ([]logs.Log, erro
 }
 
 func (r *LogRepository) ListUUIDs(ctx context.Context, user string) ([]string, error) {
-	query := "SELECT uuid FROM logs WHERE user = ?"
+	query := "SELECT uuid FROM logs WHERE user = ? AND deleted = 0"
 	rows, err := r.db.QueryContext(ctx, query, user)
 	if err != nil {
 		return nil, err
@@ -139,6 +175,7 @@ func (r *LogRepository) All(ctx context.Context) ([]logs.Log, error) {
 	query := `
 	SELECT uuid, user, content, created_at, updated_at
 	FROM logs
+	WHERE deleted = 0
 	ORDER BY created_at DESC
 `
 	rows, err := r.db.QueryContext(ctx, query)

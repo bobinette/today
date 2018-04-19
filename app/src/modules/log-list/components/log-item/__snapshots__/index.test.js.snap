@@ -1,0 +1,703 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render a log item 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LogItem
+    log={
+      Immutable.Map {
+        "uuid": "1",
+        "content": "content 1",
+        "createdAt": "2018-04-03T17:55:03",
+      }
+    }
+    onDelete={[MockFunction]}
+    onUpdate={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="card-body"
+      >
+        <div
+          className="card-text"
+        >
+          <div>
+            <div
+              className="flex flex-align-items-center flex-space-between"
+            >
+              <small
+                className="text-muted flex-1"
+              >
+                <em>
+                  04/03/2018
+                   
+                  5:55 PM
+                </em>
+              </small>
+              <button
+                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                onClick={[Function]}
+              >
+                <i
+                  className="fas fa-edit"
+                />
+              </button>
+              <button
+                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                onClick={[Function]}
+              >
+                <i
+                  className="fas fa-trash-alt"
+                />
+              </button>
+            </div>
+            <Markdown
+              className=""
+              text="content 1"
+            />
+          </div>
+        </div>
+      </div>,
+      "className": "card LogItem",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-text"
+        >
+          <div>
+            <div
+              className="flex flex-align-items-center flex-space-between"
+            >
+              <small
+                className="text-muted flex-1"
+              >
+                <em>
+                  04/03/2018
+                   
+                  5:55 PM
+                </em>
+              </small>
+              <button
+                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                onClick={[Function]}
+              >
+                <i
+                  className="fas fa-edit"
+                />
+              </button>
+              <button
+                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                onClick={[Function]}
+              >
+                <i
+                  className="fas fa-trash-alt"
+                />
+              </button>
+            </div>
+            <Markdown
+              className=""
+              text="content 1"
+            />
+          </div>
+        </div>,
+        "className": "card-body",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div>
+              <div
+                className="flex flex-align-items-center flex-space-between"
+              >
+                <small
+                  className="text-muted flex-1"
+                >
+                  <em>
+                    04/03/2018
+                     
+                    5:55 PM
+                  </em>
+                </small>
+                <button
+                  className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-edit"
+                  />
+                </button>
+                <button
+                  className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-trash-alt"
+                  />
+                </button>
+              </div>
+              <Markdown
+                className=""
+                text="content 1"
+              />
+            </div>,
+            false,
+          ],
+          "className": "card-text",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="flex flex-align-items-center flex-space-between"
+                >
+                  <small
+                    className="text-muted flex-1"
+                  >
+                    <em>
+                      04/03/2018
+                       
+                      5:55 PM
+                    </em>
+                  </small>
+                  <button
+                    className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-edit"
+                    />
+                  </button>
+                  <button
+                    className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-trash-alt"
+                    />
+                  </button>
+                </div>,
+                <Markdown
+                  className=""
+                  text="content 1"
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <small
+                      className="text-muted flex-1"
+                    >
+                      <em>
+                        04/03/2018
+                         
+                        5:55 PM
+                      </em>
+                    </small>,
+                    <button
+                      className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-edit"
+                      />
+                    </button>,
+                    <button
+                      className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-trash-alt"
+                      />
+                    </button>,
+                  ],
+                  "className": "flex flex-align-items-center flex-space-between",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <em>
+                        04/03/2018
+                         
+                        5:55 PM
+                      </em>,
+                      "className": "text-muted flex-1",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "04/03/2018",
+                          " ",
+                          "5:55 PM",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "04/03/2018",
+                        " ",
+                        "5:55 PM",
+                      ],
+                      "type": "em",
+                    },
+                    "type": "small",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        className="fas fa-edit"
+                      />,
+                      "className": "btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "fas fa-edit",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        className="fas fa-trash-alt"
+                      />,
+                      "className": "btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "fas fa-trash-alt",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "className": "",
+                  "text": "content 1",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          false,
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-body"
+        >
+          <div
+            className="card-text"
+          >
+            <div>
+              <div
+                className="flex flex-align-items-center flex-space-between"
+              >
+                <small
+                  className="text-muted flex-1"
+                >
+                  <em>
+                    04/03/2018
+                     
+                    5:55 PM
+                  </em>
+                </small>
+                <button
+                  className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-edit"
+                  />
+                </button>
+                <button
+                  className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-trash-alt"
+                  />
+                </button>
+              </div>
+              <Markdown
+                className=""
+                text="content 1"
+              />
+            </div>
+          </div>
+        </div>,
+        "className": "card LogItem",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="card-text"
+          >
+            <div>
+              <div
+                className="flex flex-align-items-center flex-space-between"
+              >
+                <small
+                  className="text-muted flex-1"
+                >
+                  <em>
+                    04/03/2018
+                     
+                    5:55 PM
+                  </em>
+                </small>
+                <button
+                  className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-edit"
+                  />
+                </button>
+                <button
+                  className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-trash-alt"
+                  />
+                </button>
+              </div>
+              <Markdown
+                className=""
+                text="content 1"
+              />
+            </div>
+          </div>,
+          "className": "card-body",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                <div
+                  className="flex flex-align-items-center flex-space-between"
+                >
+                  <small
+                    className="text-muted flex-1"
+                  >
+                    <em>
+                      04/03/2018
+                       
+                      5:55 PM
+                    </em>
+                  </small>
+                  <button
+                    className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-edit"
+                    />
+                  </button>
+                  <button
+                    className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-trash-alt"
+                    />
+                  </button>
+                </div>
+                <Markdown
+                  className=""
+                  text="content 1"
+                />
+              </div>,
+              false,
+            ],
+            "className": "card-text",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="flex flex-align-items-center flex-space-between"
+                  >
+                    <small
+                      className="text-muted flex-1"
+                    >
+                      <em>
+                        04/03/2018
+                         
+                        5:55 PM
+                      </em>
+                    </small>
+                    <button
+                      className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-edit"
+                      />
+                    </button>
+                    <button
+                      className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-trash-alt"
+                      />
+                    </button>
+                  </div>,
+                  <Markdown
+                    className=""
+                    text="content 1"
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <small
+                        className="text-muted flex-1"
+                      >
+                        <em>
+                          04/03/2018
+                           
+                          5:55 PM
+                        </em>
+                      </small>,
+                      <button
+                        className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="fas fa-edit"
+                        />
+                      </button>,
+                      <button
+                        className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="fas fa-trash-alt"
+                        />
+                      </button>,
+                    ],
+                    "className": "flex flex-align-items-center flex-space-between",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <em>
+                          04/03/2018
+                           
+                          5:55 PM
+                        </em>,
+                        "className": "text-muted flex-1",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            "04/03/2018",
+                            " ",
+                            "5:55 PM",
+                          ],
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "04/03/2018",
+                          " ",
+                          "5:55 PM",
+                        ],
+                        "type": "em",
+                      },
+                      "type": "small",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          className="fas fa-edit"
+                        />,
+                        "className": "btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "fas fa-edit",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "type": "button",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          className="fas fa-trash-alt"
+                        />,
+                        "className": "btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "fas fa-trash-alt",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "type": "button",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "className": "",
+                    "text": "content 1",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            false,
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

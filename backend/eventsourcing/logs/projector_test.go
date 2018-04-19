@@ -45,6 +45,27 @@ func TestProjector(t *testing.T) {
 			},
 			nil,
 		},
+		"updated": {
+			&Log{UUID: id, User: "user", CreatedAt: timeNow().Add(-1 * time.Hour)},
+			eh.NewEventForAggregate(Updated, &UpdatedData{
+				Content: "content updated",
+			}, timeNow(), AggregateType, id, 1),
+			&Log{
+				UUID:      id,
+				Version:   1,
+				User:      "user",
+				Content:   "content updated",
+				CreatedAt: timeNow().Add(-1 * time.Hour),
+				UpdatedAt: timeNow(),
+			},
+			nil,
+		},
+		"removed": {
+			&Log{UUID: id, User: "user", CreatedAt: timeNow().Add(-1 * time.Hour)},
+			eh.NewEventForAggregate(Removed, &RemovedData{}, timeNow(), AggregateType, id, 1),
+			nil,
+			nil,
+		},
 	}
 
 	ctx := context.Background()

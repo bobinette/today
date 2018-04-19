@@ -36,6 +36,17 @@ func (p *Projector) Project(ctx context.Context, event eh.Event, entity eh.Entit
 		model.User = data.User
 		model.Content = data.Content
 		model.CreatedAt = timeNow()
+	case Updated:
+		data, ok := event.Data().(*UpdatedData)
+		if !ok {
+			return nil, errors.New("invalid event data")
+		}
+		// Update only the content
+		model.Content = data.Content
+	case Removed:
+		// Return a nil entity so the command handler wrapping the projector
+		// calls the remove method on the "repo", i.e. the service in our case.
+		return nil, nil
 	default:
 		// Also return the modele here to not delete it.
 		return model, fmt.Errorf("could not project event: %s", event.EventType())

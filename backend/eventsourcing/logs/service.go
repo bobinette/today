@@ -12,6 +12,7 @@ import (
 type LogService interface {
 	Find(ctx context.Context, uuid string) (logs.Log, error)
 	Save(ctx context.Context, log logs.Log) error
+	Delete(ctx context.Context, uuid string) error
 }
 
 type Service struct {
@@ -71,5 +72,5 @@ func (s *Service) Save(ctx context.Context, entity eh.Entity) error {
 
 // Remove removes a entity by ID from the storage.
 func (s *Service) Remove(ctx context.Context, uuid eh.UUID) error {
-	return errors.New("not implemented")
+	return s.service.Delete(ctx, string(uuid))
 }

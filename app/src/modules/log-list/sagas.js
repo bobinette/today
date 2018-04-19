@@ -18,9 +18,27 @@ export function* fetchLogsDebouncedSaga() {
   yield call(fetchLogsSaga);
 }
 
+export function* updateLogSaga({ uuid, content, done }) {
+  const { log } = yield call(api.updateLog, uuid, content);
+  yield put({ type: events.LOG_UPDATED, log });
+  if (done) {
+    yield call(done);
+  }
+}
+
+export function* deleteLogSaga({ uuid }) {
+  const r = yield call(confirm, 'Do you really want to delete your log?'); // eslint-disable-line no-restricted-globals
+  if (!r) return;
+
+  yield call(api.deleteLog, uuid);
+  yield put({ type: events.LOG_DELETED, uuid });
+}
+
 export default function* sagas() {
   yield [
     takeEvery([events.FETCH_LOGS, newLogEvents.LOG_CREATED], fetchLogsSaga),
     takeLatest([events.UPDATE_SEARCH], fetchLogsDebouncedSaga),
+    takeEvery([events.UPDATE_LOG], updateLogSaga),
+    takeEvery([events.DELETE_LOG], deleteLogSaga),
   ];
 }

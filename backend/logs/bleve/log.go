@@ -59,6 +59,10 @@ func (s *Index) Index(ctx context.Context, log logs.Log) error {
 	return s.index.Index(log.UUID, data)
 }
 
+func (s *Index) Delete(ctx context.Context, uuid string) error {
+	return s.index.Delete(uuid)
+}
+
 func (s *Index) Search(ctx context.Context, params logs.SearchParams) ([]string, error) {
 	// Do not handle the offset for now
 	total := 100 // Default...

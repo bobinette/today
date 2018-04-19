@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
 
-import moment from 'moment';
-
-import Markdown from 'components/markdown';
 import SearchBar from 'components/searchbar';
 
 import NewLogInput from 'modules/new-log';
 import { separateActions } from 'utils/redux';
 
-import { fetchLogs, onSearchChange } from './actions';
+import { deleteLog, fetchLogs, onSearchChange, onUpdate } from './actions';
 import { selectLogs, selectQ } from './selectors';
+
+import LogItem from './components/log-item';
 
 import './log-list.scss';
 
@@ -22,13 +21,26 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
+  deleteLog,
   fetchLogs,
   onSearchChange,
+  onUpdate,
 };
 
 export class LogList extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.onUpdate = this.onUpdate.bind(this);
+  }
+
   componentDidMount() {
     this.props.actions.fetchLogs();
+  }
+
+  onUpdate(uuid, content, done) {
+    const { actions } = this.props;
+    actions.onUpdate(uuid, content, done);
   }
 
   render() {
@@ -44,7 +56,11 @@ export class LogList extends PureComponent {
         />
         {logs.map(log => (
           <div key={log.get('uuid')}>
-            <LogList.LogItem log={log} />
+            <LogItem
+              log={log}
+              onUpdate={this.onUpdate}
+              onDelete={actions.deleteLog}
+            />
           </div>
         ))}
       </div>
@@ -56,29 +72,11 @@ LogList.propTypes = {
   logs: ImmutablePropTypes.list.isRequired,
   q: PropTypes.string.isRequired,
   actions: PropTypes.shape({
+    deleteLog: PropTypes.func.isRequired,
     fetchLogs: PropTypes.func.isRequired,
     onSearchChange: PropTypes.func.isRequired,
+    onUpdate: PropTypes.func.isRequired,
   }).isRequired,
-};
-
-LogList.LogItem = ({ log }) => (
-  <div className="card LogItem">
-    <div className="card-body">
-      <div className="card-text">
-        <Markdown text={log.get('content')} />
-        <small className="text-muted">
-          <em>
-            {moment(log.get('createdAt')).format('L')}{' '}
-            {moment(log.get('createdAt')).format('LT')}
-          </em>
-        </small>
-      </div>
-    </div>
-  </div>
-);
-
-LogList.LogItem.propTypes = {
-  log: ImmutablePropTypes.map.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps, separateActions)(

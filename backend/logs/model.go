@@ -31,7 +31,7 @@ type Repository interface {
 
 	// Write
 	Save(ctx context.Context, log Log) error
-	// Remove(ctx context.Context, uuid string) error
+	Delete(ctx context.Context, uuid string) error
 }
 
 type SearchParams struct {
@@ -41,5 +41,6 @@ type SearchParams struct {
 
 type Index interface {
 	Index(ctx context.Context, log Log) error
-	Search(ctx context.Context, params SearchParams) ([]string, error)
+	Delete(ctx context.Context, uuid string) error
+	Search(ctx context.Context, params SearchParams) (uuids []string, err error)
 }

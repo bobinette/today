@@ -18,4 +18,26 @@ export default {
       return { error };
     }
   },
+
+  async updateLog(uuid, content) {
+    try {
+      const response = await axios.post(`${apiUrl}/api/logs/${uuid}`, {
+        content,
+      });
+      return { log: response.data };
+    } catch (error) {
+      console.log('error updating log', error);
+      return { error };
+    }
+  },
+
+  async deleteLog(uuid) {
+    try {
+      await axios.delete(`${apiUrl}/api/logs/${uuid}`);
+      return {};
+    } catch (error) {
+      console.log('error deleting log', error);
+      return { error };
+    }
+  },
 };

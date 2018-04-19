@@ -40,4 +40,15 @@ func TestLogRepository(t *testing.T, repo logs.Repository) {
 	all, err = repo.List(ctx, user)
 	assert.NoError(t, err)
 	assert.Equal(t, []logs.Log{log}, all)
+
+	err = repo.Delete(ctx, log.UUID)
+	assert.NoError(t, err)
+
+	retrieved, err = repo.Find(ctx, log.UUID)
+	assert.Equal(t, err, logs.ErrLogNotFound)
+	assert.Equal(t, logs.Log{}, retrieved)
+
+	all, err = repo.List(ctx, user)
+	assert.NoError(t, err)
+	assert.Equal(t, []logs.Log{}, all)
 }

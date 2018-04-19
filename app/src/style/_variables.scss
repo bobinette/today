@@ -2,6 +2,5 @@ $theme-colors: ('primary': #34a166);
 
 $body-bg: #f4f4f4;
 
-// $border-radius: 0.125rem;
-// $border-radius-lg: 0.15rem;
-// $border-radius-sm: 0.1rem;
+@import 'node_modules/bootstrap/scss/functions.scss';
+@import 'node_modules/bootstrap/scss/variables.scss';

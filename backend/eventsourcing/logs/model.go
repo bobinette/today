@@ -18,15 +18,17 @@ type Log struct {
 }
 
 var _ = eh.Entity(&Log{})
-var _ = eh.Versionable(&Log{})
 
 // EntityID implements the EntityID method of the eventhorizon.Entity interface.
 func (t *Log) EntityID() eh.UUID {
 	return t.UUID
 }
 
+// Restore when version are handled by the log service in this
+// ES specific repo
+// var _ = eh.Versionable(&Log{})
 // AggregateVersion implements the AggregateVersion method of the
 // eventhorizon.Versionable interface.
-func (t *Log) AggregateVersion() int {
-	return t.Version
-}
+// func (t *Log) AggregateVersion() int {
+// 	return t.Version
+// }

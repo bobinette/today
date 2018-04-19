@@ -1,0 +1,26 @@
+@import 'src/style/variables.scss';
+
+.LogItem {
+    margin: 1rem 0;
+}
+
+.btn.LogItem__ActionIcon {
+    color: $gray-400;
+
+    &:hover {
+        color: $gray-600;
+    }
+}
+
+.LogItem__Content {
+    width: 100%;
+    background: $body-bg;
+
+    &:focus {
+        background: $card-bg;
+    }
+}
+
+.LogItem__UpdateActions .btn {
+    margin-left: 0.5rem;
+}
