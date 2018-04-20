@@ -8,6 +8,7 @@ ShallowWrapper {
     actions={
       Object {
         "deleteLog": [MockFunction],
+        "edit": [MockFunction],
         "fetchLogs": [MockFunction] {
           "calls": Array [
             Array [],
@@ -15,21 +16,38 @@ ShallowWrapper {
         },
         "onSearchChange": [MockFunction],
         "onUpdate": [MockFunction],
+        "startEditing": [MockFunction],
+        "stopEditing": [MockFunction],
       }
     }
     logs={
       Immutable.List [
         Immutable.Map {
-          "uuid": "1",
-          "content": "content 1",
+          "source": Immutable.Map {
+            "uuid": "1",
+            "content": "content 1",
+          },
+          "edited": Immutable.Map {
+            "editing": false,
+          },
         },
         Immutable.Map {
-          "uuid": "2",
-          "content": "content 2",
+          "source": Immutable.Map {
+            "uuid": "2",
+            "content": "content 2",
+          },
+          "edited": Immutable.Map {
+            "editing": false,
+          },
         },
         Immutable.Map {
-          "uuid": "3",
-          "content": "content 3",
+          "source": Immutable.Map {
+            "uuid": "3",
+            "content": "content 3",
+          },
+          "edited": Immutable.Map {
+            "editing": false,
+          },
         },
       ]
     }
@@ -63,8 +81,8 @@ ShallowWrapper {
                   "content": "content 1",
                 }
               }
-              onDelete={[MockFunction]}
-              onUpdate={[Function]}
+              onDelete={[Function]}
+              onEdit={[Function]}
             />
           </div>,
           <div>
@@ -75,8 +93,8 @@ ShallowWrapper {
                   "content": "content 2",
                 }
               }
-              onDelete={[MockFunction]}
-              onUpdate={[Function]}
+              onDelete={[Function]}
+              onEdit={[Function]}
             />
           </div>,
           <div>
@@ -87,8 +105,8 @@ ShallowWrapper {
                   "content": "content 3",
                 }
               }
-              onDelete={[MockFunction]}
-              onUpdate={[Function]}
+              onDelete={[Function]}
+              onEdit={[Function]}
             />
           </div>,
         ],
@@ -131,8 +149,8 @@ ShallowWrapper {
                 "content": "content 1",
               }
             }
-            onDelete={[MockFunction]}
-            onUpdate={[Function]}
+            onDelete={[Function]}
+            onEdit={[Function]}
           />,
         },
         "ref": null,
@@ -145,8 +163,8 @@ ShallowWrapper {
               "uuid": "1",
               "content": "content 1",
             },
-            "onDelete": [MockFunction],
-            "onUpdate": [Function],
+            "onDelete": [Function],
+            "onEdit": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -166,8 +184,8 @@ ShallowWrapper {
                 "content": "content 2",
               }
             }
-            onDelete={[MockFunction]}
-            onUpdate={[Function]}
+            onDelete={[Function]}
+            onEdit={[Function]}
           />,
         },
         "ref": null,
@@ -180,8 +198,8 @@ ShallowWrapper {
               "uuid": "2",
               "content": "content 2",
             },
-            "onDelete": [MockFunction],
-            "onUpdate": [Function],
+            "onDelete": [Function],
+            "onEdit": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -201,8 +219,8 @@ ShallowWrapper {
                 "content": "content 3",
               }
             }
-            onDelete={[MockFunction]}
-            onUpdate={[Function]}
+            onDelete={[Function]}
+            onEdit={[Function]}
           />,
         },
         "ref": null,
@@ -215,8 +233,8 @@ ShallowWrapper {
               "uuid": "3",
               "content": "content 3",
             },
-            "onDelete": [MockFunction],
-            "onUpdate": [Function],
+            "onDelete": [Function],
+            "onEdit": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -249,8 +267,8 @@ ShallowWrapper {
                     "content": "content 1",
                   }
                 }
-                onDelete={[MockFunction]}
-                onUpdate={[Function]}
+                onDelete={[Function]}
+                onEdit={[Function]}
               />
             </div>,
             <div>
@@ -261,8 +279,8 @@ ShallowWrapper {
                     "content": "content 2",
                   }
                 }
-                onDelete={[MockFunction]}
-                onUpdate={[Function]}
+                onDelete={[Function]}
+                onEdit={[Function]}
               />
             </div>,
             <div>
@@ -273,8 +291,8 @@ ShallowWrapper {
                     "content": "content 3",
                   }
                 }
-                onDelete={[MockFunction]}
-                onUpdate={[Function]}
+                onDelete={[Function]}
+                onEdit={[Function]}
               />
             </div>,
           ],
@@ -317,8 +335,8 @@ ShallowWrapper {
                   "content": "content 1",
                 }
               }
-              onDelete={[MockFunction]}
-              onUpdate={[Function]}
+              onDelete={[Function]}
+              onEdit={[Function]}
             />,
           },
           "ref": null,
@@ -331,8 +349,8 @@ ShallowWrapper {
                 "uuid": "1",
                 "content": "content 1",
               },
-              "onDelete": [MockFunction],
-              "onUpdate": [Function],
+              "onDelete": [Function],
+              "onEdit": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -352,8 +370,8 @@ ShallowWrapper {
                   "content": "content 2",
                 }
               }
-              onDelete={[MockFunction]}
-              onUpdate={[Function]}
+              onDelete={[Function]}
+              onEdit={[Function]}
             />,
           },
           "ref": null,
@@ -366,8 +384,8 @@ ShallowWrapper {
                 "uuid": "2",
                 "content": "content 2",
               },
-              "onDelete": [MockFunction],
-              "onUpdate": [Function],
+              "onDelete": [Function],
+              "onEdit": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -387,8 +405,8 @@ ShallowWrapper {
                   "content": "content 3",
                 }
               }
-              onDelete={[MockFunction]}
-              onUpdate={[Function]}
+              onDelete={[Function]}
+              onEdit={[Function]}
             />,
           },
           "ref": null,
@@ -401,8 +419,438 @@ ShallowWrapper {
                 "uuid": "3",
                 "content": "content 3",
               },
-              "onDelete": [MockFunction],
+              "onDelete": [Function],
+              "onEdit": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`render the log list with one in edit mode 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LogList
+    actions={
+      Object {
+        "deleteLog": [MockFunction],
+        "edit": [MockFunction],
+        "fetchLogs": [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+        },
+        "onSearchChange": [MockFunction],
+        "onUpdate": [MockFunction],
+        "startEditing": [MockFunction],
+        "stopEditing": [MockFunction],
+      }
+    }
+    logs={
+      Immutable.List [
+        Immutable.Map {
+          "source": Immutable.Map {
+            "uuid": "1",
+            "content": "content 1",
+          },
+          "edited": Immutable.Map {
+            "editing": false,
+          },
+        },
+        Immutable.Map {
+          "source": Immutable.Map {
+            "uuid": "2",
+            "content": "content 2",
+          },
+          "edited": Immutable.Map {
+            "editing": true,
+            "content": "editing",
+            "updating": false,
+          },
+        },
+        Immutable.Map {
+          "source": Immutable.Map {
+            "uuid": "3",
+            "content": "content 3",
+          },
+          "edited": Immutable.Map {
+            "editing": false,
+          },
+        },
+      ]
+    }
+    q="q"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Connect(NewLogInput) />,
+        <SearchBar
+          className="LogList__searchBar col-md-8 offset-md-2"
+          onChange={[MockFunction]}
+          q="q"
+        />,
+        Immutable.List [
+          <div>
+            <LogItem
+              log={
+                Immutable.Map {
+                  "uuid": "1",
+                  "content": "content 1",
+                }
+              }
+              onDelete={[Function]}
+              onEdit={[Function]}
+            />
+          </div>,
+          <div>
+            <LogItemEditing
+              content="editing"
+              onCancel={[Function]}
+              onEditContent={[Function]}
+              onUpdate={[Function]}
+              updating={false}
+            />
+          </div>,
+          <div>
+            <LogItem
+              log={
+                Immutable.Map {
+                  "uuid": "3",
+                  "content": "content 3",
+                }
+              }
+              onDelete={[Function]}
+              onEdit={[Function]}
+            />
+          </div>,
+        ],
+      ],
+      "className": "container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "className": "LogList__searchBar col-md-8 offset-md-2",
+          "onChange": [MockFunction],
+          "q": "q",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "host",
+        "props": Object {
+          "children": <LogItem
+            log={
+              Immutable.Map {
+                "uuid": "1",
+                "content": "content 1",
+              }
+            }
+            onDelete={[Function]}
+            onEdit={[Function]}
+          />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "log": Immutable.Map {
+              "uuid": "1",
+              "content": "content 1",
+            },
+            "onDelete": [Function],
+            "onEdit": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "2",
+        "nodeType": "host",
+        "props": Object {
+          "children": <LogItemEditing
+            content="editing"
+            onCancel={[Function]}
+            onEditContent={[Function]}
+            onUpdate={[Function]}
+            updating={false}
+          />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "content": "editing",
+            "onCancel": [Function],
+            "onEditContent": [Function],
+            "onUpdate": [Function],
+            "updating": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "3",
+        "nodeType": "host",
+        "props": Object {
+          "children": <LogItem
+            log={
+              Immutable.Map {
+                "uuid": "3",
+                "content": "content 3",
+              }
+            }
+            onDelete={[Function]}
+            onEdit={[Function]}
+          />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "log": Immutable.Map {
+              "uuid": "3",
+              "content": "content 3",
+            },
+            "onDelete": [Function],
+            "onEdit": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Connect(NewLogInput) />,
+          <SearchBar
+            className="LogList__searchBar col-md-8 offset-md-2"
+            onChange={[MockFunction]}
+            q="q"
+          />,
+          Immutable.List [
+            <div>
+              <LogItem
+                log={
+                  Immutable.Map {
+                    "uuid": "1",
+                    "content": "content 1",
+                  }
+                }
+                onDelete={[Function]}
+                onEdit={[Function]}
+              />
+            </div>,
+            <div>
+              <LogItemEditing
+                content="editing"
+                onCancel={[Function]}
+                onEditContent={[Function]}
+                onUpdate={[Function]}
+                updating={false}
+              />
+            </div>,
+            <div>
+              <LogItem
+                log={
+                  Immutable.Map {
+                    "uuid": "3",
+                    "content": "content 3",
+                  }
+                }
+                onDelete={[Function]}
+                onEdit={[Function]}
+              />
+            </div>,
+          ],
+        ],
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "className": "LogList__searchBar col-md-8 offset-md-2",
+            "onChange": [MockFunction],
+            "q": "q",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "host",
+          "props": Object {
+            "children": <LogItem
+              log={
+                Immutable.Map {
+                  "uuid": "1",
+                  "content": "content 1",
+                }
+              }
+              onDelete={[Function]}
+              onEdit={[Function]}
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "log": Immutable.Map {
+                "uuid": "1",
+                "content": "content 1",
+              },
+              "onDelete": [Function],
+              "onEdit": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "2",
+          "nodeType": "host",
+          "props": Object {
+            "children": <LogItemEditing
+              content="editing"
+              onCancel={[Function]}
+              onEditContent={[Function]}
+              onUpdate={[Function]}
+              updating={false}
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "content": "editing",
+              "onCancel": [Function],
+              "onEditContent": [Function],
               "onUpdate": [Function],
+              "updating": false,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "3",
+          "nodeType": "host",
+          "props": Object {
+            "children": <LogItem
+              log={
+                Immutable.Map {
+                  "uuid": "3",
+                  "content": "content 3",
+                }
+              }
+              onDelete={[Function]}
+              onEdit={[Function]}
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "log": Immutable.Map {
+                "uuid": "3",
+                "content": "content 3",
+              },
+              "onDelete": [Function],
+              "onEdit": [Function],
             },
             "ref": null,
             "rendered": null,

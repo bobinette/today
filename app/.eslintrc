@@ -33,3 +33,6 @@ rules:
     - 0
   import/prefer-default-export:
     - 0
+  object-curly-newline:
+    # This one does not work well with prettier either.
+    - 0

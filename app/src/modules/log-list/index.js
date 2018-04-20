@@ -8,10 +8,19 @@ import SearchBar from 'components/searchbar';
 import NewLogInput from 'modules/new-log';
 import { separateActions } from 'utils/redux';
 
-import { deleteLog, fetchLogs, onSearchChange, onUpdate } from './actions';
+import {
+  deleteLog,
+  fetchLogs,
+  onSearchChange,
+  onUpdate,
+  startEditing,
+  edit,
+  stopEditing,
+} from './actions';
 import { selectLogs, selectQ } from './selectors';
 
 import LogItem from './components/log-item';
+import LogItemEditing from './components/log-item-editing';
 
 import './log-list.scss';
 
@@ -25,22 +34,14 @@ const mapDispatchToProps = {
   fetchLogs,
   onSearchChange,
   onUpdate,
+  startEditing,
+  edit,
+  stopEditing,
 };
 
 export class LogList extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.onUpdate = this.onUpdate.bind(this);
-  }
-
   componentDidMount() {
     this.props.actions.fetchLogs();
-  }
-
-  onUpdate(uuid, content, done) {
-    const { actions } = this.props;
-    actions.onUpdate(uuid, content, done);
   }
 
   render() {
@@ -55,12 +56,26 @@ export class LogList extends PureComponent {
           onChange={actions.onSearchChange}
         />
         {logs.map(log => (
-          <div key={log.get('uuid')}>
-            <LogItem
-              log={log}
-              onUpdate={this.onUpdate}
-              onDelete={actions.deleteLog}
-            />
+          <div key={log.getIn(['source', 'uuid'])}>
+            {log.getIn(['edited', 'editing']) ? (
+              <LogItemEditing
+                content={log.getIn(['edited', 'content'])}
+                updating={log.getIn(['edited', 'updating'])}
+                onEditContent={content =>
+                  actions.edit(log.getIn(['source', 'uuid']), content)}
+                onCancel={() =>
+                  actions.stopEditing(log.getIn(['source', 'uuid']))}
+                onUpdate={() => actions.onUpdate(log.getIn(['source', 'uuid']))}
+              />
+            ) : (
+              <LogItem
+                log={log.get('source')}
+                onEdit={() =>
+                  actions.startEditing(log.getIn(['source', 'uuid']))}
+                onDelete={() =>
+                  actions.deleteLog(log.getIn(['source', 'uuid']))}
+              />
+            )}
           </div>
         ))}
       </div>
@@ -76,6 +91,9 @@ LogList.propTypes = {
     fetchLogs: PropTypes.func.isRequired,
     onSearchChange: PropTypes.func.isRequired,
     onUpdate: PropTypes.func.isRequired,
+    startEditing: PropTypes.func.isRequired,
+    edit: PropTypes.func.isRequired,
+    stopEditing: PropTypes.func.isRequired,
   }).isRequired,
 };
 

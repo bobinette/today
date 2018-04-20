@@ -7,11 +7,25 @@ export const onSearchChange = q => ({
   q,
 });
 
-export const onUpdate = (uuid, content, done) => ({
-  type: events.UPDATE_LOG,
+export const startEditing = uuid => ({
+  type: events.START_EDITING_LOG,
+  uuid,
+});
+
+export const edit = (uuid, content) => ({
+  type: events.EDIT_LOG,
   uuid,
   content,
-  done,
+});
+
+export const stopEditing = uuid => ({
+  type: events.STOP_EDITING_LOG,
+  uuid,
+});
+
+export const onUpdate = uuid => ({
+  type: events.UPDATE_LOG,
+  uuid,
 });
 
 export const deleteLog = uuid => ({

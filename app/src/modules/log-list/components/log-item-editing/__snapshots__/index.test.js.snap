@@ -1,0 +1,951 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render a log item 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LogItemEditing
+    content="content"
+    onCancel={[MockFunction]}
+    onEditContent={[MockFunction]}
+    onUpdate={[MockFunction]}
+    updating={false}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="card-body"
+      >
+        <div
+          className="card-text"
+        >
+          <TextareaAutosize
+            className="LogItemEditing__Content"
+            onChange={[Function]}
+            onHeightChange={[Function]}
+            placeholder="Editing..."
+            useCacheForDOMMeasurements={false}
+            value="content"
+          />
+          <div
+            className="flex flex-align-right LogItemEditing__UpdateActions"
+          >
+            <button
+              className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Cancel
+            </button>
+            <button
+              className="btn btn-primary btn-sm LogItemEditing__Update"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </div>,
+      "className": "card LogItemEditing",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-text"
+        >
+          <TextareaAutosize
+            className="LogItemEditing__Content"
+            onChange={[Function]}
+            onHeightChange={[Function]}
+            placeholder="Editing..."
+            useCacheForDOMMeasurements={false}
+            value="content"
+          />
+          <div
+            className="flex flex-align-right LogItemEditing__UpdateActions"
+          >
+            <button
+              className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Cancel
+            </button>
+            <button
+              className="btn btn-primary btn-sm LogItemEditing__Update"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Update
+            </button>
+          </div>
+        </div>,
+        "className": "card-body",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <TextareaAutosize
+              className="LogItemEditing__Content"
+              onChange={[Function]}
+              onHeightChange={[Function]}
+              placeholder="Editing..."
+              useCacheForDOMMeasurements={false}
+              value="content"
+            />,
+            <div
+              className="flex flex-align-right LogItemEditing__UpdateActions"
+            >
+              <button
+                className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                disabled={false}
+                onClick={[Function]}
+              >
+                Cancel
+              </button>
+              <button
+                className="btn btn-primary btn-sm LogItemEditing__Update"
+                disabled={false}
+                onClick={[Function]}
+              >
+                Update
+              </button>
+            </div>,
+          ],
+          "className": "card-text",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "LogItemEditing__Content",
+              "onChange": [Function],
+              "onHeightChange": [Function],
+              "placeholder": "Editing...",
+              "useCacheForDOMMeasurements": false,
+              "value": "content",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                  disabled={false}
+                  onClick={[Function]}
+                >
+                  Cancel
+                </button>,
+                <button
+                  className="btn btn-primary btn-sm LogItemEditing__Update"
+                  disabled={false}
+                  onClick={[Function]}
+                >
+                  Update
+                </button>,
+              ],
+              "className": "flex flex-align-right LogItemEditing__UpdateActions",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Cancel",
+                  "className": "btn btn-outline-secondary btn-sm LogItemEditing__Cancel",
+                  "disabled": false,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Cancel",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Update",
+                  "className": "btn btn-primary btn-sm LogItemEditing__Update",
+                  "disabled": false,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Update",
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-body"
+        >
+          <div
+            className="card-text"
+          >
+            <TextareaAutosize
+              className="LogItemEditing__Content"
+              onChange={[Function]}
+              onHeightChange={[Function]}
+              placeholder="Editing..."
+              useCacheForDOMMeasurements={false}
+              value="content"
+            />
+            <div
+              className="flex flex-align-right LogItemEditing__UpdateActions"
+            >
+              <button
+                className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                disabled={false}
+                onClick={[Function]}
+              >
+                Cancel
+              </button>
+              <button
+                className="btn btn-primary btn-sm LogItemEditing__Update"
+                disabled={false}
+                onClick={[Function]}
+              >
+                Update
+              </button>
+            </div>
+          </div>
+        </div>,
+        "className": "card LogItemEditing",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="card-text"
+          >
+            <TextareaAutosize
+              className="LogItemEditing__Content"
+              onChange={[Function]}
+              onHeightChange={[Function]}
+              placeholder="Editing..."
+              useCacheForDOMMeasurements={false}
+              value="content"
+            />
+            <div
+              className="flex flex-align-right LogItemEditing__UpdateActions"
+            >
+              <button
+                className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                disabled={false}
+                onClick={[Function]}
+              >
+                Cancel
+              </button>
+              <button
+                className="btn btn-primary btn-sm LogItemEditing__Update"
+                disabled={false}
+                onClick={[Function]}
+              >
+                Update
+              </button>
+            </div>
+          </div>,
+          "className": "card-body",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <TextareaAutosize
+                className="LogItemEditing__Content"
+                onChange={[Function]}
+                onHeightChange={[Function]}
+                placeholder="Editing..."
+                useCacheForDOMMeasurements={false}
+                value="content"
+              />,
+              <div
+                className="flex flex-align-right LogItemEditing__UpdateActions"
+              >
+                <button
+                  className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                  disabled={false}
+                  onClick={[Function]}
+                >
+                  Cancel
+                </button>
+                <button
+                  className="btn btn-primary btn-sm LogItemEditing__Update"
+                  disabled={false}
+                  onClick={[Function]}
+                >
+                  Update
+                </button>
+              </div>,
+            ],
+            "className": "card-text",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "className": "LogItemEditing__Content",
+                "onChange": [Function],
+                "onHeightChange": [Function],
+                "placeholder": "Editing...",
+                "useCacheForDOMMeasurements": false,
+                "value": "content",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <button
+                    className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                    disabled={false}
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>,
+                  <button
+                    className="btn btn-primary btn-sm LogItemEditing__Update"
+                    disabled={false}
+                    onClick={[Function]}
+                  >
+                    Update
+                  </button>,
+                ],
+                "className": "flex flex-align-right LogItemEditing__UpdateActions",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Cancel",
+                    "className": "btn btn-outline-secondary btn-sm LogItemEditing__Cancel",
+                    "disabled": false,
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Update",
+                    "className": "btn btn-primary btn-sm LogItemEditing__Update",
+                    "disabled": false,
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Update",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`render a log item updating 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LogItemEditing
+    content="content"
+    onCancel={[MockFunction]}
+    onEditContent={[MockFunction]}
+    onUpdate={[MockFunction]}
+    updating={true}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="card-body"
+      >
+        <div
+          className="card-text"
+        >
+          <TextareaAutosize
+            className="LogItemEditing__Content"
+            onChange={[Function]}
+            onHeightChange={[Function]}
+            placeholder="Editing..."
+            useCacheForDOMMeasurements={false}
+            value="content"
+          />
+          <div
+            className="flex flex-align-right LogItemEditing__UpdateActions"
+          >
+            <button
+              className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+              disabled={true}
+              onClick={[Function]}
+            >
+              Cancel
+            </button>
+            <button
+              className="btn btn-primary btn-sm LogItemEditing__Update"
+              disabled={true}
+              onClick={[Function]}
+            >
+              <span>
+                Updating...
+                <i
+                  className="fas fa-circle-notch fa-spin btn-spinner"
+                />
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>,
+      "className": "card LogItemEditing",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-text"
+        >
+          <TextareaAutosize
+            className="LogItemEditing__Content"
+            onChange={[Function]}
+            onHeightChange={[Function]}
+            placeholder="Editing..."
+            useCacheForDOMMeasurements={false}
+            value="content"
+          />
+          <div
+            className="flex flex-align-right LogItemEditing__UpdateActions"
+          >
+            <button
+              className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+              disabled={true}
+              onClick={[Function]}
+            >
+              Cancel
+            </button>
+            <button
+              className="btn btn-primary btn-sm LogItemEditing__Update"
+              disabled={true}
+              onClick={[Function]}
+            >
+              <span>
+                Updating...
+                <i
+                  className="fas fa-circle-notch fa-spin btn-spinner"
+                />
+              </span>
+            </button>
+          </div>
+        </div>,
+        "className": "card-body",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <TextareaAutosize
+              className="LogItemEditing__Content"
+              onChange={[Function]}
+              onHeightChange={[Function]}
+              placeholder="Editing..."
+              useCacheForDOMMeasurements={false}
+              value="content"
+            />,
+            <div
+              className="flex flex-align-right LogItemEditing__UpdateActions"
+            >
+              <button
+                className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                disabled={true}
+                onClick={[Function]}
+              >
+                Cancel
+              </button>
+              <button
+                className="btn btn-primary btn-sm LogItemEditing__Update"
+                disabled={true}
+                onClick={[Function]}
+              >
+                <span>
+                  Updating...
+                  <i
+                    className="fas fa-circle-notch fa-spin btn-spinner"
+                  />
+                </span>
+              </button>
+            </div>,
+          ],
+          "className": "card-text",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "LogItemEditing__Content",
+              "onChange": [Function],
+              "onHeightChange": [Function],
+              "placeholder": "Editing...",
+              "useCacheForDOMMeasurements": false,
+              "value": "content",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                  disabled={true}
+                  onClick={[Function]}
+                >
+                  Cancel
+                </button>,
+                <button
+                  className="btn btn-primary btn-sm LogItemEditing__Update"
+                  disabled={true}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Updating...
+                    <i
+                      className="fas fa-circle-notch fa-spin btn-spinner"
+                    />
+                  </span>
+                </button>,
+              ],
+              "className": "flex flex-align-right LogItemEditing__UpdateActions",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Cancel",
+                  "className": "btn btn-outline-secondary btn-sm LogItemEditing__Cancel",
+                  "disabled": true,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Cancel",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    Updating...
+                    <i
+                      className="fas fa-circle-notch fa-spin btn-spinner"
+                    />
+                  </span>,
+                  "className": "btn btn-primary btn-sm LogItemEditing__Update",
+                  "disabled": true,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Updating...",
+                      <i
+                        className="fas fa-circle-notch fa-spin btn-spinner"
+                      />,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Updating...",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "fas fa-circle-notch fa-spin btn-spinner",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                  ],
+                  "type": "span",
+                },
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-body"
+        >
+          <div
+            className="card-text"
+          >
+            <TextareaAutosize
+              className="LogItemEditing__Content"
+              onChange={[Function]}
+              onHeightChange={[Function]}
+              placeholder="Editing..."
+              useCacheForDOMMeasurements={false}
+              value="content"
+            />
+            <div
+              className="flex flex-align-right LogItemEditing__UpdateActions"
+            >
+              <button
+                className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                disabled={true}
+                onClick={[Function]}
+              >
+                Cancel
+              </button>
+              <button
+                className="btn btn-primary btn-sm LogItemEditing__Update"
+                disabled={true}
+                onClick={[Function]}
+              >
+                <span>
+                  Updating...
+                  <i
+                    className="fas fa-circle-notch fa-spin btn-spinner"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>,
+        "className": "card LogItemEditing",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="card-text"
+          >
+            <TextareaAutosize
+              className="LogItemEditing__Content"
+              onChange={[Function]}
+              onHeightChange={[Function]}
+              placeholder="Editing..."
+              useCacheForDOMMeasurements={false}
+              value="content"
+            />
+            <div
+              className="flex flex-align-right LogItemEditing__UpdateActions"
+            >
+              <button
+                className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                disabled={true}
+                onClick={[Function]}
+              >
+                Cancel
+              </button>
+              <button
+                className="btn btn-primary btn-sm LogItemEditing__Update"
+                disabled={true}
+                onClick={[Function]}
+              >
+                <span>
+                  Updating...
+                  <i
+                    className="fas fa-circle-notch fa-spin btn-spinner"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>,
+          "className": "card-body",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <TextareaAutosize
+                className="LogItemEditing__Content"
+                onChange={[Function]}
+                onHeightChange={[Function]}
+                placeholder="Editing..."
+                useCacheForDOMMeasurements={false}
+                value="content"
+              />,
+              <div
+                className="flex flex-align-right LogItemEditing__UpdateActions"
+              >
+                <button
+                  className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                  disabled={true}
+                  onClick={[Function]}
+                >
+                  Cancel
+                </button>
+                <button
+                  className="btn btn-primary btn-sm LogItemEditing__Update"
+                  disabled={true}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Updating...
+                    <i
+                      className="fas fa-circle-notch fa-spin btn-spinner"
+                    />
+                  </span>
+                </button>
+              </div>,
+            ],
+            "className": "card-text",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "className": "LogItemEditing__Content",
+                "onChange": [Function],
+                "onHeightChange": [Function],
+                "placeholder": "Editing...",
+                "useCacheForDOMMeasurements": false,
+                "value": "content",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <button
+                    className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
+                    disabled={true}
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>,
+                  <button
+                    className="btn btn-primary btn-sm LogItemEditing__Update"
+                    disabled={true}
+                    onClick={[Function]}
+                  >
+                    <span>
+                      Updating...
+                      <i
+                        className="fas fa-circle-notch fa-spin btn-spinner"
+                      />
+                    </span>
+                  </button>,
+                ],
+                "className": "flex flex-align-right LogItemEditing__UpdateActions",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Cancel",
+                    "className": "btn btn-outline-secondary btn-sm LogItemEditing__Cancel",
+                    "disabled": true,
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <span>
+                      Updating...
+                      <i
+                        className="fas fa-circle-notch fa-spin btn-spinner"
+                      />
+                    </span>,
+                    "className": "btn btn-primary btn-sm LogItemEditing__Update",
+                    "disabled": true,
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Updating...",
+                        <i
+                          className="fas fa-circle-notch fa-spin btn-spinner"
+                        />,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Updating...",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "fas fa-circle-notch fa-spin btn-spinner",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                    ],
+                    "type": "span",
+                  },
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
