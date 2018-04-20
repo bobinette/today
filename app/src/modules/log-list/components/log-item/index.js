@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 
 import moment from 'moment';
+import Tooltip from 'rc-tooltip';
 
 import Markdown from 'components/markdown';
 
@@ -18,10 +19,16 @@ class LogItem extends PureComponent {
           <div className="card-text">
             <div className="flex flex-align-items-center flex-space-between">
               <small className="text-muted flex-1">
-                <em>
-                  {moment(log.get('createdAt')).format('L')}{' '}
-                  {moment(log.get('createdAt')).format('LT')}
-                </em>
+                <Tooltip
+                  placement="top"
+                  mouseEnterDelay={0.3}
+                  overlay={`uuid: ${log.get('uuid')}`}
+                >
+                  <em>
+                    {moment(log.get('createdAt')).format('L')}{' '}
+                    {moment(log.get('createdAt')).format('LT')}
+                  </em>
+                </Tooltip>
               </small>
               <button
                 className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
