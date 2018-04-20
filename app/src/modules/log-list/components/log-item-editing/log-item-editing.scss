@@ -1,0 +1,18 @@
+@import 'src/style/variables.scss';
+
+.LogItemEditing {
+    margin: 1rem 0;
+}
+
+.LogItemEditing__Content {
+    width: 100%;
+    background: $body-bg;
+
+    &:focus {
+        background: $card-bg;
+    }
+}
+
+.LogItemEditing__UpdateActions .btn {
+    margin-left: 0.5rem;
+}

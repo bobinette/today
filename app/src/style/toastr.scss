@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+// To have a higher priority
+.ReduxToastr.redux-toastr .toastr {
+    // I do not care about the icons and close button
+    .rrt-left-container,
+    .rrt-right-container {
+        display: none;
+    }
+
+    .rrt-middle-container {
+        margin-left: 0;
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+
+    &.rrt-success {
+        background-color: theme-color('success');
+    }
+
+    &.rrt-info {
+        background-color: theme-color('info');
+    }
+
+    &.rrt-warning {
+        background-color: theme-color('warning');
+    }
+
+    &.rrt-light {
+        background-color: theme-color('light');
+    }
+
+    &.rrt-error {
+        background-color: theme-color('danger');
+    }
+}

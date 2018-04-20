@@ -2,6 +2,7 @@ import axios from 'axios';
 import qs from 'qs';
 
 import apiUrl from 'utils/apiUrl';
+import { formatError } from 'utils/axios';
 
 export default {
   async fetchLogs(q) {
@@ -14,8 +15,7 @@ export default {
       );
       return { logs: response.data };
     } catch (error) {
-      console.error('error getting logs', error);
-      return { error };
+      return { error: formatError(error) };
     }
   },
 
@@ -26,8 +26,7 @@ export default {
       });
       return { log: response.data };
     } catch (error) {
-      console.log('error updating log', error);
-      return { error };
+      return { error: formatError(error) };
     }
   },
 
@@ -36,8 +35,7 @@ export default {
       await axios.delete(`${apiUrl}/api/logs/${uuid}`);
       return {};
     } catch (error) {
-      console.log('error deleting log', error);
-      return { error };
+      return { error: formatError(error) };
     }
   },
 };

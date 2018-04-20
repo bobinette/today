@@ -1,6 +1,8 @@
 import { delay } from 'redux-saga';
 import { call, put, select, takeEvery, takeLatest } from 'redux-saga/effects';
 
+import { toastr } from 'react-redux-toastr';
+
 import api from './api';
 import * as events from './events';
 import { selectContent } from './selectors';
@@ -10,7 +12,10 @@ export function* createLogSaga() {
 
   const { error } = yield call(api.createLog, { content });
   if (error) {
-    console.error(error);
+    const { message } = error;
+    yield call(toastr.error, '', `Could not create log: ${message}`, {
+      icon: 'toto',
+    });
     return;
   }
 

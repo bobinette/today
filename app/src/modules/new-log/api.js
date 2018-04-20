@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import apiUrl from 'utils/apiUrl';
+import { formatError } from 'utils/axios';
 
 export default {
   async createLog({ title, content }) {
@@ -8,8 +9,7 @@ export default {
       await axios.post(`${apiUrl}/api/logs`, { title, content });
       return {};
     } catch (error) {
-      console.error('error getting logs', error);
-      return { error };
+      return { error: formatError(error) };
     }
   },
 };

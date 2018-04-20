@@ -11,16 +11,3 @@
         color: $gray-600;
     }
 }
-
-.LogItem__Content {
-    width: 100%;
-    background: $body-bg;
-
-    &:focus {
-        background: $card-bg;
-    }
-}
-
-.LogItem__UpdateActions .btn {
-    margin-left: 0.5rem;
-}

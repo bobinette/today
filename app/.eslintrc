@@ -29,5 +29,10 @@ rules:
   function-paren-newline:
     # Does not work well with prettier and max len
     - 0
+  arrow-parens:
+    - 0
   import/prefer-default-export:
+    - 0
+  object-curly-newline:
+    # This one does not work well with prettier either.
     - 0
