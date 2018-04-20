@@ -17,9 +17,7 @@ export function* fetchLogsSaga() {
   const { logs, error } = yield call(api.fetchLogs, q);
   if (error) {
     const { message } = error;
-    yield call(toastr.error, '', `Could not fetch your logs: ${message}`, {
-      icon: 'toto',
-    });
+    yield call(toastr.error, '', `Could not fetch your logs: ${message}`);
     return;
   }
 

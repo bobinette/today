@@ -8,10 +8,11 @@ import { Provider } from 'react-redux';
 
 // Toastr
 import ReduxToastr, { reducer as toastrReducer } from 'react-redux-toastr';
-import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 
 // Init style before importing components
 import 'style/base.scss';
+import 'style/toastr.scss';
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 
 // Import the assets
 import 'assets/logo.png';
@@ -51,9 +52,10 @@ ReactDOM.render(
     <div>
       <App />
       <ReduxToastr
+        className="ReduxToastr"
         newestOnTop
         preventDuplicates
-        timeOut={3000}
+        timeOut={0}
         transitionIn="fadeIn"
         transitionOut="fadeOut"
       />
