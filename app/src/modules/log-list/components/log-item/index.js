@@ -22,7 +22,7 @@ class LogItem extends PureComponent {
                 <Tooltip
                   placement="top"
                   mouseEnterDelay={0.3}
-                  overlay={`uuid: ${log.get('uuid')}`}
+                  overlay={log.get('uuid')}
                 >
                   <em>
                     {moment(log.get('createdAt')).format('L')}{' '}
@@ -43,7 +43,7 @@ class LogItem extends PureComponent {
                 <i className="fas fa-trash-alt" />
               </button>
             </div>
-            <Markdown text={log.get('content')} />
+            <Markdown text={log.get('content')} autoLoadReferences />
           </div>
         </div>
       </div>

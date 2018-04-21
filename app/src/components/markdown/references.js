@@ -1,0 +1,77 @@
+import collapse from 'collapse-white-space';
+import u from 'unist-builder';
+
+function locator(value, fromIndex) {
+  return value.indexOf('{', fromIndex);
+}
+
+const TODAY_REF = /^{today:([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})}$/i;
+
+function plugin(opts) {
+  const options = opts || {};
+
+  const { builder } = options;
+
+  function tokenizer(eat, value, silent) {
+    const opening = value.slice(0, 2);
+
+    if (opening === '\\{') {
+      if (silent) {
+        return true;
+      }
+
+      return eat(opening)({
+        type: 'text',
+        value: '{',
+      });
+    }
+
+    const match = TODAY_REF.exec(value);
+    if (match === null) {
+      return undefined;
+    }
+
+    if (silent) {
+      return true;
+    }
+
+    const substring = match[0];
+    const uuid = match[1].trim();
+
+    const custom = builder !== undefined ? builder(uuid) : undefined;
+
+    const node = custom || {
+      type: 'todayReference',
+      data: {
+        hProperties: {
+          uuid,
+          autoLoad: options.autoLoad,
+        },
+      },
+    };
+
+    return eat(substring)(node);
+  }
+  tokenizer.locator = locator;
+
+  const { Compiler, Parser } = this;
+  const tokenizers = Parser.prototype.inlineTokenizers;
+  const methods = Parser.prototype.inlineMethods;
+
+  tokenizers.todayReference = tokenizer;
+  methods.splice(methods.indexOf('text'), 0, 'todayReference');
+
+  // Stringify for math inline
+  if (Compiler != null) {
+    const { visitors } = Compiler.prototype;
+    visitors.inlineMath = node => `$${node.value}$`;
+  }
+}
+
+export const handler = {
+  todayReference: (h, node) => {
+    return h(node, 'TodayReference');
+  },
+};
+
+export default plugin;
