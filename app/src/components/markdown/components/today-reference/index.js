@@ -24,7 +24,7 @@ export async function fetchLog(uuid) {
   }
 }
 
-class TodayReference extends PureComponent {
+export class TodayReference extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -64,7 +64,7 @@ class TodayReference extends PureComponent {
 
   async load(uuid) {
     this.setState({ log: null, loading: true });
-    const { log, error } = await fetchLog(uuid);
+    const { log, error } = await this.props.fetchLog(uuid);
     this.setState({
       log: fromJS(log),
       error,
@@ -89,7 +89,7 @@ class TodayReference extends PureComponent {
 
     if (error) {
       return (
-        <div className="flex flex-align-items-center">
+        <div className="TodayReference__Error flex flex-align-items-center">
           <i className="fas fa-exclamation-circle TodayReference__Icon" />
           <span>
             Could not load <code>{uuid}</code>:<br />
@@ -146,10 +146,13 @@ class TodayReference extends PureComponent {
 TodayReference.propTypes = {
   autoLoad: PropTypes.bool,
   uuid: PropTypes.string.isRequired,
+  fetchLog: PropTypes.func.isRequired,
 };
 
 TodayReference.defaultProps = {
   autoLoad: false,
 };
 
-export default TodayReference;
+export default props => (
+  <TodayReference {...Object.assign({}, props, { fetchLog })} />
+);

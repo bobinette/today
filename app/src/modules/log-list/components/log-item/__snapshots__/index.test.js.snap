@@ -45,7 +45,7 @@ ShallowWrapper {
                 destroyTooltipOnHide={false}
                 mouseEnterDelay={0.3}
                 mouseLeaveDelay={0.1}
-                overlay="uuid: 1"
+                overlay="1"
                 placement="top"
                 prefixCls="rc-tooltip"
                 trigger={
@@ -79,6 +79,7 @@ ShallowWrapper {
             </button>
           </div>
           <Markdown
+            autoLoadReferences={true}
             className=""
             text="content 1"
           />
@@ -107,7 +108,7 @@ ShallowWrapper {
                 destroyTooltipOnHide={false}
                 mouseEnterDelay={0.3}
                 mouseLeaveDelay={0.1}
-                overlay="uuid: 1"
+                overlay="1"
                 placement="top"
                 prefixCls="rc-tooltip"
                 trigger={
@@ -141,6 +142,7 @@ ShallowWrapper {
             </button>
           </div>
           <Markdown
+            autoLoadReferences={true}
             className=""
             text="content 1"
           />
@@ -166,7 +168,7 @@ ShallowWrapper {
                   destroyTooltipOnHide={false}
                   mouseEnterDelay={0.3}
                   mouseLeaveDelay={0.1}
-                  overlay="uuid: 1"
+                  overlay="1"
                   placement="top"
                   prefixCls="rc-tooltip"
                   trigger={
@@ -200,6 +202,7 @@ ShallowWrapper {
               </button>
             </div>,
             <Markdown
+              autoLoadReferences={true}
               className=""
               text="content 1"
             />,
@@ -223,7 +226,7 @@ ShallowWrapper {
                     destroyTooltipOnHide={false}
                     mouseEnterDelay={0.3}
                     mouseLeaveDelay={0.1}
-                    overlay="uuid: 1"
+                    overlay="1"
                     placement="top"
                     prefixCls="rc-tooltip"
                     trigger={
@@ -271,7 +274,7 @@ ShallowWrapper {
                     destroyTooltipOnHide={false}
                     mouseEnterDelay={0.3}
                     mouseLeaveDelay={0.1}
-                    overlay="uuid: 1"
+                    overlay="1"
                     placement="top"
                     prefixCls="rc-tooltip"
                     trigger={
@@ -304,7 +307,7 @@ ShallowWrapper {
                     "destroyTooltipOnHide": false,
                     "mouseEnterDelay": 0.3,
                     "mouseLeaveDelay": 0.1,
-                    "overlay": "uuid: 1",
+                    "overlay": "1",
                     "placement": "top",
                     "prefixCls": "rc-tooltip",
                     "trigger": Array [
@@ -393,6 +396,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
+              "autoLoadReferences": true,
               "className": "",
               "text": "content 1",
             },
@@ -431,7 +435,7 @@ ShallowWrapper {
                   destroyTooltipOnHide={false}
                   mouseEnterDelay={0.3}
                   mouseLeaveDelay={0.1}
-                  overlay="uuid: 1"
+                  overlay="1"
                   placement="top"
                   prefixCls="rc-tooltip"
                   trigger={
@@ -465,6 +469,7 @@ ShallowWrapper {
               </button>
             </div>
             <Markdown
+              autoLoadReferences={true}
               className=""
               text="content 1"
             />
@@ -493,7 +498,7 @@ ShallowWrapper {
                   destroyTooltipOnHide={false}
                   mouseEnterDelay={0.3}
                   mouseLeaveDelay={0.1}
-                  overlay="uuid: 1"
+                  overlay="1"
                   placement="top"
                   prefixCls="rc-tooltip"
                   trigger={
@@ -527,6 +532,7 @@ ShallowWrapper {
               </button>
             </div>
             <Markdown
+              autoLoadReferences={true}
               className=""
               text="content 1"
             />
@@ -552,7 +558,7 @@ ShallowWrapper {
                     destroyTooltipOnHide={false}
                     mouseEnterDelay={0.3}
                     mouseLeaveDelay={0.1}
-                    overlay="uuid: 1"
+                    overlay="1"
                     placement="top"
                     prefixCls="rc-tooltip"
                     trigger={
@@ -586,6 +592,7 @@ ShallowWrapper {
                 </button>
               </div>,
               <Markdown
+                autoLoadReferences={true}
                 className=""
                 text="content 1"
               />,
@@ -609,7 +616,7 @@ ShallowWrapper {
                       destroyTooltipOnHide={false}
                       mouseEnterDelay={0.3}
                       mouseLeaveDelay={0.1}
-                      overlay="uuid: 1"
+                      overlay="1"
                       placement="top"
                       prefixCls="rc-tooltip"
                       trigger={
@@ -657,7 +664,7 @@ ShallowWrapper {
                       destroyTooltipOnHide={false}
                       mouseEnterDelay={0.3}
                       mouseLeaveDelay={0.1}
-                      overlay="uuid: 1"
+                      overlay="1"
                       placement="top"
                       prefixCls="rc-tooltip"
                       trigger={
@@ -690,7 +697,7 @@ ShallowWrapper {
                       "destroyTooltipOnHide": false,
                       "mouseEnterDelay": 0.3,
                       "mouseLeaveDelay": 0.1,
-                      "overlay": "uuid: 1",
+                      "overlay": "1",
                       "placement": "top",
                       "prefixCls": "rc-tooltip",
                       "trigger": Array [
@@ -779,6 +786,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "autoLoadReferences": true,
                 "className": "",
                 "text": "content 1",
               },

@@ -42,7 +42,7 @@ function plugin(opts) {
       data: {
         hProperties: {
           uuid,
-          autoLoad: options.autoLoad,
+          autoLoad: options.autoLoad || false,
         },
       },
     };
@@ -60,9 +60,7 @@ function plugin(opts) {
 }
 
 export const handler = {
-  todayReference: (h, node) => {
-    return h(node, 'TodayReference');
-  },
+  todayReference: (h, node) => h(node, 'TodayReference'),
 };
 
 export default plugin;
