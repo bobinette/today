@@ -1,11 +1,8 @@
-import collapse from 'collapse-white-space';
-import u from 'unist-builder';
-
 function locator(value, fromIndex) {
   return value.indexOf('{', fromIndex);
 }
 
-const TODAY_REF = /^{today:([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})}$/i;
+const TODAY_REF = /^{today:([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})}/i;
 
 function plugin(opts) {
   const options = opts || {};
@@ -54,18 +51,12 @@ function plugin(opts) {
   }
   tokenizer.locator = locator;
 
-  const { Compiler, Parser } = this;
-  const tokenizers = Parser.prototype.inlineTokenizers;
-  const methods = Parser.prototype.inlineMethods;
+  const { Parser } = this;
+  const tokenizers = Parser.prototype.blockTokenizers;
+  const methods = Parser.prototype.blockMethods;
 
   tokenizers.todayReference = tokenizer;
-  methods.splice(methods.indexOf('text'), 0, 'todayReference');
-
-  // Stringify for math inline
-  if (Compiler != null) {
-    const { visitors } = Compiler.prototype;
-    visitors.inlineMath = node => `$${node.value}$`;
-  }
+  methods.splice(methods.indexOf('paragraph'), 0, 'todayReference');
 }
 
 export const handler = {

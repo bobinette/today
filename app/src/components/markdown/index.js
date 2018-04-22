@@ -11,6 +11,8 @@ import todayReference, { handler } from './references';
 
 import TodayReference from './components/today-reference';
 
+import './markdown.scss';
+
 const createElement = (name, attrs, children) => {
   switch (name) {
     case 'h1':
@@ -52,7 +54,7 @@ export const Markdown = ({ text, className, autoLoadReferences }) => {
       .processSync(text).contents;
     return <div className={`Markdown ${className}`}>{md}</div>;
   } catch (e) {
-    debugger;
+    console.log(e);
     return (
       <div className={`Markdown ${className} Markdown__Error`}>
         Could not parse markdown
