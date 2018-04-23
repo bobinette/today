@@ -5,8 +5,17 @@
 html {
     height: 100%;
 }
+
 body {
     min-height: 100%;
+}
+
+code {
+    padding: 0.2rem 0.4rem;
+    font-size: 90%;
+    color: #bd4147;
+    background-color: #f7f7f9;
+    border-radius: 0.25rem;
 }
 
 // Space below the navbar
@@ -71,7 +80,8 @@ textarea {
     }
 }
 
-.btn.btn-icon {
+.btn.btn-icon,
+.btn.btn-no-padding {
     padding: 0;
 }
 

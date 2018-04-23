@@ -39,11 +39,27 @@ ShallowWrapper {
             <small
               className="text-muted flex-1"
             >
-              <em>
-                04/03/2018
-                 
-                5:55 PM
-              </em>
+              <Tooltip
+                align={Object {}}
+                arrowContent={null}
+                destroyTooltipOnHide={false}
+                mouseEnterDelay={0.3}
+                mouseLeaveDelay={0.1}
+                overlay="1"
+                placement="top"
+                prefixCls="rc-tooltip"
+                trigger={
+                  Array [
+                    "hover",
+                  ]
+                }
+              >
+                <em>
+                  04/03/2018
+                   
+                  5:55 PM
+                </em>
+              </Tooltip>
             </small>
             <button
               className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
@@ -63,6 +79,7 @@ ShallowWrapper {
             </button>
           </div>
           <Markdown
+            autoLoadReferences={true}
             className=""
             text="content 1"
           />
@@ -85,11 +102,27 @@ ShallowWrapper {
             <small
               className="text-muted flex-1"
             >
-              <em>
-                04/03/2018
-                 
-                5:55 PM
-              </em>
+              <Tooltip
+                align={Object {}}
+                arrowContent={null}
+                destroyTooltipOnHide={false}
+                mouseEnterDelay={0.3}
+                mouseLeaveDelay={0.1}
+                overlay="1"
+                placement="top"
+                prefixCls="rc-tooltip"
+                trigger={
+                  Array [
+                    "hover",
+                  ]
+                }
+              >
+                <em>
+                  04/03/2018
+                   
+                  5:55 PM
+                </em>
+              </Tooltip>
             </small>
             <button
               className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
@@ -109,6 +142,7 @@ ShallowWrapper {
             </button>
           </div>
           <Markdown
+            autoLoadReferences={true}
             className=""
             text="content 1"
           />
@@ -128,11 +162,27 @@ ShallowWrapper {
               <small
                 className="text-muted flex-1"
               >
-                <em>
-                  04/03/2018
-                   
-                  5:55 PM
-                </em>
+                <Tooltip
+                  align={Object {}}
+                  arrowContent={null}
+                  destroyTooltipOnHide={false}
+                  mouseEnterDelay={0.3}
+                  mouseLeaveDelay={0.1}
+                  overlay="1"
+                  placement="top"
+                  prefixCls="rc-tooltip"
+                  trigger={
+                    Array [
+                      "hover",
+                    ]
+                  }
+                >
+                  <em>
+                    04/03/2018
+                     
+                    5:55 PM
+                  </em>
+                </Tooltip>
               </small>
               <button
                 className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
@@ -152,6 +202,7 @@ ShallowWrapper {
               </button>
             </div>,
             <Markdown
+              autoLoadReferences={true}
               className=""
               text="content 1"
             />,
@@ -169,11 +220,27 @@ ShallowWrapper {
                 <small
                   className="text-muted flex-1"
                 >
-                  <em>
-                    04/03/2018
-                     
-                    5:55 PM
-                  </em>
+                  <Tooltip
+                    align={Object {}}
+                    arrowContent={null}
+                    destroyTooltipOnHide={false}
+                    mouseEnterDelay={0.3}
+                    mouseLeaveDelay={0.1}
+                    overlay="1"
+                    placement="top"
+                    prefixCls="rc-tooltip"
+                    trigger={
+                      Array [
+                        "hover",
+                      ]
+                    }
+                  >
+                    <em>
+                      04/03/2018
+                       
+                      5:55 PM
+                    </em>
+                  </Tooltip>
                 </small>,
                 <button
                   className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
@@ -201,32 +268,73 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <em>
-                    04/03/2018
-                     
-                    5:55 PM
-                  </em>,
+                  "children": <Tooltip
+                    align={Object {}}
+                    arrowContent={null}
+                    destroyTooltipOnHide={false}
+                    mouseEnterDelay={0.3}
+                    mouseLeaveDelay={0.1}
+                    overlay="1"
+                    placement="top"
+                    prefixCls="rc-tooltip"
+                    trigger={
+                      Array [
+                        "hover",
+                      ]
+                    }
+                  >
+                    <em>
+                      04/03/2018
+                       
+                      5:55 PM
+                    </em>
+                  </Tooltip>,
                   "className": "text-muted flex-1",
                 },
                 "ref": null,
                 "rendered": Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
+                  "nodeType": "class",
                   "props": Object {
-                    "children": Array [
+                    "align": Object {},
+                    "arrowContent": null,
+                    "children": <em>
+                      04/03/2018
+                       
+                      5:55 PM
+                    </em>,
+                    "destroyTooltipOnHide": false,
+                    "mouseEnterDelay": 0.3,
+                    "mouseLeaveDelay": 0.1,
+                    "overlay": "1",
+                    "placement": "top",
+                    "prefixCls": "rc-tooltip",
+                    "trigger": Array [
+                      "hover",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "04/03/2018",
+                        " ",
+                        "5:55 PM",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
                       "04/03/2018",
                       " ",
                       "5:55 PM",
                     ],
+                    "type": "em",
                   },
-                  "ref": null,
-                  "rendered": Array [
-                    "04/03/2018",
-                    " ",
-                    "5:55 PM",
-                  ],
-                  "type": "em",
+                  "type": [Function],
                 },
                 "type": "small",
               },
@@ -288,6 +396,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
+              "autoLoadReferences": true,
               "className": "",
               "text": "content 1",
             },
@@ -320,11 +429,27 @@ ShallowWrapper {
               <small
                 className="text-muted flex-1"
               >
-                <em>
-                  04/03/2018
-                   
-                  5:55 PM
-                </em>
+                <Tooltip
+                  align={Object {}}
+                  arrowContent={null}
+                  destroyTooltipOnHide={false}
+                  mouseEnterDelay={0.3}
+                  mouseLeaveDelay={0.1}
+                  overlay="1"
+                  placement="top"
+                  prefixCls="rc-tooltip"
+                  trigger={
+                    Array [
+                      "hover",
+                    ]
+                  }
+                >
+                  <em>
+                    04/03/2018
+                     
+                    5:55 PM
+                  </em>
+                </Tooltip>
               </small>
               <button
                 className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
@@ -344,6 +469,7 @@ ShallowWrapper {
               </button>
             </div>
             <Markdown
+              autoLoadReferences={true}
               className=""
               text="content 1"
             />
@@ -366,11 +492,27 @@ ShallowWrapper {
               <small
                 className="text-muted flex-1"
               >
-                <em>
-                  04/03/2018
-                   
-                  5:55 PM
-                </em>
+                <Tooltip
+                  align={Object {}}
+                  arrowContent={null}
+                  destroyTooltipOnHide={false}
+                  mouseEnterDelay={0.3}
+                  mouseLeaveDelay={0.1}
+                  overlay="1"
+                  placement="top"
+                  prefixCls="rc-tooltip"
+                  trigger={
+                    Array [
+                      "hover",
+                    ]
+                  }
+                >
+                  <em>
+                    04/03/2018
+                     
+                    5:55 PM
+                  </em>
+                </Tooltip>
               </small>
               <button
                 className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
@@ -390,6 +532,7 @@ ShallowWrapper {
               </button>
             </div>
             <Markdown
+              autoLoadReferences={true}
               className=""
               text="content 1"
             />
@@ -409,11 +552,27 @@ ShallowWrapper {
                 <small
                   className="text-muted flex-1"
                 >
-                  <em>
-                    04/03/2018
-                     
-                    5:55 PM
-                  </em>
+                  <Tooltip
+                    align={Object {}}
+                    arrowContent={null}
+                    destroyTooltipOnHide={false}
+                    mouseEnterDelay={0.3}
+                    mouseLeaveDelay={0.1}
+                    overlay="1"
+                    placement="top"
+                    prefixCls="rc-tooltip"
+                    trigger={
+                      Array [
+                        "hover",
+                      ]
+                    }
+                  >
+                    <em>
+                      04/03/2018
+                       
+                      5:55 PM
+                    </em>
+                  </Tooltip>
                 </small>
                 <button
                   className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
@@ -433,6 +592,7 @@ ShallowWrapper {
                 </button>
               </div>,
               <Markdown
+                autoLoadReferences={true}
                 className=""
                 text="content 1"
               />,
@@ -450,11 +610,27 @@ ShallowWrapper {
                   <small
                     className="text-muted flex-1"
                   >
-                    <em>
-                      04/03/2018
-                       
-                      5:55 PM
-                    </em>
+                    <Tooltip
+                      align={Object {}}
+                      arrowContent={null}
+                      destroyTooltipOnHide={false}
+                      mouseEnterDelay={0.3}
+                      mouseLeaveDelay={0.1}
+                      overlay="1"
+                      placement="top"
+                      prefixCls="rc-tooltip"
+                      trigger={
+                        Array [
+                          "hover",
+                        ]
+                      }
+                    >
+                      <em>
+                        04/03/2018
+                         
+                        5:55 PM
+                      </em>
+                    </Tooltip>
                   </small>,
                   <button
                     className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
@@ -482,32 +658,73 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": <em>
-                      04/03/2018
-                       
-                      5:55 PM
-                    </em>,
+                    "children": <Tooltip
+                      align={Object {}}
+                      arrowContent={null}
+                      destroyTooltipOnHide={false}
+                      mouseEnterDelay={0.3}
+                      mouseLeaveDelay={0.1}
+                      overlay="1"
+                      placement="top"
+                      prefixCls="rc-tooltip"
+                      trigger={
+                        Array [
+                          "hover",
+                        ]
+                      }
+                    >
+                      <em>
+                        04/03/2018
+                         
+                        5:55 PM
+                      </em>
+                    </Tooltip>,
                     "className": "text-muted flex-1",
                   },
                   "ref": null,
                   "rendered": Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "host",
+                    "nodeType": "class",
                     "props": Object {
-                      "children": Array [
+                      "align": Object {},
+                      "arrowContent": null,
+                      "children": <em>
+                        04/03/2018
+                         
+                        5:55 PM
+                      </em>,
+                      "destroyTooltipOnHide": false,
+                      "mouseEnterDelay": 0.3,
+                      "mouseLeaveDelay": 0.1,
+                      "overlay": "1",
+                      "placement": "top",
+                      "prefixCls": "rc-tooltip",
+                      "trigger": Array [
+                        "hover",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "04/03/2018",
+                          " ",
+                          "5:55 PM",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
                         "04/03/2018",
                         " ",
                         "5:55 PM",
                       ],
+                      "type": "em",
                     },
-                    "ref": null,
-                    "rendered": Array [
-                      "04/03/2018",
-                      " ",
-                      "5:55 PM",
-                    ],
-                    "type": "em",
+                    "type": [Function],
                   },
                   "type": "small",
                 },
@@ -569,6 +786,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "autoLoadReferences": true,
                 "className": "",
                 "text": "content 1",
               },
