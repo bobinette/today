@@ -4,12 +4,8 @@ import PropTypes from 'prop-types';
 import remark from 'remark';
 import remarkEmoji from 'remark-emoji';
 import remarkReact from 'remark-react';
-import remarkReactLowlight from 'remark-react-lowlight';
 import githubSanitize from 'hast-util-sanitize/lib/github.json';
 import merge from 'deepmerge';
-
-import js from 'highlight.js/lib/languages/javascript';
-import 'highlight.js/styles/github.css';
 
 import todayReference, { handler } from './references';
 
@@ -50,9 +46,6 @@ export const Markdown = ({ text, className, autoLoadReferences }) => {
       })
       .use(remarkReact, {
         createElement,
-        // remarkReactComponents: {
-        //   code: remarkReactLowlight({ js }),
-        // },
         sanitize,
         toHast: {
           handlers: handler,
