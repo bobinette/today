@@ -26,8 +26,11 @@ func Register(repo Repository, index Index, admins []string, srv *echo.Echo) (*S
 
 	srv.GET("/api/logs/:uuid", handler.get)
 	srv.GET("/api/logs", handler.list)
+	srv.GET("/api/tags", handler.listTags)
 
+	// Admin routes
 	srv.POST("/api/logs/reindex", handler.indexAll)
+	srv.POST("/api/tags/load", handler.loadTags)
 
 	s2 := service
 	return &s2, nil
@@ -63,6 +66,32 @@ func (h *Handler) indexAll(c echo.Context) error {
 	}
 
 	if err := h.service.indexAll(c.Request().Context()); err != nil {
+		return err
+	}
+
+	return c.NoContent(http.StatusOK)
+}
+
+func (h *Handler) listTags(c echo.Context) error {
+	user := c.Request().Header.Get("X-Forwarded-Email")
+
+	q := c.QueryParam("q")
+
+	tags, err := h.service.listTags(c.Request().Context(), user, q)
+	if err != nil {
+		return err
+	}
+
+	return c.JSON(http.StatusOK, tags)
+}
+
+func (h *Handler) loadTags(c echo.Context) error {
+	user := c.Request().Header.Get("X-Forwarded-Email")
+	if !stringIsSlice(user, h.admins) {
+		return c.JSON(http.StatusForbidden, map[string]interface{}{"error": "only admins can reload the tags"})
+	}
+
+	if err := h.service.loadTags(c.Request().Context()); err != nil {
 		return err
 	}
 

@@ -38,8 +38,12 @@ func (r *LogRepository) Save(ctx context.Context, log logs.Log) error {
 		params = []interface{}{log.Content, log.UUID}
 	}
 
-	_, err = r.db.ExecContext(ctx, query, params...)
-	return err
+	if _, err := r.db.ExecContext(ctx, query, params...); err != nil {
+		return err
+	}
+
+	tags := logs.ExtractTags(log)
+	return r.SaveTags(ctx, log.UUID, tags)
 }
 
 func (r *LogRepository) isInsert(ctx context.Context, uuid string) (bool, error) {
@@ -54,6 +58,34 @@ func (r *LogRepository) isInsert(ctx context.Context, uuid string) (bool, error)
 		return false, err
 	}
 	return false, nil
+}
+
+func (r *LogRepository) SaveTags(ctx context.Context, uuid string, tags []string) error {
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return err
+	}
+	defer tx.Rollback()
+
+	if _, err := tx.ExecContext(ctx, `DELETE FROM tags WHERE log_uuid = ?`, uuid); err != nil {
+		return err
+	}
+
+	if len(tags) == 0 {
+		return nil
+	}
+
+	query := fmt.Sprintf(`INSERT INTO tags (log_uuid, tag) VALUES %s`, join("(?, ?)", ",", len(tags)))
+	params := make([]interface{}, 2*len(tags))
+	for i, tag := range tags {
+		params[2*i] = uuid
+		params[2*i+1] = tag
+	}
+	if _, err := tx.ExecContext(ctx, query, params...); err != nil {
+		return err
+	}
+
+	return tx.Commit()
 }
 
 func (r *LogRepository) Delete(ctx context.Context, uuid string) error {
@@ -216,4 +248,45 @@ func (r *LogRepository) list(rows *sql.Rows) ([]logs.Log, error) {
 	}
 
 	return res, nil
+}
+
+func (r *LogRepository) SearchTags(ctx context.Context, user, q string) ([]string, error) {
+	tagCondition := ""
+	if q != "" {
+		tagCondition = fmt.Sprintf(` AND tag LIKE "%%%s%%"`, q)
+	}
+	query := fmt.Sprintf(`
+	SELECT tag, COUNT(*) AS n
+	FROM (
+		SELECT tag
+		FROM tags
+		JOIN logs ON tags.log_uuid = logs.uuid
+		WHERE logs.user = ?%s
+	) user_tags
+	GROUP BY tag
+	ORDER BY n, tag
+`, tagCondition)
+
+	rows, err := r.db.QueryContext(ctx, query, user)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	tags := make([]string, 0)
+	for rows.Next() {
+		var tag string
+		var c int
+		if err := rows.Scan(&tag, &c); err != nil {
+			return nil, err
+		}
+
+		tags = append(tags, tag)
+	}
+
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+
+	return tags, nil
 }

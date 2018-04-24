@@ -72,13 +72,13 @@ func (s *Index) Search(ctx context.Context, params logs.SearchParams) ([]string,
 	}
 	total = int(sr.Total)
 
-	query := andQ(
+	q := andQ(
 		query.NewMatchAllQuery(),
 		s.searchQ(params.Q),
 		searchUUIDs(params.UUIDs),
 	)
 
-	searchRequest := bleve.NewSearchRequest(query)
+	searchRequest := bleve.NewSearchRequest(q)
 	searchRequest.Size = total
 
 	sortBy := []string{"-createdAt"}
@@ -95,34 +95,6 @@ func (s *Index) Search(ctx context.Context, params logs.SearchParams) ([]string,
 	}
 
 	return uuids, nil
-}
-
-func andQ(qs ...query.Query) query.Query {
-	ands := make([]query.Query, 0, len(qs))
-	for _, q := range qs {
-		if q != nil {
-			ands = append(ands, q)
-		}
-	}
-
-	if len(ands) == 0 {
-		return nil
-	}
-	return query.NewConjunctionQuery(ands)
-}
-
-func orQ(qs ...query.Query) query.Query {
-	ors := make([]query.Query, 0, len(qs))
-	for _, q := range qs {
-		if q != nil {
-			ors = append(ors, q)
-		}
-	}
-
-	if len(ors) == 0 {
-		return nil
-	}
-	return query.NewDisjunctionQuery(ors)
 }
 
 func (s *Index) searchQ(queryString string) query.Query {
@@ -165,6 +137,34 @@ func (s *Index) matches(queryString, field string, must bool) query.Query {
 		return query.NewBooleanQuery(nil, nil, conjuncts)
 	}
 	return query.NewConjunctionQuery(conjuncts)
+}
+
+func andQ(qs ...query.Query) query.Query {
+	ands := make([]query.Query, 0, len(qs))
+	for _, q := range qs {
+		if q != nil {
+			ands = append(ands, q)
+		}
+	}
+
+	if len(ands) == 0 {
+		return nil
+	}
+	return query.NewConjunctionQuery(ands)
+}
+
+func orQ(qs ...query.Query) query.Query {
+	ors := make([]query.Query, 0, len(qs))
+	for _, q := range qs {
+		if q != nil {
+			ors = append(ors, q)
+		}
+	}
+
+	if len(ors) == 0 {
+		return nil
+	}
+	return query.NewDisjunctionQuery(ors)
 }
 
 func searchUUIDs(uuids []string) query.Query {

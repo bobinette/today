@@ -59,6 +59,26 @@ func (s *Service) Delete(ctx context.Context, uuid string) error {
 	return s.index.Delete(ctx, uuid)
 }
 
+func (s *Service) listTags(ctx context.Context, user, q string) ([]string, error) {
+	return s.repo.SearchTags(ctx, user, q)
+}
+
+func (s *Service) loadTags(ctx context.Context) error {
+	logs, err := s.repo.All(ctx)
+	if err != nil {
+		return err
+	}
+
+	for _, log := range logs {
+		tags := ExtractTags(log)
+		if err := s.repo.SaveTags(ctx, log.UUID, tags); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (s *Service) indexAll(ctx context.Context) error {
 	logs, err := s.repo.All(ctx)
 	if err != nil {

@@ -16,10 +16,10 @@ func TestLogIndex(t *testing.T, index logs.Index) {
 	secondHalf := kickOff.Add((46 + 15) * time.Minute)
 	indexedLogs := []logs.Log{
 		{UUID: "1", Content: "the game starts", CreatedAt: kickOff},
-		{UUID: "2", Content: "Zidane scores his first goal", CreatedAt: kickOff.Add(27 * time.Minute)},
+		{UUID: "2", Content: "Zidane scores his first #goal", CreatedAt: kickOff.Add(27 * time.Minute)},
 		{UUID: "3", Content: "Zidane scores again", CreatedAt: kickOff.Add((45 + 1) * time.Minute)},
 		{UUID: "4", Content: "Desailly gets sent off", CreatedAt: secondHalf.Add(22 * time.Minute)},
-		{UUID: "5", Content: "Petit scores, we are the champions", CreatedAt: secondHalf.Add((45 + 3) * time.Minute)},
+		{UUID: "5", Content: "Petit scores, we are the #champions #goal", CreatedAt: secondHalf.Add((45 + 3) * time.Minute)},
 		{UUID: "6", Content: "Someone else scores ? No.", CreatedAt: secondHalf.Add((45 + 5) * time.Minute)},
 	}
 
@@ -76,4 +76,32 @@ func TestLogIndex(t *testing.T, index logs.Index) {
 		assert.NoError(t, err, name)
 		assert.Equal(t, tc.expected, uuids, name)
 	}
+
+	// tagCases := map[string]struct {
+	// 	q        string
+	// 	uuids    []string
+	// 	expected []string
+	// }{
+	// 	"all": {
+	// 		q:        "",
+	// 		uuids:    allUUIDs,
+	// 		expected: []string{"#goal", "#champions"},
+	// 	},
+	// 	"#champions": {
+	// 		q:        "#champions",
+	// 		uuids:    allUUIDs,
+	// 		expected: []string{"#champions"},
+	// 	},
+	// 	"champ": {
+	// 		q:        "champ",
+	// 		uuids:    allUUIDs,
+	// 		expected: []string{"#champions"},
+	// 	},
+	// }
+	// for name, tc := range tagCases {
+	// 	tags, err := index.SearchTags(ctx, tc.uuids, tc.q)
+
+	// 	assert.NoError(t, err, name)
+	// 	assert.Equal(t, tc.expected, tags, name)
+	// }
 }

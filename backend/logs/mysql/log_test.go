@@ -55,11 +55,14 @@ func TestLogRepository(t *testing.T) {
 
 	ctx := context.Background()
 	defer func() {
-		// db.ExecContext(ctx, "TRUNCATE logs")
+		// db.ExecContext(ctx, "DELETE FROM tags")
+		// db.ExecContext(ctx, "DELETE FROM logs")
 		db.Close()
 	}()
 
-	_, err = db.ExecContext(ctx, "TRUNCATE logs")
+	_, err = db.ExecContext(ctx, "DELETE FROM tags")
+	require.NoError(t, err)
+	_, err = db.ExecContext(ctx, "DELETE FROM logs")
 	require.NoError(t, err)
 
 	testutil.TestLogRepository(t, NewLogRepository(db))
