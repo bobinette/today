@@ -1,7 +1,13 @@
+@import 'src/style/variables.scss';
+
 p:last-child {
     margin-bottom: 0;
 }
 
 pre code {
     display: block !important;
+}
+
+.TodayTag {
+    color: theme-color('primary');
 }

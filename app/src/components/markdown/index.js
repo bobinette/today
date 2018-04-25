@@ -8,6 +8,7 @@ import githubSanitize from 'hast-util-sanitize/lib/github.json';
 import merge from 'deepmerge';
 
 import todayReference, { handler } from './references';
+import tag from './tags';
 
 import TodayReference from './components/today-reference';
 
@@ -35,8 +36,9 @@ export const Markdown = ({ text, className, autoLoadReferences }) => {
     attributes: {
       '*': ['className'],
       TodayReference: ['uuid', 'autoLoad'],
+      span: ['className'],
     },
-    tagNames: ['TodayReference'],
+    tagNames: ['TodayReference', 'span'],
   });
   try {
     const md = remark()
@@ -44,6 +46,7 @@ export const Markdown = ({ text, className, autoLoadReferences }) => {
       .use(todayReference, {
         autoLoad: autoLoadReferences,
       })
+      .use(tag)
       .use(remarkReact, {
         createElement,
         sanitize,

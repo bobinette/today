@@ -27,7 +27,7 @@ export function* detectTitleSaga() {
   yield call(delay, 500);
 
   const content = yield select(selectContent);
-  const hasTitle = /^#{1,6}[^#\n]+$/gm.test(content);
+  const hasTitle = /^#{1,6} [^#\n]+$/gm.test(content);
 
   yield put({
     type: events.TITLE_DETECTED,
