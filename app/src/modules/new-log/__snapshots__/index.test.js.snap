@@ -27,13 +27,45 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <TextareaAutosize
-          className="NewLogInput__Content"
-          onChange={[Function]}
-          onHeightChange={[Function]}
-          placeholder="Tell me all about your day..."
-          useCacheForDOMMeasurements={false}
-          value="Test"
+        <Autosuggest
+          alwaysRenderSuggestions={true}
+          focusInputOnSuggestionClick={true}
+          getSuggestionValue={[Function]}
+          highlightFirstSuggestion={false}
+          id="1"
+          inputProps={
+            Object {
+              "onChange": [Function],
+              "placeholder": "Tell me about your day...",
+              "value": "Test",
+            }
+          }
+          multiSection={false}
+          onSuggestionsClearRequested={[Function]}
+          onSuggestionsFetchRequested={[Function]}
+          renderInputComponent={[Function]}
+          renderSuggestion={[Function]}
+          renderSuggestionsContainer={[Function]}
+          shouldRenderSuggestions={[Function]}
+          suggestions={Array []}
+          theme={
+            Object {
+              "container": "react-autosuggest__container",
+              "containerOpen": "react-autosuggest__container--open",
+              "input": "react-autosuggest__input",
+              "inputFocused": "react-autosuggest__input--focused",
+              "inputOpen": "react-autosuggest__input--open",
+              "sectionContainer": "react-autosuggest__section-container",
+              "sectionContainerFirst": "react-autosuggest__section-container--first",
+              "sectionTitle": "react-autosuggest__section-title",
+              "suggestion": "react-autosuggest__suggestion",
+              "suggestionFirst": "react-autosuggest__suggestion--first",
+              "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+              "suggestionsContainer": "react-autosuggest__suggestions-container",
+              "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+              "suggestionsList": "react-autosuggest__suggestions-list",
+            }
+          }
         />,
         <div
           className="flex flex-space-between flex-align-items-center"
@@ -65,12 +97,40 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "className": "NewLogInput__Content",
-          "onChange": [Function],
-          "onHeightChange": [Function],
-          "placeholder": "Tell me all about your day...",
-          "useCacheForDOMMeasurements": false,
-          "value": "Test",
+          "alwaysRenderSuggestions": true,
+          "focusInputOnSuggestionClick": true,
+          "getSuggestionValue": [Function],
+          "highlightFirstSuggestion": false,
+          "id": "1",
+          "inputProps": Object {
+            "onChange": [Function],
+            "placeholder": "Tell me about your day...",
+            "value": "Test",
+          },
+          "multiSection": false,
+          "onSuggestionsClearRequested": [Function],
+          "onSuggestionsFetchRequested": [Function],
+          "renderInputComponent": [Function],
+          "renderSuggestion": [Function],
+          "renderSuggestionsContainer": [Function],
+          "shouldRenderSuggestions": [Function],
+          "suggestions": Array [],
+          "theme": Object {
+            "container": "react-autosuggest__container",
+            "containerOpen": "react-autosuggest__container--open",
+            "input": "react-autosuggest__input",
+            "inputFocused": "react-autosuggest__input--focused",
+            "inputOpen": "react-autosuggest__input--open",
+            "sectionContainer": "react-autosuggest__section-container",
+            "sectionContainerFirst": "react-autosuggest__section-container--first",
+            "sectionTitle": "react-autosuggest__section-title",
+            "suggestion": "react-autosuggest__suggestion",
+            "suggestionFirst": "react-autosuggest__suggestion--first",
+            "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+            "suggestionsContainer": "react-autosuggest__suggestions-container",
+            "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+            "suggestionsList": "react-autosuggest__suggestions-list",
+          },
         },
         "ref": null,
         "rendered": null,
@@ -164,13 +224,45 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <TextareaAutosize
-            className="NewLogInput__Content"
-            onChange={[Function]}
-            onHeightChange={[Function]}
-            placeholder="Tell me all about your day..."
-            useCacheForDOMMeasurements={false}
-            value="Test"
+          <Autosuggest
+            alwaysRenderSuggestions={true}
+            focusInputOnSuggestionClick={true}
+            getSuggestionValue={[Function]}
+            highlightFirstSuggestion={false}
+            id="1"
+            inputProps={
+              Object {
+                "onChange": [Function],
+                "placeholder": "Tell me about your day...",
+                "value": "Test",
+              }
+            }
+            multiSection={false}
+            onSuggestionsClearRequested={[Function]}
+            onSuggestionsFetchRequested={[Function]}
+            renderInputComponent={[Function]}
+            renderSuggestion={[Function]}
+            renderSuggestionsContainer={[Function]}
+            shouldRenderSuggestions={[Function]}
+            suggestions={Array []}
+            theme={
+              Object {
+                "container": "react-autosuggest__container",
+                "containerOpen": "react-autosuggest__container--open",
+                "input": "react-autosuggest__input",
+                "inputFocused": "react-autosuggest__input--focused",
+                "inputOpen": "react-autosuggest__input--open",
+                "sectionContainer": "react-autosuggest__section-container",
+                "sectionContainerFirst": "react-autosuggest__section-container--first",
+                "sectionTitle": "react-autosuggest__section-title",
+                "suggestion": "react-autosuggest__suggestion",
+                "suggestionFirst": "react-autosuggest__suggestion--first",
+                "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+                "suggestionsContainer": "react-autosuggest__suggestions-container",
+                "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+                "suggestionsList": "react-autosuggest__suggestions-list",
+              }
+            }
           />,
           <div
             className="flex flex-space-between flex-align-items-center"
@@ -202,12 +294,40 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "className": "NewLogInput__Content",
-            "onChange": [Function],
-            "onHeightChange": [Function],
-            "placeholder": "Tell me all about your day...",
-            "useCacheForDOMMeasurements": false,
-            "value": "Test",
+            "alwaysRenderSuggestions": true,
+            "focusInputOnSuggestionClick": true,
+            "getSuggestionValue": [Function],
+            "highlightFirstSuggestion": false,
+            "id": "1",
+            "inputProps": Object {
+              "onChange": [Function],
+              "placeholder": "Tell me about your day...",
+              "value": "Test",
+            },
+            "multiSection": false,
+            "onSuggestionsClearRequested": [Function],
+            "onSuggestionsFetchRequested": [Function],
+            "renderInputComponent": [Function],
+            "renderSuggestion": [Function],
+            "renderSuggestionsContainer": [Function],
+            "shouldRenderSuggestions": [Function],
+            "suggestions": Array [],
+            "theme": Object {
+              "container": "react-autosuggest__container",
+              "containerOpen": "react-autosuggest__container--open",
+              "input": "react-autosuggest__input",
+              "inputFocused": "react-autosuggest__input--focused",
+              "inputOpen": "react-autosuggest__input--open",
+              "sectionContainer": "react-autosuggest__section-container",
+              "sectionContainerFirst": "react-autosuggest__section-container--first",
+              "sectionTitle": "react-autosuggest__section-title",
+              "suggestion": "react-autosuggest__suggestion",
+              "suggestionFirst": "react-autosuggest__suggestion--first",
+              "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+              "suggestionsContainer": "react-autosuggest__suggestions-container",
+              "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+              "suggestionsList": "react-autosuggest__suggestions-list",
+            },
           },
           "ref": null,
           "rendered": null,
@@ -332,13 +452,45 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <TextareaAutosize
-          className="NewLogInput__Content"
-          onChange={[Function]}
-          onHeightChange={[Function]}
-          placeholder="Tell me all about your day..."
-          useCacheForDOMMeasurements={false}
-          value="Test"
+        <Autosuggest
+          alwaysRenderSuggestions={true}
+          focusInputOnSuggestionClick={true}
+          getSuggestionValue={[Function]}
+          highlightFirstSuggestion={false}
+          id="1"
+          inputProps={
+            Object {
+              "onChange": [Function],
+              "placeholder": "Tell me about your day...",
+              "value": "Test",
+            }
+          }
+          multiSection={false}
+          onSuggestionsClearRequested={[Function]}
+          onSuggestionsFetchRequested={[Function]}
+          renderInputComponent={[Function]}
+          renderSuggestion={[Function]}
+          renderSuggestionsContainer={[Function]}
+          shouldRenderSuggestions={[Function]}
+          suggestions={Array []}
+          theme={
+            Object {
+              "container": "react-autosuggest__container",
+              "containerOpen": "react-autosuggest__container--open",
+              "input": "react-autosuggest__input",
+              "inputFocused": "react-autosuggest__input--focused",
+              "inputOpen": "react-autosuggest__input--open",
+              "sectionContainer": "react-autosuggest__section-container",
+              "sectionContainerFirst": "react-autosuggest__section-container--first",
+              "sectionTitle": "react-autosuggest__section-title",
+              "suggestion": "react-autosuggest__suggestion",
+              "suggestionFirst": "react-autosuggest__suggestion--first",
+              "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+              "suggestionsContainer": "react-autosuggest__suggestions-container",
+              "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+              "suggestionsList": "react-autosuggest__suggestions-list",
+            }
+          }
         />,
         <div
           className="flex flex-space-between flex-align-items-center"
@@ -370,12 +522,40 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "className": "NewLogInput__Content",
-          "onChange": [Function],
-          "onHeightChange": [Function],
-          "placeholder": "Tell me all about your day...",
-          "useCacheForDOMMeasurements": false,
-          "value": "Test",
+          "alwaysRenderSuggestions": true,
+          "focusInputOnSuggestionClick": true,
+          "getSuggestionValue": [Function],
+          "highlightFirstSuggestion": false,
+          "id": "1",
+          "inputProps": Object {
+            "onChange": [Function],
+            "placeholder": "Tell me about your day...",
+            "value": "Test",
+          },
+          "multiSection": false,
+          "onSuggestionsClearRequested": [Function],
+          "onSuggestionsFetchRequested": [Function],
+          "renderInputComponent": [Function],
+          "renderSuggestion": [Function],
+          "renderSuggestionsContainer": [Function],
+          "shouldRenderSuggestions": [Function],
+          "suggestions": Array [],
+          "theme": Object {
+            "container": "react-autosuggest__container",
+            "containerOpen": "react-autosuggest__container--open",
+            "input": "react-autosuggest__input",
+            "inputFocused": "react-autosuggest__input--focused",
+            "inputOpen": "react-autosuggest__input--open",
+            "sectionContainer": "react-autosuggest__section-container",
+            "sectionContainerFirst": "react-autosuggest__section-container--first",
+            "sectionTitle": "react-autosuggest__section-title",
+            "suggestion": "react-autosuggest__suggestion",
+            "suggestionFirst": "react-autosuggest__suggestion--first",
+            "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+            "suggestionsContainer": "react-autosuggest__suggestions-container",
+            "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+            "suggestionsList": "react-autosuggest__suggestions-list",
+          },
         },
         "ref": null,
         "rendered": null,
@@ -469,13 +649,45 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <TextareaAutosize
-            className="NewLogInput__Content"
-            onChange={[Function]}
-            onHeightChange={[Function]}
-            placeholder="Tell me all about your day..."
-            useCacheForDOMMeasurements={false}
-            value="Test"
+          <Autosuggest
+            alwaysRenderSuggestions={true}
+            focusInputOnSuggestionClick={true}
+            getSuggestionValue={[Function]}
+            highlightFirstSuggestion={false}
+            id="1"
+            inputProps={
+              Object {
+                "onChange": [Function],
+                "placeholder": "Tell me about your day...",
+                "value": "Test",
+              }
+            }
+            multiSection={false}
+            onSuggestionsClearRequested={[Function]}
+            onSuggestionsFetchRequested={[Function]}
+            renderInputComponent={[Function]}
+            renderSuggestion={[Function]}
+            renderSuggestionsContainer={[Function]}
+            shouldRenderSuggestions={[Function]}
+            suggestions={Array []}
+            theme={
+              Object {
+                "container": "react-autosuggest__container",
+                "containerOpen": "react-autosuggest__container--open",
+                "input": "react-autosuggest__input",
+                "inputFocused": "react-autosuggest__input--focused",
+                "inputOpen": "react-autosuggest__input--open",
+                "sectionContainer": "react-autosuggest__section-container",
+                "sectionContainerFirst": "react-autosuggest__section-container--first",
+                "sectionTitle": "react-autosuggest__section-title",
+                "suggestion": "react-autosuggest__suggestion",
+                "suggestionFirst": "react-autosuggest__suggestion--first",
+                "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+                "suggestionsContainer": "react-autosuggest__suggestions-container",
+                "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+                "suggestionsList": "react-autosuggest__suggestions-list",
+              }
+            }
           />,
           <div
             className="flex flex-space-between flex-align-items-center"
@@ -507,12 +719,40 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "className": "NewLogInput__Content",
-            "onChange": [Function],
-            "onHeightChange": [Function],
-            "placeholder": "Tell me all about your day...",
-            "useCacheForDOMMeasurements": false,
-            "value": "Test",
+            "alwaysRenderSuggestions": true,
+            "focusInputOnSuggestionClick": true,
+            "getSuggestionValue": [Function],
+            "highlightFirstSuggestion": false,
+            "id": "1",
+            "inputProps": Object {
+              "onChange": [Function],
+              "placeholder": "Tell me about your day...",
+              "value": "Test",
+            },
+            "multiSection": false,
+            "onSuggestionsClearRequested": [Function],
+            "onSuggestionsFetchRequested": [Function],
+            "renderInputComponent": [Function],
+            "renderSuggestion": [Function],
+            "renderSuggestionsContainer": [Function],
+            "shouldRenderSuggestions": [Function],
+            "suggestions": Array [],
+            "theme": Object {
+              "container": "react-autosuggest__container",
+              "containerOpen": "react-autosuggest__container--open",
+              "input": "react-autosuggest__input",
+              "inputFocused": "react-autosuggest__input--focused",
+              "inputOpen": "react-autosuggest__input--open",
+              "sectionContainer": "react-autosuggest__section-container",
+              "sectionContainerFirst": "react-autosuggest__section-container--first",
+              "sectionTitle": "react-autosuggest__section-title",
+              "suggestion": "react-autosuggest__suggestion",
+              "suggestionFirst": "react-autosuggest__suggestion--first",
+              "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+              "suggestionsContainer": "react-autosuggest__suggestions-container",
+              "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+              "suggestionsList": "react-autosuggest__suggestions-list",
+            },
           },
           "ref": null,
           "rendered": null,

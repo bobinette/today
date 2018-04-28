@@ -3,10 +3,12 @@
 .NewLogInput {
     width: 100%;
     padding: 0.3rem;
-    background: white;
+    background: $card-bg;
 
     border: 1px solid $card-border-color;
     border-radius: $card-border-radius;
+
+    position: relative;
 }
 
 .NewLogInput__Content {
@@ -15,4 +17,31 @@
 
 .NewLogInput__TitleDetectedIcon {
     margin: 0 0.3rem;
+}
+
+.TodayAutoComplete {
+    background: $card-bg;
+    border: 1px solid $card-border-color;
+    border-radius: $card-border-radius;
+    z-index: 1000;
+
+    ul {
+        margin-bottom: 0;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    li:not(:last-child) {
+        border-bottom: 1px solid $card-border-color;
+    }
+
+    .TodayAutoComplete__Item {
+        padding: 0.4rem;
+        cursor: pointer;
+
+        &--selected {
+            background: theme-color('primary');
+            color: $card-bg;
+        }
+    }
 }

@@ -37,8 +37,8 @@ test('detect title saga - false', () => {
   expect(gen.next().value).toEqual(select(selectContent));
   expect(
     gen.next(`
-No title here
-No title should be detected
+#noTitle
+No title should be detected: space missing
   `).value,
   ).toEqual(put({ type: events.TITLE_DETECTED, hasTitle: false }));
   expect(gen.next().done).toBe(true);
