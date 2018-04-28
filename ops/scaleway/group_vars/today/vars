@@ -7,6 +7,7 @@ mysql:
   user: today
   password: today
   host: "127.0.0.1"
+  db: today
 
 github:
   username: bobinette

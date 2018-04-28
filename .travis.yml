@@ -80,6 +80,12 @@ before_deploy:
     npm run build &&
     cd /home/travis/build/bobinette/today
 
+  # Add the shmig migration files to the archive
+  - >
+    cd /home/travis/gopath/src/github.com/bobinette/today/backend &&
+    cp -r mysql/migrations ../bin/migrations &&
+    cd /home/travis/build/bobinette/today
+
   # bundle it all
   - cd bin
   - tar -zcvf ../today-linux.tar.gz .

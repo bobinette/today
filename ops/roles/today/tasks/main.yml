@@ -144,6 +144,33 @@
     group: "{{ user }}"
     mode: 0644
 
+# ------------------------------------------------
+# SHMIG
+
+- name: Copy shmig
+  copy:
+    src: shmig
+    dest: /var/www/today/shmig
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0744
+
+- name: Copy the shmig configuration
+  template:
+    src: shmig.conf.j2
+    dest: /var/www/today/shmig.conf
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644
+
+- name: Run the migration
+  shell: /var/www/today/shmig up
+  args:
+    chdir: /var/www/today
+
+# end: SHMIG
+# ------------------------------------------------
+
 - name: Restart the services
   service:
     name: "{{ item }}"
