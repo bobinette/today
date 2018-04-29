@@ -81,8 +81,8 @@ ShallowWrapper {
                   "content": "content 1",
                 }
               }
-              onDelete={[Function]}
-              onEdit={[Function]}
+              onDelete={[MockFunction]}
+              onEdit={[MockFunction]}
             />
           </div>,
           <div>
@@ -93,8 +93,8 @@ ShallowWrapper {
                   "content": "content 2",
                 }
               }
-              onDelete={[Function]}
-              onEdit={[Function]}
+              onDelete={[MockFunction]}
+              onEdit={[MockFunction]}
             />
           </div>,
           <div>
@@ -105,8 +105,8 @@ ShallowWrapper {
                   "content": "content 3",
                 }
               }
-              onDelete={[Function]}
-              onEdit={[Function]}
+              onDelete={[MockFunction]}
+              onEdit={[MockFunction]}
             />
           </div>,
         ],
@@ -149,22 +149,22 @@ ShallowWrapper {
                 "content": "content 1",
               }
             }
-            onDelete={[Function]}
-            onEdit={[Function]}
+            onDelete={[MockFunction]}
+            onEdit={[MockFunction]}
           />,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "1",
               "content": "content 1",
             },
-            "onDelete": [Function],
-            "onEdit": [Function],
+            "onDelete": [MockFunction],
+            "onEdit": [MockFunction],
           },
           "ref": null,
           "rendered": null,
@@ -184,22 +184,22 @@ ShallowWrapper {
                 "content": "content 2",
               }
             }
-            onDelete={[Function]}
-            onEdit={[Function]}
+            onDelete={[MockFunction]}
+            onEdit={[MockFunction]}
           />,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "2",
               "content": "content 2",
             },
-            "onDelete": [Function],
-            "onEdit": [Function],
+            "onDelete": [MockFunction],
+            "onEdit": [MockFunction],
           },
           "ref": null,
           "rendered": null,
@@ -219,22 +219,22 @@ ShallowWrapper {
                 "content": "content 3",
               }
             }
-            onDelete={[Function]}
-            onEdit={[Function]}
+            onDelete={[MockFunction]}
+            onEdit={[MockFunction]}
           />,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "3",
               "content": "content 3",
             },
-            "onDelete": [Function],
-            "onEdit": [Function],
+            "onDelete": [MockFunction],
+            "onEdit": [MockFunction],
           },
           "ref": null,
           "rendered": null,
@@ -267,8 +267,8 @@ ShallowWrapper {
                     "content": "content 1",
                   }
                 }
-                onDelete={[Function]}
-                onEdit={[Function]}
+                onDelete={[MockFunction]}
+                onEdit={[MockFunction]}
               />
             </div>,
             <div>
@@ -279,8 +279,8 @@ ShallowWrapper {
                     "content": "content 2",
                   }
                 }
-                onDelete={[Function]}
-                onEdit={[Function]}
+                onDelete={[MockFunction]}
+                onEdit={[MockFunction]}
               />
             </div>,
             <div>
@@ -291,8 +291,8 @@ ShallowWrapper {
                     "content": "content 3",
                   }
                 }
-                onDelete={[Function]}
-                onEdit={[Function]}
+                onDelete={[MockFunction]}
+                onEdit={[MockFunction]}
               />
             </div>,
           ],
@@ -335,22 +335,22 @@ ShallowWrapper {
                   "content": "content 1",
                 }
               }
-              onDelete={[Function]}
-              onEdit={[Function]}
+              onDelete={[MockFunction]}
+              onEdit={[MockFunction]}
             />,
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "1",
                 "content": "content 1",
               },
-              "onDelete": [Function],
-              "onEdit": [Function],
+              "onDelete": [MockFunction],
+              "onEdit": [MockFunction],
             },
             "ref": null,
             "rendered": null,
@@ -370,22 +370,22 @@ ShallowWrapper {
                   "content": "content 2",
                 }
               }
-              onDelete={[Function]}
-              onEdit={[Function]}
+              onDelete={[MockFunction]}
+              onEdit={[MockFunction]}
             />,
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "2",
                 "content": "content 2",
               },
-              "onDelete": [Function],
-              "onEdit": [Function],
+              "onDelete": [MockFunction],
+              "onEdit": [MockFunction],
             },
             "ref": null,
             "rendered": null,
@@ -405,22 +405,22 @@ ShallowWrapper {
                   "content": "content 3",
                 }
               }
-              onDelete={[Function]}
-              onEdit={[Function]}
+              onDelete={[MockFunction]}
+              onEdit={[MockFunction]}
             />,
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "3",
                 "content": "content 3",
               },
-              "onDelete": [Function],
-              "onEdit": [Function],
+              "onDelete": [MockFunction],
+              "onEdit": [MockFunction],
             },
             "ref": null,
             "rendered": null,
@@ -525,17 +525,18 @@ ShallowWrapper {
                   "content": "content 1",
                 }
               }
-              onDelete={[Function]}
-              onEdit={[Function]}
+              onDelete={[MockFunction]}
+              onEdit={[MockFunction]}
             />
           </div>,
           <div>
             <LogItemEditing
               content="editing"
-              onCancel={[Function]}
-              onEditContent={[Function]}
-              onUpdate={[Function]}
+              onCancel={[MockFunction]}
+              onEditContent={[MockFunction]}
+              onUpdate={[MockFunction]}
               updating={false}
+              uuid="2"
             />
           </div>,
           <div>
@@ -546,8 +547,8 @@ ShallowWrapper {
                   "content": "content 3",
                 }
               }
-              onDelete={[Function]}
-              onEdit={[Function]}
+              onDelete={[MockFunction]}
+              onEdit={[MockFunction]}
             />
           </div>,
         ],
@@ -590,22 +591,22 @@ ShallowWrapper {
                 "content": "content 1",
               }
             }
-            onDelete={[Function]}
-            onEdit={[Function]}
+            onDelete={[MockFunction]}
+            onEdit={[MockFunction]}
           />,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "1",
               "content": "content 1",
             },
-            "onDelete": [Function],
-            "onEdit": [Function],
+            "onDelete": [MockFunction],
+            "onEdit": [MockFunction],
           },
           "ref": null,
           "rendered": null,
@@ -620,10 +621,11 @@ ShallowWrapper {
         "props": Object {
           "children": <LogItemEditing
             content="editing"
-            onCancel={[Function]}
-            onEditContent={[Function]}
-            onUpdate={[Function]}
+            onCancel={[MockFunction]}
+            onEditContent={[MockFunction]}
+            onUpdate={[MockFunction]}
             updating={false}
+            uuid="2"
           />,
         },
         "ref": null,
@@ -633,10 +635,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "content": "editing",
-            "onCancel": [Function],
-            "onEditContent": [Function],
-            "onUpdate": [Function],
+            "onCancel": [MockFunction],
+            "onEditContent": [MockFunction],
+            "onUpdate": [MockFunction],
             "updating": false,
+            "uuid": "2",
           },
           "ref": null,
           "rendered": null,
@@ -656,22 +659,22 @@ ShallowWrapper {
                 "content": "content 3",
               }
             }
-            onDelete={[Function]}
-            onEdit={[Function]}
+            onDelete={[MockFunction]}
+            onEdit={[MockFunction]}
           />,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "3",
               "content": "content 3",
             },
-            "onDelete": [Function],
-            "onEdit": [Function],
+            "onDelete": [MockFunction],
+            "onEdit": [MockFunction],
           },
           "ref": null,
           "rendered": null,
@@ -704,17 +707,18 @@ ShallowWrapper {
                     "content": "content 1",
                   }
                 }
-                onDelete={[Function]}
-                onEdit={[Function]}
+                onDelete={[MockFunction]}
+                onEdit={[MockFunction]}
               />
             </div>,
             <div>
               <LogItemEditing
                 content="editing"
-                onCancel={[Function]}
-                onEditContent={[Function]}
-                onUpdate={[Function]}
+                onCancel={[MockFunction]}
+                onEditContent={[MockFunction]}
+                onUpdate={[MockFunction]}
                 updating={false}
+                uuid="2"
               />
             </div>,
             <div>
@@ -725,8 +729,8 @@ ShallowWrapper {
                     "content": "content 3",
                   }
                 }
-                onDelete={[Function]}
-                onEdit={[Function]}
+                onDelete={[MockFunction]}
+                onEdit={[MockFunction]}
               />
             </div>,
           ],
@@ -769,22 +773,22 @@ ShallowWrapper {
                   "content": "content 1",
                 }
               }
-              onDelete={[Function]}
-              onEdit={[Function]}
+              onDelete={[MockFunction]}
+              onEdit={[MockFunction]}
             />,
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "1",
                 "content": "content 1",
               },
-              "onDelete": [Function],
-              "onEdit": [Function],
+              "onDelete": [MockFunction],
+              "onEdit": [MockFunction],
             },
             "ref": null,
             "rendered": null,
@@ -799,10 +803,11 @@ ShallowWrapper {
           "props": Object {
             "children": <LogItemEditing
               content="editing"
-              onCancel={[Function]}
-              onEditContent={[Function]}
-              onUpdate={[Function]}
+              onCancel={[MockFunction]}
+              onEditContent={[MockFunction]}
+              onUpdate={[MockFunction]}
               updating={false}
+              uuid="2"
             />,
           },
           "ref": null,
@@ -812,10 +817,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "content": "editing",
-              "onCancel": [Function],
-              "onEditContent": [Function],
-              "onUpdate": [Function],
+              "onCancel": [MockFunction],
+              "onEditContent": [MockFunction],
+              "onUpdate": [MockFunction],
               "updating": false,
+              "uuid": "2",
             },
             "ref": null,
             "rendered": null,
@@ -835,22 +841,22 @@ ShallowWrapper {
                   "content": "content 3",
                 }
               }
-              onDelete={[Function]}
-              onEdit={[Function]}
+              onDelete={[MockFunction]}
+              onEdit={[MockFunction]}
             />,
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "3",
                 "content": "content 3",
               },
-              "onDelete": [Function],
-              "onEdit": [Function],
+              "onDelete": [MockFunction],
+              "onEdit": [MockFunction],
             },
             "ref": null,
             "rendered": null,

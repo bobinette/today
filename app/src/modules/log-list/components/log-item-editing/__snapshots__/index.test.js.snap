@@ -10,6 +10,7 @@ ShallowWrapper {
     onEditContent={[MockFunction]}
     onUpdate={[MockFunction]}
     updating={false}
+    uuid="1"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -432,6 +433,7 @@ ShallowWrapper {
     onEditContent={[MockFunction]}
     onUpdate={[MockFunction]}
     updating={true}
+    uuid="1"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
