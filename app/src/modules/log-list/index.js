@@ -59,21 +59,18 @@ export class LogList extends PureComponent {
           <div key={log.getIn(['source', 'uuid'])}>
             {log.getIn(['edited', 'editing']) ? (
               <LogItemEditing
+                uuid={log.getIn(['source', 'uuid'])}
                 content={log.getIn(['edited', 'content'])}
                 updating={log.getIn(['edited', 'updating'])}
-                onEditContent={content =>
-                  actions.edit(log.getIn(['source', 'uuid']), content)}
-                onCancel={() =>
-                  actions.stopEditing(log.getIn(['source', 'uuid']))}
-                onUpdate={() => actions.onUpdate(log.getIn(['source', 'uuid']))}
+                onEditContent={actions.edit}
+                onCancel={actions.stopEditing}
+                onUpdate={actions.onUpdate}
               />
             ) : (
               <LogItem
                 log={log.get('source')}
-                onEdit={() =>
-                  actions.startEditing(log.getIn(['source', 'uuid']))}
-                onDelete={() =>
-                  actions.deleteLog(log.getIn(['source', 'uuid']))}
+                onEdit={actions.startEditing}
+                onDelete={actions.deleteLog}
               />
             )}
           </div>

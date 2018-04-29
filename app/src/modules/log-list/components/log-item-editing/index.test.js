@@ -5,6 +5,7 @@ import LogItemEditing from '.';
 
 test('render a log item in edit mode', () => {
   const props = {
+    uuid: '1',
     content: 'content',
     updating: false,
     onEditContent: jest.fn(),
@@ -18,6 +19,7 @@ test('render a log item in edit mode', () => {
 
 test('render a log item in edit mode updating', () => {
   const props = {
+    uuid: '1',
     content: 'content',
     updating: true,
     onEditContent: jest.fn(),
@@ -31,6 +33,7 @@ test('render a log item in edit mode updating', () => {
 
 test('actions', () => {
   const props = {
+    uuid: '1',
     content: 'content',
     updating: false,
     onEditContent: jest.fn(),
@@ -42,11 +45,11 @@ test('actions', () => {
   wrapper
     .find('textarea.LogItemEditing__Content') // Use the tag otherwise 2 elements are found
     .simulate('change', { target: { value: 'value' } });
-  expect(props.onEditContent).toHaveBeenCalledWith('value');
+  expect(props.onEditContent).toHaveBeenCalledWith('1', 'value');
 
   wrapper.find('.LogItemEditing__Update').simulate('click');
-  expect(props.onUpdate).toHaveBeenCalledWith();
+  expect(props.onUpdate).toHaveBeenCalledWith('1');
 
   wrapper.find('.LogItemEditing__Cancel').simulate('click');
-  expect(props.onCancel).toHaveBeenCalledWith();
+  expect(props.onCancel).toHaveBeenCalledWith('1');
 });

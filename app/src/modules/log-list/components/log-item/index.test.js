@@ -29,8 +29,8 @@ test('call actions', () => {
   const wrapper = mount(<LogItem {...props} />);
 
   wrapper.find('.LogItem__ActionEdit').simulate('click');
-  expect(props.onEdit).toHaveBeenCalledWith();
+  expect(props.onEdit).toHaveBeenCalledWith('1');
 
   wrapper.find('.LogItem__ActionDelete').simulate('click');
-  expect(props.onDelete).toHaveBeenCalledWith();
+  expect(props.onDelete).toHaveBeenCalledWith('1');
 });

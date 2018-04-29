@@ -13,12 +13,12 @@ class LogItemEditing extends PureComponent {
   }
 
   onEditContent(evt) {
-    const { onEditContent } = this.props;
-    onEditContent(evt.target.value);
+    const { onEditContent, uuid } = this.props;
+    onEditContent(uuid, evt.target.value);
   }
 
   render() {
-    const { content, updating, onCancel, onUpdate } = this.props;
+    const { uuid, content, updating, onCancel, onUpdate } = this.props;
 
     return (
       <div className="card LogItemEditing">
@@ -33,14 +33,14 @@ class LogItemEditing extends PureComponent {
             <div className="flex flex-align-right LogItemEditing__UpdateActions">
               <button
                 className="btn btn-outline-secondary btn-sm LogItemEditing__Cancel"
-                onClick={() => onCancel()}
+                onClick={() => onCancel(uuid)}
                 disabled={updating}
               >
                 Cancel
               </button>
               <button
                 className="btn btn-primary btn-sm LogItemEditing__Update"
-                onClick={() => onUpdate()}
+                onClick={() => onUpdate(uuid)}
                 disabled={updating}
               >
                 {updating ? (
@@ -60,6 +60,7 @@ class LogItemEditing extends PureComponent {
 }
 
 LogItemEditing.propTypes = {
+  uuid: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   updating: PropTypes.bool.isRequired,
   onEditContent: PropTypes.func.isRequired,
