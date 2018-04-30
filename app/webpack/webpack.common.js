@@ -25,7 +25,11 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        include: [
+          path.join(__dirname, '../src'),
+          path.join(__dirname, '../node_modules/remark-math'),
+          path.join(__dirname, '../node_modules/remark-html-katex'),
+        ],
         loader: 'babel-loader',
       },
       {
@@ -68,7 +72,9 @@ module.exports = {
   plugins: [
     // Nicer display when building
     new ProgressBarPlugin({
-      format: `  build [:bar] ${chalk.green.bold(':percent')} (:elapsed seconds)`,
+      format: `  build [:bar] ${chalk.green.bold(
+        ':percent',
+      )} (:elapsed seconds)`,
       clear: false,
     }),
 
