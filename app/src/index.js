@@ -14,6 +14,7 @@ import 'style/base.scss';
 import 'style/toastr.scss';
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 import 'rc-tooltip/assets/bootstrap.css';
+import 'katex/dist/katex.min.css';
 
 // Import the assets
 import 'assets/logo.png';
