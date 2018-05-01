@@ -1,0 +1,32 @@
+@import 'src/style/variables.scss';
+
+.Textarea {
+    background: $card-bg;
+    border: 1px solid $card-border-color;
+    border-radius: $card-border-radius;
+    z-index: 1000;
+
+    ul {
+        margin-bottom: 0;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    li:not(:last-child) {
+        border-bottom: 1px solid $card-border-color;
+    }
+
+    .Textarea__Item {
+        padding: 0.4rem;
+        cursor: pointer;
+
+        &--selected {
+            background: theme-color('primary');
+            color: $card-bg;
+        }
+    }
+}
+
+.Textarea__Content {
+    width: 100%;
+}

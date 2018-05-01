@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import Textarea from 'react-textarea-autosize';
+import Textarea from 'components/textarea';
 
 import './log-item-editing.scss';
 
@@ -12,9 +12,9 @@ class LogItemEditing extends PureComponent {
     this.onEditContent = this.onEditContent.bind(this);
   }
 
-  onEditContent(evt) {
+  onEditContent(value) {
     const { onEditContent, uuid } = this.props;
-    onEditContent(uuid, evt.target.value);
+    onEditContent(uuid, value);
   }
 
   render() {
@@ -23,9 +23,8 @@ class LogItemEditing extends PureComponent {
     return (
       <div className="card LogItemEditing">
         <div className="card-body">
-          <div className="card-text">
+          <div className="card-text LogItemEditing__Content">
             <Textarea
-              className="LogItemEditing__Content"
               placeholder="Editing..."
               onChange={this.onEditContent}
               value={content}
