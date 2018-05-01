@@ -1,6 +1,9 @@
 // URLs
 let u = 'https://today.bobi.space';
-if (process.env.NODE_ENV !== 'production') {
+if (
+  window.location.hostname.indexOf('127.0.0.1') !== -1 ||
+  process.env.NODE_ENV !== 'production'
+) {
   u = 'http://127.0.0.1:9091';
 }
 

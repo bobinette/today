@@ -1,0 +1,4 @@
+vendor/*/*
+migrations/*
+config/*
+conf.*toml*

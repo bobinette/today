@@ -51,38 +51,38 @@
 
 
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/BurntSushi/toml"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/Sirupsen/logrus"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/blevesearch/bleve"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/go-sql-driver/mysql"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/labstack/echo"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/looplab/eventhorizon"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/sandalwing/echo-logrusmiddleware"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/spf13/viper"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/stretchr/testify"
