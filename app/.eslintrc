@@ -36,3 +36,5 @@ rules:
   object-curly-newline:
     # This one does not work well with prettier either.
     - 0
+  class-methods-use-this:
+    - 0

@@ -5,12 +5,7 @@
 }
 
 .LogItemEditing__Content {
-    width: 100%;
-    background: $body-bg;
-
-    &:focus {
-        background: $card-bg;
-    }
+    position: relative;
 }
 
 .LogItemEditing__UpdateActions .btn {

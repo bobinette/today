@@ -28,14 +28,11 @@ ShallowWrapper {
         className="card-body"
       >
         <div
-          className="card-text"
+          className="card-text LogItemEditing__Content"
         >
-          <TextareaAutosize
-            className="LogItemEditing__Content"
+          <Textarea
             onChange={[Function]}
-            onHeightChange={[Function]}
             placeholder="Editing..."
-            useCacheForDOMMeasurements={false}
             value="content"
           />
           <div
@@ -67,14 +64,11 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="card-text"
+          className="card-text LogItemEditing__Content"
         >
-          <TextareaAutosize
-            className="LogItemEditing__Content"
+          <Textarea
             onChange={[Function]}
-            onHeightChange={[Function]}
             placeholder="Editing..."
-            useCacheForDOMMeasurements={false}
             value="content"
           />
           <div
@@ -105,12 +99,9 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <TextareaAutosize
-              className="LogItemEditing__Content"
+            <Textarea
               onChange={[Function]}
-              onHeightChange={[Function]}
               placeholder="Editing..."
-              useCacheForDOMMeasurements={false}
               value="content"
             />,
             <div
@@ -132,7 +123,7 @@ ShallowWrapper {
               </button>
             </div>,
           ],
-          "className": "card-text",
+          "className": "card-text LogItemEditing__Content",
         },
         "ref": null,
         "rendered": Array [
@@ -141,11 +132,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "className": "LogItemEditing__Content",
               "onChange": [Function],
-              "onHeightChange": [Function],
               "placeholder": "Editing...",
-              "useCacheForDOMMeasurements": false,
               "value": "content",
             },
             "ref": null,
@@ -225,14 +213,11 @@ ShallowWrapper {
           className="card-body"
         >
           <div
-            className="card-text"
+            className="card-text LogItemEditing__Content"
           >
-            <TextareaAutosize
-              className="LogItemEditing__Content"
+            <Textarea
               onChange={[Function]}
-              onHeightChange={[Function]}
               placeholder="Editing..."
-              useCacheForDOMMeasurements={false}
               value="content"
             />
             <div
@@ -264,14 +249,11 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <div
-            className="card-text"
+            className="card-text LogItemEditing__Content"
           >
-            <TextareaAutosize
-              className="LogItemEditing__Content"
+            <Textarea
               onChange={[Function]}
-              onHeightChange={[Function]}
               placeholder="Editing..."
-              useCacheForDOMMeasurements={false}
               value="content"
             />
             <div
@@ -302,12 +284,9 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <TextareaAutosize
-                className="LogItemEditing__Content"
+              <Textarea
                 onChange={[Function]}
-                onHeightChange={[Function]}
                 placeholder="Editing..."
-                useCacheForDOMMeasurements={false}
                 value="content"
               />,
               <div
@@ -329,7 +308,7 @@ ShallowWrapper {
                 </button>
               </div>,
             ],
-            "className": "card-text",
+            "className": "card-text LogItemEditing__Content",
           },
           "ref": null,
           "rendered": Array [
@@ -338,11 +317,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "className": "LogItemEditing__Content",
                 "onChange": [Function],
-                "onHeightChange": [Function],
                 "placeholder": "Editing...",
-                "useCacheForDOMMeasurements": false,
                 "value": "content",
               },
               "ref": null,
@@ -451,14 +427,11 @@ ShallowWrapper {
         className="card-body"
       >
         <div
-          className="card-text"
+          className="card-text LogItemEditing__Content"
         >
-          <TextareaAutosize
-            className="LogItemEditing__Content"
+          <Textarea
             onChange={[Function]}
-            onHeightChange={[Function]}
             placeholder="Editing..."
-            useCacheForDOMMeasurements={false}
             value="content"
           />
           <div
@@ -495,14 +468,11 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="card-text"
+          className="card-text LogItemEditing__Content"
         >
-          <TextareaAutosize
-            className="LogItemEditing__Content"
+          <Textarea
             onChange={[Function]}
-            onHeightChange={[Function]}
             placeholder="Editing..."
-            useCacheForDOMMeasurements={false}
             value="content"
           />
           <div
@@ -538,12 +508,9 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <TextareaAutosize
-              className="LogItemEditing__Content"
+            <Textarea
               onChange={[Function]}
-              onHeightChange={[Function]}
               placeholder="Editing..."
-              useCacheForDOMMeasurements={false}
               value="content"
             />,
             <div
@@ -570,7 +537,7 @@ ShallowWrapper {
               </button>
             </div>,
           ],
-          "className": "card-text",
+          "className": "card-text LogItemEditing__Content",
         },
         "ref": null,
         "rendered": Array [
@@ -579,11 +546,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "className": "LogItemEditing__Content",
               "onChange": [Function],
-              "onHeightChange": [Function],
               "placeholder": "Editing...",
-              "useCacheForDOMMeasurements": false,
               "value": "content",
             },
             "ref": null,
@@ -701,14 +665,11 @@ ShallowWrapper {
           className="card-body"
         >
           <div
-            className="card-text"
+            className="card-text LogItemEditing__Content"
           >
-            <TextareaAutosize
-              className="LogItemEditing__Content"
+            <Textarea
               onChange={[Function]}
-              onHeightChange={[Function]}
               placeholder="Editing..."
-              useCacheForDOMMeasurements={false}
               value="content"
             />
             <div
@@ -745,14 +706,11 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <div
-            className="card-text"
+            className="card-text LogItemEditing__Content"
           >
-            <TextareaAutosize
-              className="LogItemEditing__Content"
+            <Textarea
               onChange={[Function]}
-              onHeightChange={[Function]}
               placeholder="Editing..."
-              useCacheForDOMMeasurements={false}
               value="content"
             />
             <div
@@ -788,12 +746,9 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <TextareaAutosize
-                className="LogItemEditing__Content"
+              <Textarea
                 onChange={[Function]}
-                onHeightChange={[Function]}
                 placeholder="Editing..."
-                useCacheForDOMMeasurements={false}
                 value="content"
               />,
               <div
@@ -820,7 +775,7 @@ ShallowWrapper {
                 </button>
               </div>,
             ],
-            "className": "card-text",
+            "className": "card-text LogItemEditing__Content",
           },
           "ref": null,
           "rendered": Array [
@@ -829,11 +784,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "className": "LogItemEditing__Content",
                 "onChange": [Function],
-                "onHeightChange": [Function],
                 "placeholder": "Editing...",
-                "useCacheForDOMMeasurements": false,
                 "value": "content",
               },
               "ref": null,

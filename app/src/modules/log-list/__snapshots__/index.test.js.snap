@@ -157,7 +157,7 @@ ShallowWrapper {
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "1",
@@ -192,7 +192,7 @@ ShallowWrapper {
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "2",
@@ -227,7 +227,7 @@ ShallowWrapper {
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "3",
@@ -343,7 +343,7 @@ ShallowWrapper {
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "1",
@@ -378,7 +378,7 @@ ShallowWrapper {
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "2",
@@ -413,7 +413,7 @@ ShallowWrapper {
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "3",
@@ -599,7 +599,7 @@ ShallowWrapper {
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "1",
@@ -667,7 +667,7 @@ ShallowWrapper {
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "log": Immutable.Map {
               "uuid": "3",
@@ -781,7 +781,7 @@ ShallowWrapper {
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "1",
@@ -849,7 +849,7 @@ ShallowWrapper {
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
               "log": Immutable.Map {
                 "uuid": "3",
