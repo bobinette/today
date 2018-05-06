@@ -21,7 +21,7 @@ ShallowWrapper {
         className="container"
       >
         <div
-          className="row flex-align-center"
+          className="row w-100 flex flex-align-items-center flex-space-between"
         >
           <h5
             className="NavBar__AppName fg-white"
@@ -34,6 +34,19 @@ ShallowWrapper {
             />
             Today
           </h5>
+          <div
+            className="GithubLogo"
+          >
+            <a
+              href="https://github.com/bobinette/today"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <i
+                className="fab fa-github"
+              />
+            </a>
+          </div>
         </div>
       </div>,
       "className": "navbar navbar-row navbar-top navbar-inverse bg-primary",
@@ -46,7 +59,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="row flex-align-center"
+          className="row w-100 flex flex-align-items-center flex-space-between"
         >
           <h5
             className="NavBar__AppName fg-white"
@@ -59,6 +72,19 @@ ShallowWrapper {
             />
             Today
           </h5>
+          <div
+            className="GithubLogo"
+          >
+            <a
+              href="https://github.com/bobinette/today"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <i
+                className="fab fa-github"
+              />
+            </a>
+          </div>
         </div>,
         "className": "container",
       },
@@ -68,120 +94,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <h5
-            className="NavBar__AppName fg-white"
-          >
-            <img
-              alt=""
-              height="24"
-              src="/assets/leaf-inverse.png"
-              width="24"
-            />
-            Today
-          </h5>,
-          "className": "row flex-align-center",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <img
-                alt=""
-                height="24"
-                src="/assets/leaf-inverse.png"
-                width="24"
-              />,
-              "Today",
-            ],
-            "className": "NavBar__AppName fg-white",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "alt": "",
-                "height": "24",
-                "src": "/assets/leaf-inverse.png",
-                "width": "24",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "img",
-            },
-            "Today",
-          ],
-          "type": "h5",
-        },
-        "type": "div",
-      },
-      "type": "div",
-    },
-    "type": "nav",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
-          className="container"
-        >
-          <div
-            className="row flex-align-center"
-          >
+          "children": Array [
             <h5
-              className="NavBar__AppName fg-white"
-            >
-              <img
-                alt=""
-                height="24"
-                src="/assets/leaf-inverse.png"
-                width="24"
-              />
-              Today
-            </h5>
-          </div>
-        </div>,
-        "className": "navbar navbar-row navbar-top navbar-inverse bg-primary",
-        "id": "navbar",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <div
-            className="row flex-align-center"
-          >
-            <h5
-              className="NavBar__AppName fg-white"
-            >
-              <img
-                alt=""
-                height="24"
-                src="/assets/leaf-inverse.png"
-                width="24"
-              />
-              Today
-            </h5>
-          </div>,
-          "className": "container",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <h5
               className="NavBar__AppName fg-white"
             >
               <img
@@ -192,10 +106,25 @@ ShallowWrapper {
               />
               Today
             </h5>,
-            "className": "row flex-align-center",
-          },
-          "ref": null,
-          "rendered": Object {
+            <div
+              className="GithubLogo"
+            >
+              <a
+                href="https://github.com/bobinette/today"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i
+                  className="fab fa-github"
+                />
+              </a>
+            </div>,
+          ],
+          "className": "row w-100 flex flex-align-items-center flex-space-between",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
@@ -231,6 +160,253 @@ ShallowWrapper {
             ],
             "type": "h5",
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <a
+                href="https://github.com/bobinette/today"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i
+                  className="fab fa-github"
+                />
+              </a>,
+              "className": "GithubLogo",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <i
+                  className="fab fa-github"
+                />,
+                "href": "https://github.com/bobinette/today",
+                "rel": "noopener noreferrer",
+                "target": "_blank",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fab fa-github",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              "type": "a",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "nav",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="container"
+        >
+          <div
+            className="row w-100 flex flex-align-items-center flex-space-between"
+          >
+            <h5
+              className="NavBar__AppName fg-white"
+            >
+              <img
+                alt=""
+                height="24"
+                src="/assets/leaf-inverse.png"
+                width="24"
+              />
+              Today
+            </h5>
+            <div
+              className="GithubLogo"
+            >
+              <a
+                href="https://github.com/bobinette/today"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i
+                  className="fab fa-github"
+                />
+              </a>
+            </div>
+          </div>
+        </div>,
+        "className": "navbar navbar-row navbar-top navbar-inverse bg-primary",
+        "id": "navbar",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="row w-100 flex flex-align-items-center flex-space-between"
+          >
+            <h5
+              className="NavBar__AppName fg-white"
+            >
+              <img
+                alt=""
+                height="24"
+                src="/assets/leaf-inverse.png"
+                width="24"
+              />
+              Today
+            </h5>
+            <div
+              className="GithubLogo"
+            >
+              <a
+                href="https://github.com/bobinette/today"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i
+                  className="fab fa-github"
+                />
+              </a>
+            </div>
+          </div>,
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h5
+                className="NavBar__AppName fg-white"
+              >
+                <img
+                  alt=""
+                  height="24"
+                  src="/assets/leaf-inverse.png"
+                  width="24"
+                />
+                Today
+              </h5>,
+              <div
+                className="GithubLogo"
+              >
+                <a
+                  href="https://github.com/bobinette/today"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i
+                    className="fab fa-github"
+                  />
+                </a>
+              </div>,
+            ],
+            "className": "row w-100 flex flex-align-items-center flex-space-between",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt=""
+                    height="24"
+                    src="/assets/leaf-inverse.png"
+                    width="24"
+                  />,
+                  "Today",
+                ],
+                "className": "NavBar__AppName fg-white",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "",
+                    "height": "24",
+                    "src": "/assets/leaf-inverse.png",
+                    "width": "24",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "Today",
+              ],
+              "type": "h5",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <a
+                  href="https://github.com/bobinette/today"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i
+                    className="fab fa-github"
+                  />
+                </a>,
+                "className": "GithubLogo",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <i
+                    className="fab fa-github"
+                  />,
+                  "href": "https://github.com/bobinette/today",
+                  "rel": "noopener noreferrer",
+                  "target": "_blank",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "fab fa-github",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+                "type": "a",
+              },
+              "type": "div",
+            },
+          ],
           "type": "div",
         },
         "type": "div",

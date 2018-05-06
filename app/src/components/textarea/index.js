@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
-import Autosuggest from 'react-autosuggest';
 import AutosizeTextarea from 'react-textarea-autosize';
 import getCaretCoordinates from 'textarea-caret';
 
 import axios from 'axios';
 import qs from 'qs';
 import apiUrl from 'utils/apiUrl';
+
+import Autosuggest from './react-autosuggest';
 
 import './textarea.scss';
 

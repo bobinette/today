@@ -62,7 +62,11 @@ export class NewLogInput extends PureComponent {
               </span>
             )}
           </small>
-          <button className="btn btn-primary btn-sm" onClick={this.onCreate}>
+          <button
+            className="btn btn-primary btn-sm"
+            onClick={this.onCreate}
+            disabled={!content}
+          >
             Create
           </button>
         </div>

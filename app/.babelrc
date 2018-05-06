@@ -9,11 +9,11 @@
     "stage-3",
     "react"
   ],
-  "plugins": ["react-hot-loader/babel"],
+  "plugins": ["react-hot-loader/babel", "transform-class-properties"],
   "env": {
     "test": {
       "presets": ["env", "stage-3", "react"],
-      "plugins": []
+      "plugins": ["transform-class-properties"]
     }
   }
 }
