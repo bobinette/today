@@ -68,7 +68,7 @@
         "qs": "^6.5.1",
         "rc-tooltip": "^3.7.2",
         "react": "^16.2.0",
-        "react-autosuggest": "^9.3.4",
+        "react-autosuggest": "git+https://git@github.com/shibumicorp/react-autosuggest.git",
         "react-dom": "^16.2.0",
         "react-immutable-proptypes": "^2.1.0",
         "react-redux": "^5.0.6",
