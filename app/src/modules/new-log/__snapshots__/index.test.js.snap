@@ -26,132 +26,57 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <Textarea
-          onChange={[MockFunction]}
-          placeholder="Tell me about your day..."
-          value="Test"
-        />,
-        <div
-          className="flex flex-space-between flex-align-items-center"
+      "children": <MarkdownInput
+        onChange={[MockFunction]}
+        onKeyDown={[Function]}
+        placeholder="Tell me about your day..."
+        value="Test"
+      >
+        <button
+          className="btn btn-primary btn-sm"
+          disabled={false}
+          onClick={[Function]}
         >
-          <small
-            className="text-muted text-sm"
-          >
-            <a
-              href="https://guides.github.com/features/mastering-markdown/"
-            >
-              Use markdown styling
-            </a>
-             (with no title)
-          </small>
-          <button
-            className="btn btn-primary btn-sm"
-            disabled={false}
-            onClick={[Function]}
-          >
-            Create
-          </button>
-        </div>,
-      ],
+          Create
+        </button>
+      </MarkdownInput>,
       "className": "NewLogInput",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "onChange": [MockFunction],
-          "placeholder": "Tell me about your day...",
-          "value": "Test",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <button
+          className="btn btn-primary btn-sm"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Create
+        </button>,
+        "onChange": [MockFunction],
+        "onKeyDown": [Function],
+        "placeholder": "Tell me about your day...",
+        "value": "Test",
       },
-      Object {
+      "ref": null,
+      "rendered": Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <small
-              className="text-muted text-sm"
-            >
-              <a
-                href="https://guides.github.com/features/mastering-markdown/"
-              >
-                Use markdown styling
-              </a>
-               (with no title)
-            </small>,
-            <button
-              className="btn btn-primary btn-sm"
-              disabled={false}
-              onClick={[Function]}
-            >
-              Create
-            </button>,
-          ],
-          "className": "flex flex-space-between flex-align-items-center",
+          "children": "Create",
+          "className": "btn btn-primary btn-sm",
+          "disabled": false,
+          "onClick": [Function],
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <a
-                  href="https://guides.github.com/features/mastering-markdown/"
-                >
-                  Use markdown styling
-                </a>,
-                " (with no title)",
-                false,
-              ],
-              "className": "text-muted text-sm",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Use markdown styling",
-                  "href": "https://guides.github.com/features/mastering-markdown/",
-                },
-                "ref": null,
-                "rendered": "Use markdown styling",
-                "type": "a",
-              },
-              " (with no title)",
-              false,
-            ],
-            "type": "small",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Create",
-              "className": "btn btn-primary btn-sm",
-              "disabled": false,
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Create",
-            "type": "button",
-          },
-        ],
-        "type": "div",
+        "rendered": "Create",
+        "type": "button",
       },
-    ],
+      "type": [Function],
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -160,132 +85,57 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <Textarea
-            onChange={[MockFunction]}
-            placeholder="Tell me about your day..."
-            value="Test"
-          />,
-          <div
-            className="flex flex-space-between flex-align-items-center"
+        "children": <MarkdownInput
+          onChange={[MockFunction]}
+          onKeyDown={[Function]}
+          placeholder="Tell me about your day..."
+          value="Test"
+        >
+          <button
+            className="btn btn-primary btn-sm"
+            disabled={false}
+            onClick={[Function]}
           >
-            <small
-              className="text-muted text-sm"
-            >
-              <a
-                href="https://guides.github.com/features/mastering-markdown/"
-              >
-                Use markdown styling
-              </a>
-               (with no title)
-            </small>
-            <button
-              className="btn btn-primary btn-sm"
-              disabled={false}
-              onClick={[Function]}
-            >
-              Create
-            </button>
-          </div>,
-        ],
+            Create
+          </button>
+        </MarkdownInput>,
         "className": "NewLogInput",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "onChange": [MockFunction],
-            "placeholder": "Tell me about your day...",
-            "value": "Test",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <button
+            className="btn btn-primary btn-sm"
+            disabled={false}
+            onClick={[Function]}
+          >
+            Create
+          </button>,
+          "onChange": [MockFunction],
+          "onKeyDown": [Function],
+          "placeholder": "Tell me about your day...",
+          "value": "Test",
         },
-        Object {
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              <small
-                className="text-muted text-sm"
-              >
-                <a
-                  href="https://guides.github.com/features/mastering-markdown/"
-                >
-                  Use markdown styling
-                </a>
-                 (with no title)
-              </small>,
-              <button
-                className="btn btn-primary btn-sm"
-                disabled={false}
-                onClick={[Function]}
-              >
-                Create
-              </button>,
-            ],
-            "className": "flex flex-space-between flex-align-items-center",
+            "children": "Create",
+            "className": "btn btn-primary btn-sm",
+            "disabled": false,
+            "onClick": [Function],
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <a
-                    href="https://guides.github.com/features/mastering-markdown/"
-                  >
-                    Use markdown styling
-                  </a>,
-                  " (with no title)",
-                  false,
-                ],
-                "className": "text-muted text-sm",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Use markdown styling",
-                    "href": "https://guides.github.com/features/mastering-markdown/",
-                  },
-                  "ref": null,
-                  "rendered": "Use markdown styling",
-                  "type": "a",
-                },
-                " (with no title)",
-                false,
-              ],
-              "type": "small",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Create",
-                "className": "btn btn-primary btn-sm",
-                "disabled": false,
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Create",
-              "type": "button",
-            },
-          ],
-          "type": "div",
+          "rendered": "Create",
+          "type": "button",
         },
-      ],
+        "type": [Function],
+      },
       "type": "div",
     },
   ],
@@ -325,132 +175,57 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <Textarea
-          onChange={[MockFunction]}
-          placeholder="Tell me about your day..."
-          value="Test"
-        />,
-        <div
-          className="flex flex-space-between flex-align-items-center"
+      "children": <MarkdownInput
+        onChange={[MockFunction]}
+        onKeyDown={[Function]}
+        placeholder="Tell me about your day..."
+        value="Test"
+      >
+        <button
+          className="btn btn-primary btn-sm"
+          disabled={false}
+          onClick={[Function]}
         >
-          <small
-            className="text-muted text-sm"
-          >
-            <a
-              href="https://guides.github.com/features/mastering-markdown/"
-            >
-              Use markdown styling
-            </a>
-             (with no title)
-          </small>
-          <button
-            className="btn btn-primary btn-sm"
-            disabled={false}
-            onClick={[Function]}
-          >
-            Create
-          </button>
-        </div>,
-      ],
+          Create
+        </button>
+      </MarkdownInput>,
       "className": "NewLogInput",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "onChange": [MockFunction],
-          "placeholder": "Tell me about your day...",
-          "value": "Test",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <button
+          className="btn btn-primary btn-sm"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Create
+        </button>,
+        "onChange": [MockFunction],
+        "onKeyDown": [Function],
+        "placeholder": "Tell me about your day...",
+        "value": "Test",
       },
-      Object {
+      "ref": null,
+      "rendered": Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <small
-              className="text-muted text-sm"
-            >
-              <a
-                href="https://guides.github.com/features/mastering-markdown/"
-              >
-                Use markdown styling
-              </a>
-               (with no title)
-            </small>,
-            <button
-              className="btn btn-primary btn-sm"
-              disabled={false}
-              onClick={[Function]}
-            >
-              Create
-            </button>,
-          ],
-          "className": "flex flex-space-between flex-align-items-center",
+          "children": "Create",
+          "className": "btn btn-primary btn-sm",
+          "disabled": false,
+          "onClick": [Function],
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <a
-                  href="https://guides.github.com/features/mastering-markdown/"
-                >
-                  Use markdown styling
-                </a>,
-                " (with no title)",
-                false,
-              ],
-              "className": "text-muted text-sm",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Use markdown styling",
-                  "href": "https://guides.github.com/features/mastering-markdown/",
-                },
-                "ref": null,
-                "rendered": "Use markdown styling",
-                "type": "a",
-              },
-              " (with no title)",
-              false,
-            ],
-            "type": "small",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Create",
-              "className": "btn btn-primary btn-sm",
-              "disabled": false,
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Create",
-            "type": "button",
-          },
-        ],
-        "type": "div",
+        "rendered": "Create",
+        "type": "button",
       },
-    ],
+      "type": [Function],
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -459,132 +234,57 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <Textarea
-            onChange={[MockFunction]}
-            placeholder="Tell me about your day..."
-            value="Test"
-          />,
-          <div
-            className="flex flex-space-between flex-align-items-center"
+        "children": <MarkdownInput
+          onChange={[MockFunction]}
+          onKeyDown={[Function]}
+          placeholder="Tell me about your day..."
+          value="Test"
+        >
+          <button
+            className="btn btn-primary btn-sm"
+            disabled={false}
+            onClick={[Function]}
           >
-            <small
-              className="text-muted text-sm"
-            >
-              <a
-                href="https://guides.github.com/features/mastering-markdown/"
-              >
-                Use markdown styling
-              </a>
-               (with no title)
-            </small>
-            <button
-              className="btn btn-primary btn-sm"
-              disabled={false}
-              onClick={[Function]}
-            >
-              Create
-            </button>
-          </div>,
-        ],
+            Create
+          </button>
+        </MarkdownInput>,
         "className": "NewLogInput",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "onChange": [MockFunction],
-            "placeholder": "Tell me about your day...",
-            "value": "Test",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <button
+            className="btn btn-primary btn-sm"
+            disabled={false}
+            onClick={[Function]}
+          >
+            Create
+          </button>,
+          "onChange": [MockFunction],
+          "onKeyDown": [Function],
+          "placeholder": "Tell me about your day...",
+          "value": "Test",
         },
-        Object {
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              <small
-                className="text-muted text-sm"
-              >
-                <a
-                  href="https://guides.github.com/features/mastering-markdown/"
-                >
-                  Use markdown styling
-                </a>
-                 (with no title)
-              </small>,
-              <button
-                className="btn btn-primary btn-sm"
-                disabled={false}
-                onClick={[Function]}
-              >
-                Create
-              </button>,
-            ],
-            "className": "flex flex-space-between flex-align-items-center",
+            "children": "Create",
+            "className": "btn btn-primary btn-sm",
+            "disabled": false,
+            "onClick": [Function],
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <a
-                    href="https://guides.github.com/features/mastering-markdown/"
-                  >
-                    Use markdown styling
-                  </a>,
-                  " (with no title)",
-                  false,
-                ],
-                "className": "text-muted text-sm",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Use markdown styling",
-                    "href": "https://guides.github.com/features/mastering-markdown/",
-                  },
-                  "ref": null,
-                  "rendered": "Use markdown styling",
-                  "type": "a",
-                },
-                " (with no title)",
-                false,
-              ],
-              "type": "small",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Create",
-                "className": "btn btn-primary btn-sm",
-                "disabled": false,
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Create",
-              "type": "button",
-            },
-          ],
-          "type": "div",
+          "rendered": "Create",
+          "type": "button",
         },
-      ],
+        "type": [Function],
+      },
       "type": "div",
     },
   ],

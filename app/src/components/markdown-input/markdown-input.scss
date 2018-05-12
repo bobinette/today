@@ -1,0 +1,30 @@
+@import 'src/style/variables.scss';
+
+.react-tabs__tab-list {
+    margin: 0 0 0.3rem;
+    padding: 0 1rem;
+}
+
+.react-tabs__tab-panel.MarkdownInput__InputTab {
+    padding: 0.5rem;
+    padding-bottom: 0;
+}
+
+.react-tabs__tab-panel.MarkdownInput__PreviewTab {
+    padding: 0.8rem;
+    padding-bottom: 0;
+}
+
+.MarkdownInput__Preview {
+    min-height: 80px;
+}
+
+.react-tabs__tab-list,
+.react-tabs__tab--selected {
+    border-color: $card-border-color;
+}
+
+.MarkdownInput__Footer {
+    padding: 0.5rem;
+    padding-top: 0;
+}

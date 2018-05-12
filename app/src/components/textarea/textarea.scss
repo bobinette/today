@@ -1,6 +1,10 @@
 @import 'src/style/variables.scss';
 
-.Textarea {
+.react-autowhatever__container {
+    position: relative;
+}
+
+.TextareaContainer {
     background: $card-bg;
     border: 1px solid $card-border-color;
     border-radius: $card-border-radius;

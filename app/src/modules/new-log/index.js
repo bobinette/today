@@ -4,18 +4,17 @@ import { connect } from 'react-redux';
 
 import classNames from 'classnames';
 
-import Textarea from 'components/textarea';
+import MarkdownInput from 'components/markdown-input';
 
 import { separateActions } from 'utils/redux';
 
 import { createLog, updateContent } from './actions';
-import { selectContent, selectTitleDetected } from './selectors';
+import { selectContent } from './selectors';
 
 import './new-log.scss';
 
 const mapStateToProps = state => ({
   content: selectContent(state),
-  titleDetected: selectTitleDetected(state),
 });
 
 const mapDispatchToProps = {
@@ -28,14 +27,23 @@ export class NewLogInput extends PureComponent {
     super(props);
 
     this.onCreate = this.onCreate.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this);
   }
 
   onCreate() {
     this.props.actions.createLog();
   }
 
+  onKeyDown(evt) {
+    // Cmd+Enter
+    if (evt.keyCode === 13 && evt.metaKey) {
+      evt.preventDefault();
+      this.onCreate();
+    }
+  }
+
   render() {
-    const { actions, content, titleDetected } = this.props;
+    const { actions, content } = this.props;
 
     const classes = {
       NewLogInput: true,
@@ -43,25 +51,12 @@ export class NewLogInput extends PureComponent {
 
     return (
       <div className={classNames(classes)}>
-        <Textarea
+        <MarkdownInput
           placeholder="Tell me about your day..."
           value={content}
           onChange={actions.updateContent}
-        />
-        <div className="flex flex-space-between flex-align-items-center">
-          <small className="text-muted text-sm">
-            <a href="https://guides.github.com/features/mastering-markdown/">
-              Use markdown styling
-            </a>
-            &nbsp;(with no title)
-            {titleDetected && (
-              <span className="NewLogInput__TitleDetected">
-                <i className="fas fa-exclamation-triangle NewLogInput__TitleDetectedIcon" />A
-                title was detected. It will be used as a <strong>strong</strong>{' '}
-                tag
-              </span>
-            )}
-          </small>
+          onKeyDown={this.onKeyDown}
+        >
           <button
             className="btn btn-primary btn-sm"
             onClick={this.onCreate}
@@ -69,7 +64,7 @@ export class NewLogInput extends PureComponent {
           >
             Create
           </button>
-        </div>
+        </MarkdownInput>
       </div>
     );
   }
@@ -77,7 +72,6 @@ export class NewLogInput extends PureComponent {
 
 NewLogInput.propTypes = {
   content: PropTypes.string.isRequired,
-  titleDetected: PropTypes.bool.isRequired,
   actions: PropTypes.shape({
     createLog: PropTypes.func.isRequired,
     updateContent: PropTypes.func.isRequired,
