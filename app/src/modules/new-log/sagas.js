@@ -1,5 +1,4 @@
-import { delay } from 'redux-saga';
-import { call, put, select, takeEvery, takeLatest } from 'redux-saga/effects';
+import { call, put, select, takeEvery } from 'redux-saga/effects';
 
 import { toastr } from 'react-redux-toastr';
 

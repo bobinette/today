@@ -92,6 +92,7 @@ MarkdownInput.propTypes = {
 MarkdownInput.defaultProps = {
   placeholder: '',
   onKeyDown: () => {},
+  children: null,
 };
 
 export default MarkdownInput;

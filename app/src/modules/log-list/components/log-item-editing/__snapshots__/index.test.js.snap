@@ -32,6 +32,7 @@ ShallowWrapper {
         >
           <Textarea
             onChange={[Function]}
+            onKeyDown={[Function]}
             placeholder="Editing..."
             value="content"
           />
@@ -68,6 +69,7 @@ ShallowWrapper {
         >
           <Textarea
             onChange={[Function]}
+            onKeyDown={[Function]}
             placeholder="Editing..."
             value="content"
           />
@@ -101,6 +103,7 @@ ShallowWrapper {
           "children": Array [
             <Textarea
               onChange={[Function]}
+              onKeyDown={[Function]}
               placeholder="Editing..."
               value="content"
             />,
@@ -133,6 +136,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "onChange": [Function],
+              "onKeyDown": [Function],
               "placeholder": "Editing...",
               "value": "content",
             },
@@ -217,6 +221,7 @@ ShallowWrapper {
           >
             <Textarea
               onChange={[Function]}
+              onKeyDown={[Function]}
               placeholder="Editing..."
               value="content"
             />
@@ -253,6 +258,7 @@ ShallowWrapper {
           >
             <Textarea
               onChange={[Function]}
+              onKeyDown={[Function]}
               placeholder="Editing..."
               value="content"
             />
@@ -286,6 +292,7 @@ ShallowWrapper {
             "children": Array [
               <Textarea
                 onChange={[Function]}
+                onKeyDown={[Function]}
                 placeholder="Editing..."
                 value="content"
               />,
@@ -318,6 +325,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "onChange": [Function],
+                "onKeyDown": [Function],
                 "placeholder": "Editing...",
                 "value": "content",
               },
@@ -431,6 +439,7 @@ ShallowWrapper {
         >
           <Textarea
             onChange={[Function]}
+            onKeyDown={[Function]}
             placeholder="Editing..."
             value="content"
           />
@@ -472,6 +481,7 @@ ShallowWrapper {
         >
           <Textarea
             onChange={[Function]}
+            onKeyDown={[Function]}
             placeholder="Editing..."
             value="content"
           />
@@ -510,6 +520,7 @@ ShallowWrapper {
           "children": Array [
             <Textarea
               onChange={[Function]}
+              onKeyDown={[Function]}
               placeholder="Editing..."
               value="content"
             />,
@@ -547,6 +558,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "onChange": [Function],
+              "onKeyDown": [Function],
               "placeholder": "Editing...",
               "value": "content",
             },
@@ -669,6 +681,7 @@ ShallowWrapper {
           >
             <Textarea
               onChange={[Function]}
+              onKeyDown={[Function]}
               placeholder="Editing..."
               value="content"
             />
@@ -710,6 +723,7 @@ ShallowWrapper {
           >
             <Textarea
               onChange={[Function]}
+              onKeyDown={[Function]}
               placeholder="Editing..."
               value="content"
             />
@@ -748,6 +762,7 @@ ShallowWrapper {
             "children": Array [
               <Textarea
                 onChange={[Function]}
+                onKeyDown={[Function]}
                 placeholder="Editing..."
                 value="content"
               />,
@@ -785,6 +800,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "onChange": [Function],
+                "onKeyDown": [Function],
                 "placeholder": "Editing...",
                 "value": "content",
               },
