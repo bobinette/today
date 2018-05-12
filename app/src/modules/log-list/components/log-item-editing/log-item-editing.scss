@@ -2,6 +2,11 @@
 
 .LogItemEditing {
     margin: 1rem 0;
+
+    .card-body {
+        padding: 0;
+        padding-top: 0.3rem;
+    }
 }
 
 .LogItemEditing__Content {
