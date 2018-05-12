@@ -94,7 +94,7 @@ export const Markdown = ({ text, className, autoLoadReferences }) => {
 Markdown.propTypes = {
   className: PropTypes.string,
   text: PropTypes.string.isRequired,
-  autoLoadReferences: PropTypes.bool.isRequired,
+  autoLoadReferences: PropTypes.bool,
 };
 
 Markdown.defaultProps = {

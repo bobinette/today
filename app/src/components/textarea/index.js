@@ -209,14 +209,14 @@ class Textarea extends Component {
     style.position = 'absolute';
 
     return (
-      <div style={style} {...containerProps} className="Textarea">
+      <div style={style} {...containerProps} className="TextareaContainer">
         {children}
       </div>
     );
   }
 
   render() {
-    const { placeholder } = this.props;
+    const { placeholder, onKeyDown } = this.props;
     const { value, tags } = this.state;
 
     return (
@@ -229,6 +229,7 @@ class Textarea extends Component {
         inputProps={{
           placeholder,
           value,
+          onKeyDown,
           onChange: this.onChange,
         }}
         renderInputComponent={this.renderInputComponent}
@@ -239,9 +240,15 @@ class Textarea extends Component {
 }
 
 Textarea.propTypes = {
-  placeholder: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onKeyDown: PropTypes.func,
+};
+
+Textarea.defaultProps = {
+  placeholder: '',
+  onKeyDown: () => {},
 };
 
 export default Textarea;
