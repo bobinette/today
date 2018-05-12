@@ -26,6 +26,10 @@ class MarkdownInput extends PureComponent {
     this.detectTitle(nextProps.value);
   }
 
+  componentWillUnmount() {
+    this.detectTitle.cancel();
+  }
+
   detectTitle(value) {
     this.setState({ titleDetected: hasTitle(value) });
   }
