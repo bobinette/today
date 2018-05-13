@@ -9,6 +9,7 @@ import debounce from 'lodash.debounce';
 import Markdown from 'components/markdown';
 import Textarea from 'components/textarea';
 
+import MarkdownMark from './markdown-mark.svg';
 import { hasTitle } from './utils';
 
 import './markdown-input.scss';
@@ -62,8 +63,16 @@ class MarkdownInput extends PureComponent {
           </TabPanel>
         </Tabs>
         <div className="flex flex-space-between flex-align-items-center MarkdownInput__Footer">
-          <small className="text-muted text-sm">
-            <a href="https://guides.github.com/features/mastering-markdown/">
+          <small className="text-muted text-sm flex flex-align-items-center">
+            <a
+              href="https://guides.github.com/features/mastering-markdown/"
+              className="flex flex-align-items-center"
+            >
+              <MarkdownMark
+                width="16"
+                height="16"
+                className="MarkdownMarkLogo"
+              />
               Use markdown styling
             </a>
             &nbsp;(with no title)
