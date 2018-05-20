@@ -1,31 +1,29 @@
 @import 'src/style/variables.scss';
 
 .SearchBar {
-    background: white;
-    width: 100%;
+  background: white;
+  width: 100%;
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
 
-    border: 1px solid $card-border-color;
-    border-radius: $card-border-radius;
-    padding: 0.3rem;
+  .fa-search {
+    color: theme-color('primary');
+    margin-right: 0.2rem;
+  }
 
-    display: flex;
-    align-items: center;
-
-    .fa-search {
-        color: theme-color('primary');
-        margin-right: 0.2rem;
-    }
-
-    &:focus-within {
-        box-shadow: 0 0 2px 1px #34a166;
-    }
+  &:focus-within {
+    box-shadow: 0 0 2px 1px #34a166;
+  }
 }
 
 .SearchBar__input {
-    border: none;
-    flex: 1;
+  border: none;
+  flex: 1;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }

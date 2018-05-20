@@ -1,28 +1,28 @@
 .NavBar__AppName {
-    margin-bottom: 0;
+  margin-bottom: 0;
 
-    img {
-        margin-right: 0.2rem;
-    }
+  img {
+    margin-right: 0.2rem;
+  }
 }
 
 .GithubLogo {
+  color: white;
+  height: 24px;
+  width: 24px;
+
+  a {
     color: white;
-    height: 24px;
-    width: 24px;
+    opacity: 0.6;
 
-    a {
-        color: white;
-        opacity: 0.6;
-
-        &:hover {
-            color: white;
-            opacity: 1;
-        }
+    &:hover {
+      color: white;
+      opacity: 1;
     }
+  }
 
-    svg.svg-inline--fa.fa-w-16 {
-        width: 100%;
-        height: 100%;
-    }
+  svg.svg-inline--fa.fa-w-16 {
+    width: 100%;
+    height: 100%;
+  }
 }

@@ -2,19 +2,20 @@
 @import 'node_modules/bootstrap/scss/mixins.scss';
 
 .TodayReference {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 
-    &--hover {
-        background: $body-bg;
-        border: none;
-        @include border-radius($card-border-radius);
-    }
+  &--hover {
+    background: $body-bg;
+    border: none;
 
-    &.TodayReference__Errored {
-        color: theme-color('danger');
-    }
+    @include border-radius($card-border-radius);
+  }
+
+  &.TodayReference__Errored {
+    color: theme-color('danger');
+  }
 }
 
 .TodayReference__Icon {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
