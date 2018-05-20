@@ -3,6 +3,23 @@ extends: stylelint-config-standard
 
 plugins:
   - stylelint-scss
+  - stylelint-order
+
 rules:
+  # Handle @include
   at-rule-no-unknown: null
   scss/at-rule-no-unknown: true
+
+  # Painful list of the properties to be grouped
+  order/properties-order:
+    - emptyLineBefore: always
+      properties:
+        - position
+        - top
+        - right
+        - bottom
+        - left
+        - z-index
+
+    # This one does not seem to work...
+    # - unspecified: bottom

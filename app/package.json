@@ -77,8 +77,7 @@
         "qs": "^6.5.1",
         "rc-tooltip": "^3.7.2",
         "react": "^16.2.0",
-        "react-autosuggest":
-            "git+https://git@github.com/shibumicorp/react-autosuggest.git",
+        "react-autosuggest": "git+https://git@github.com/shibumicorp/react-autosuggest.git",
         "react-dom": "^16.2.0",
         "react-immutable-proptypes": "^2.1.0",
         "react-redux": "^5.0.6",
@@ -97,6 +96,7 @@
         "remark-react": "^4.0.1",
         "remark-react-lowlight": "^0.7.0",
         "reselect": "^3.0.1",
+        "stylelint-order": "^0.8.1",
         "textarea-caret": "^3.1.0"
     }
 }
