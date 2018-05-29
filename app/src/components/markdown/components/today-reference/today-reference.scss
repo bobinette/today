@@ -1,18 +1,17 @@
-@import 'src/style/variables.scss';
-@import 'node_modules/bootstrap/scss/mixins.scss';
+@import "src/style/variables.scss";
+@import "node_modules/bootstrap/scss/mixins.scss";
 
 .TodayReference {
   margin-bottom: 1rem;
 
   &--hover {
     background: $body-bg;
-    border: none;
 
     @include border-radius($card-border-radius);
   }
 
   &.TodayReference__Errored {
-    color: theme-color('danger');
+    color: theme-color("danger");
   }
 }
 

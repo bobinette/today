@@ -1,4 +1,4 @@
-@import 'src/style/variables.scss';
+@import "src/style/variables.scss";
 
 .react-autowhatever__container {
   position: relative;
@@ -25,7 +25,7 @@
     cursor: pointer;
 
     &--selected {
-      background: theme-color('primary');
+      background: theme-color("primary");
       color: $card-bg;
     }
   }

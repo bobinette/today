@@ -1,4 +1,4 @@
-@import 'src/style/variables.scss';
+@import "src/style/variables.scss";
 
 p:last-child {
   margin-bottom: 0;
@@ -9,5 +9,10 @@ pre code {
 }
 
 .TodayTag {
-  color: theme-color('primary');
+  background: theme-color("primary");
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.3rem;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
 }

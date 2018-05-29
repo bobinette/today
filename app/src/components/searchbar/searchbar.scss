@@ -1,4 +1,4 @@
-@import 'src/style/variables.scss';
+@import "src/style/variables.scss";
 
 .SearchBar {
   background: white;
@@ -10,7 +10,7 @@
   align-items: center;
 
   .fa-search {
-    color: theme-color('primary');
+    color: theme-color("primary");
     margin-right: 0.2rem;
   }
 

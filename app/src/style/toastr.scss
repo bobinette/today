@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 // To have a higher priority
 .ReduxToastr.redux-toastr .toastr {
@@ -15,22 +15,22 @@
   }
 
   &.rrt-success {
-    background-color: theme-color('success');
+    background-color: theme-color("success");
   }
 
   &.rrt-info {
-    background-color: theme-color('info');
+    background-color: theme-color("info");
   }
 
   &.rrt-warning {
-    background-color: theme-color('warning');
+    background-color: theme-color("warning");
   }
 
   &.rrt-light {
-    background-color: theme-color('light');
+    background-color: theme-color("light");
   }
 
   &.rrt-error {
-    background-color: theme-color('danger');
+    background-color: theme-color("danger");
   }
 }

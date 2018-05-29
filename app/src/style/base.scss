@@ -1,6 +1,7 @@
-@import './variables.scss';
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import "./variables.scss";
+@import "node_modules/bootstrap/scss/bootstrap.scss";
 
+// stylelint-disable selector-max-type
 // Make sure the page takes at least all the height
 html {
   height: 100%;
@@ -10,6 +11,9 @@ body {
   min-height: 100%;
 }
 
+// Re-style the code tag, used in the markdown
+// @TODO: add a class in the Markdown component
+//        to remove this block
 code {
   padding: 0.2rem 0.4rem;
   font-size: 90%;
@@ -17,6 +21,7 @@ code {
   background-color: #f7f7f9;
   border-radius: 0.25rem;
 }
+// stylelint-enable
 
 // Space below the navbar
 #navbar {
@@ -60,7 +65,7 @@ input {
   border-bottom: 1px solid $input-border-color;
 
   &:focus {
-    border-color: theme-color('primary');
+    border-color: theme-color("primary");
     outline: none;
   }
 }
