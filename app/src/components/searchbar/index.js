@@ -9,7 +9,7 @@ const SearchBar = ({ className, q, onChange }) => (
   <div className={classNames('SearchBar', className)}>
     <i className="fas fa-search" />
     <input
-      className="SearchBar__input"
+      className="Input SearchBar__input"
       value={q}
       onChange={evt => onChange(evt.target.value)}
       placeholder="Search your logs..."

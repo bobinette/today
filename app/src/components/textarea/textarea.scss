@@ -5,18 +5,22 @@
 }
 
 .TextareaContainer {
-  background: $card-bg;
-  border: 1px solid $card-border-color;
-  border-radius: $card-border-radius;
   z-index: 1000;
 
-  ul {
-    margin-bottom: 0;
-    list-style: none;
+  background: $card-bg;
+
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
+
+  .react-autowhatever__items-list {
     padding-left: 0;
+
+    margin-bottom: 0;
+
+    list-style: none;
   }
 
-  li:not(:last-child) {
+  .react-autowhatever__item:not(:last-child) {
     border-bottom: 1px solid $card-border-color;
   }
 
@@ -25,8 +29,8 @@
     cursor: pointer;
 
     &--selected {
-      background: theme-color("primary");
       color: $card-bg;
+      background: theme-color("primary");
     }
   }
 }

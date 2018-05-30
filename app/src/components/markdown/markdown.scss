@@ -1,5 +1,6 @@
 @import "src/style/variables.scss";
 
+// stylelint-disable selector-max-type
 p:last-child {
   margin-bottom: 0;
 }
@@ -7,12 +8,15 @@ p:last-child {
 pre code {
   display: block !important;
 }
+// stylelint-enable
 
 .TodayTag {
-  background: theme-color("primary");
   padding: 0.1rem 0.3rem;
-  border-radius: 0.3rem;
-  color: white;
+
   font-size: 0.85rem;
   font-weight: 500;
+  color: $white;
+  background: theme-color("primary");
+
+  border-radius: 0.3rem;
 }

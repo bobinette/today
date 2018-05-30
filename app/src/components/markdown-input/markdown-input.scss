@@ -1,8 +1,8 @@
 @import "src/style/variables.scss";
 
 .react-tabs__tab-list {
-  margin: 0 0 0.3rem;
   padding: 0 1rem;
+  margin: 0 0 0.3rem;
 }
 
 .react-tabs__tab-panel.MarkdownInput__InputTab {
@@ -31,7 +31,7 @@
   .MarkdownMarkLogo {
     margin-right: 0.2rem;
 
-    > rect {
+    > rect { /* stylelint-disable-line selector-max-type */
       fill: $link-color;
     }
   }

@@ -1,28 +1,31 @@
+@import "src/style/variables.scss";
+
 .NavBar__AppName {
   margin-bottom: 0;
 
-  img {
+  .TodayLogo {
     margin-right: 0.2rem;
   }
 }
 
 .GithubLogo {
-  color: white;
-  height: 24px;
   width: 24px;
+  height: 24px;
 
-  a {
-    color: white;
+  color: $white;
+
+  .GithubLink {
+    color: $white;
     opacity: 0.6;
 
     &:hover {
-      color: white;
+      color: $white;
       opacity: 1;
     }
-  }
 
-  svg.svg-inline--fa.fa-w-16 {
-    width: 100%;
-    height: 100%;
+    > .svg-inline--fa.fa-w-16 {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

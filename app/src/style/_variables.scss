@@ -1,5 +1,6 @@
 $theme-colors: ("primary": #34a166);
 
+$white: white; /* stylelint-disable-line color-named */
 $body-bg: #f4f4f4;
 
 @import "node_modules/bootstrap/scss/functions.scss";
