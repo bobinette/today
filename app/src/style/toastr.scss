@@ -1,36 +1,37 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 // To have a higher priority
 .ReduxToastr.redux-toastr .toastr {
-    // I do not care about the icons and close button
-    .rrt-left-container,
-    .rrt-right-container {
-        display: none;
-    }
+  // I do not care about the icons and close button
+  .rrt-left-container,
+  .rrt-right-container {
+    display: none;
+  }
 
-    .rrt-middle-container {
-        margin-left: 0;
-        width: 100%;
-        padding: 0.5rem 1rem;
-    }
+  .rrt-middle-container {
+    width: 100%;
 
-    &.rrt-success {
-        background-color: theme-color('success');
-    }
+    padding: 0.5rem 1rem;
+    margin-left: 0;
+  }
 
-    &.rrt-info {
-        background-color: theme-color('info');
-    }
+  &.rrt-success {
+    background-color: theme-color("success");
+  }
 
-    &.rrt-warning {
-        background-color: theme-color('warning');
-    }
+  &.rrt-info {
+    background-color: theme-color("info");
+  }
 
-    &.rrt-light {
-        background-color: theme-color('light');
-    }
+  &.rrt-warning {
+    background-color: theme-color("warning");
+  }
 
-    &.rrt-error {
-        background-color: theme-color('danger');
-    }
+  &.rrt-light {
+    background-color: theme-color("light");
+  }
+
+  &.rrt-error {
+    background-color: theme-color("danger");
+  }
 }

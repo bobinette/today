@@ -1,16 +1,17 @@
-@import 'src/style/variables.scss';
+@import "src/style/variables.scss";
 
 .NewLogInput {
-    width: 100%;
-    padding-top: 0.3rem;
-    background: $card-bg;
+  position: relative;
+  width: 100%;
 
-    border: 1px solid $card-border-color;
-    border-radius: $card-border-radius;
+  padding-top: 0.3rem;
 
-    position: relative;
+  background: $card-bg;
+
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
 }
 
 .NewLogInput__TitleDetectedIcon {
-    margin: 0 0.3rem;
+  margin: 0 0.3rem;
 }

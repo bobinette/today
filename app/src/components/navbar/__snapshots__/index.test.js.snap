@@ -28,6 +28,7 @@ ShallowWrapper {
           >
             <img
               alt=""
+              className="TodayLogo"
               height="24"
               src="/assets/leaf-inverse.png"
               width="24"
@@ -38,6 +39,7 @@ ShallowWrapper {
             className="GithubLogo"
           >
             <a
+              className="GithubLink"
               href="https://github.com/bobinette/today"
               rel="noopener noreferrer"
               target="_blank"
@@ -49,8 +51,7 @@ ShallowWrapper {
           </div>
         </div>
       </div>,
-      "className": "navbar navbar-row navbar-top navbar-inverse bg-primary",
-      "id": "navbar",
+      "className": "navbar navbar-row navbar-top navbar-inverse bg-primary TodayNavbar",
     },
     "ref": null,
     "rendered": Object {
@@ -66,6 +67,7 @@ ShallowWrapper {
           >
             <img
               alt=""
+              className="TodayLogo"
               height="24"
               src="/assets/leaf-inverse.png"
               width="24"
@@ -76,6 +78,7 @@ ShallowWrapper {
             className="GithubLogo"
           >
             <a
+              className="GithubLink"
               href="https://github.com/bobinette/today"
               rel="noopener noreferrer"
               target="_blank"
@@ -100,6 +103,7 @@ ShallowWrapper {
             >
               <img
                 alt=""
+                className="TodayLogo"
                 height="24"
                 src="/assets/leaf-inverse.png"
                 width="24"
@@ -110,6 +114,7 @@ ShallowWrapper {
               className="GithubLogo"
             >
               <a
+                className="GithubLink"
                 href="https://github.com/bobinette/today"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -132,6 +137,7 @@ ShallowWrapper {
               "children": Array [
                 <img
                   alt=""
+                  className="TodayLogo"
                   height="24"
                   src="/assets/leaf-inverse.png"
                   width="24"
@@ -148,6 +154,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "alt": "",
+                  "className": "TodayLogo",
                   "height": "24",
                   "src": "/assets/leaf-inverse.png",
                   "width": "24",
@@ -166,6 +173,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <a
+                className="GithubLink"
                 href="https://github.com/bobinette/today"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -185,6 +193,7 @@ ShallowWrapper {
                 "children": <i
                   className="fab fa-github"
                 />,
+                "className": "GithubLink",
                 "href": "https://github.com/bobinette/today",
                 "rel": "noopener noreferrer",
                 "target": "_blank",
@@ -229,6 +238,7 @@ ShallowWrapper {
             >
               <img
                 alt=""
+                className="TodayLogo"
                 height="24"
                 src="/assets/leaf-inverse.png"
                 width="24"
@@ -239,6 +249,7 @@ ShallowWrapper {
               className="GithubLogo"
             >
               <a
+                className="GithubLink"
                 href="https://github.com/bobinette/today"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -250,8 +261,7 @@ ShallowWrapper {
             </div>
           </div>
         </div>,
-        "className": "navbar navbar-row navbar-top navbar-inverse bg-primary",
-        "id": "navbar",
+        "className": "navbar navbar-row navbar-top navbar-inverse bg-primary TodayNavbar",
       },
       "ref": null,
       "rendered": Object {
@@ -267,6 +277,7 @@ ShallowWrapper {
             >
               <img
                 alt=""
+                className="TodayLogo"
                 height="24"
                 src="/assets/leaf-inverse.png"
                 width="24"
@@ -277,6 +288,7 @@ ShallowWrapper {
               className="GithubLogo"
             >
               <a
+                className="GithubLink"
                 href="https://github.com/bobinette/today"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -301,6 +313,7 @@ ShallowWrapper {
               >
                 <img
                   alt=""
+                  className="TodayLogo"
                   height="24"
                   src="/assets/leaf-inverse.png"
                   width="24"
@@ -311,6 +324,7 @@ ShallowWrapper {
                 className="GithubLogo"
               >
                 <a
+                  className="GithubLink"
                   href="https://github.com/bobinette/today"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -333,6 +347,7 @@ ShallowWrapper {
                 "children": Array [
                   <img
                     alt=""
+                    className="TodayLogo"
                     height="24"
                     src="/assets/leaf-inverse.png"
                     width="24"
@@ -349,6 +364,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "alt": "",
+                    "className": "TodayLogo",
                     "height": "24",
                     "src": "/assets/leaf-inverse.png",
                     "width": "24",
@@ -367,6 +383,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <a
+                  className="GithubLink"
                   href="https://github.com/bobinette/today"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -386,6 +403,7 @@ ShallowWrapper {
                   "children": <i
                     className="fab fa-github"
                   />,
+                  "className": "GithubLink",
                   "href": "https://github.com/bobinette/today",
                   "rel": "noopener noreferrer",
                   "target": "_blank",

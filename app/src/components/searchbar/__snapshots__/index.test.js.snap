@@ -26,7 +26,7 @@ ShallowWrapper {
           className="fas fa-search"
         />,
         <input
-          className="SearchBar__input"
+          className="Input SearchBar__input"
           onChange={[Function]}
           placeholder="Search your logs..."
           value=""
@@ -52,7 +52,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "className": "SearchBar__input",
+          "className": "Input SearchBar__input",
           "onChange": [Function],
           "placeholder": "Search your logs...",
           "value": "",
@@ -75,7 +75,7 @@ ShallowWrapper {
             className="fas fa-search"
           />,
           <input
-            className="SearchBar__input"
+            className="Input SearchBar__input"
             onChange={[Function]}
             placeholder="Search your logs..."
             value=""
@@ -101,7 +101,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "SearchBar__input",
+            "className": "Input SearchBar__input",
             "onChange": [Function],
             "placeholder": "Search your logs...",
             "value": "",

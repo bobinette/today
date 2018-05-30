@@ -1,36 +1,40 @@
-@import 'src/style/variables.scss';
+@import "src/style/variables.scss";
 
 .react-autowhatever__container {
-    position: relative;
+  position: relative;
 }
 
 .TextareaContainer {
-    background: $card-bg;
-    border: 1px solid $card-border-color;
-    border-radius: $card-border-radius;
-    z-index: 1000;
+  z-index: 1000;
 
-    ul {
-        margin-bottom: 0;
-        list-style: none;
-        padding-left: 0;
+  background: $card-bg;
+
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
+
+  .react-autowhatever__items-list {
+    padding-left: 0;
+
+    margin-bottom: 0;
+
+    list-style: none;
+  }
+
+  .react-autowhatever__item:not(:last-child) {
+    border-bottom: 1px solid $card-border-color;
+  }
+
+  .Textarea__Item {
+    padding: 0.4rem;
+    cursor: pointer;
+
+    &--selected {
+      color: $card-bg;
+      background: theme-color("primary");
     }
-
-    li:not(:last-child) {
-        border-bottom: 1px solid $card-border-color;
-    }
-
-    .Textarea__Item {
-        padding: 0.4rem;
-        cursor: pointer;
-
-        &--selected {
-            background: theme-color('primary');
-            color: $card-bg;
-        }
-    }
+  }
 }
 
 .Textarea__Content {
-    width: 100%;
+  width: 100%;
 }

@@ -1,18 +1,18 @@
-@import 'src/style/variables.scss';
+@import "src/style/variables.scss";
 
 .LogItemEditing {
-    margin: 1rem 0;
+  margin: 1rem 0;
 
-    .card-body {
-        padding: 0;
-        padding-top: 0.3rem;
-    }
+  .card-body {
+    padding: 0;
+    padding-top: 0.3rem;
+  }
 }
 
 .LogItemEditing__Content {
-    position: relative;
+  position: relative;
 }
 
 .LogItemEditing__UpdateActions .btn {
-    margin-left: 0.5rem;
+  margin-left: 0.5rem;
 }
