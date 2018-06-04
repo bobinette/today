@@ -21,6 +21,24 @@ code {
   background-color: #f7f7f9;
   border-radius: 0.25rem;
 }
+
+textarea {
+  min-height: 5rem;
+
+  padding: 0.5rem;
+
+  background: $body-bg;
+
+  border-color: $input-border-color;
+  border-radius: $input-border-radius;
+
+  &:focus {
+    background: $input-bg;
+
+    outline: none;
+    box-shadow: 0 0 2px 1px #34a166;
+  }
+}
 // stylelint-enable
 
 // Space below the navbar
