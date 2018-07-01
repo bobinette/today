@@ -2,9 +2,12 @@ package mysql
 
 import (
 	"strings"
+	"time"
 
 	"github.com/bobinette/today/backend/logs"
 )
+
+var timeNow = time.Now
 
 func join(s, sep string, n int) string {
 	a := make([]string, n)
@@ -12,6 +15,14 @@ func join(s, sep string, n int) string {
 		a[i] = s
 	}
 	return strings.Join(a, sep)
+}
+
+func toInterfaceList(a []string) []interface{} {
+	res := make([]interface{}, len(a))
+	for i, e := range a {
+		res[i] = e
+	}
+	return res
 }
 
 type keepOrder struct {

@@ -10,8 +10,6 @@ import (
 	"github.com/bobinette/today/backend/logs"
 )
 
-var timeNow = time.Now
-
 type LogRepository struct {
 	db *sql.DB
 }
