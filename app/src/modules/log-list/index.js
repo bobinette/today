@@ -2,10 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
+import { List } from 'immutable';
 
 import SearchBar from 'components/searchbar';
 
+import { selectComments } from 'modules/comments/selectors';
+
 import NewLogInput from 'modules/new-log';
+
 import { separateActions } from 'utils/redux';
 
 import {
@@ -27,6 +31,7 @@ import './log-list.scss';
 const mapStateToProps = state => ({
   logs: selectLogs(state),
   q: selectQ(state),
+  comments: selectComments(state),
 });
 
 const mapDispatchToProps = {
@@ -45,7 +50,7 @@ export class LogList extends PureComponent {
   }
 
   render() {
-    const { q, actions, logs } = this.props;
+    const { q, actions, logs, comments } = this.props;
 
     return (
       <div className="container">
@@ -55,26 +60,30 @@ export class LogList extends PureComponent {
           q={q}
           onChange={actions.onSearchChange}
         />
-        {logs.map(log => (
-          <div key={log.getIn(['source', 'uuid'])}>
-            {log.getIn(['edited', 'editing']) ? (
-              <LogItemEditing
-                uuid={log.getIn(['source', 'uuid'])}
-                content={log.getIn(['edited', 'content'])}
-                updating={log.getIn(['edited', 'updating'])}
-                onEditContent={actions.edit}
-                onCancel={actions.stopEditing}
-                onUpdate={actions.onUpdate}
-              />
-            ) : (
-              <LogItem
-                log={log.get('source')}
-                onEdit={actions.startEditing}
-                onDelete={actions.deleteLog}
-              />
-            )}
-          </div>
-        ))}
+        {logs.map(log => {
+          const uuid = log.getIn(['source', 'uuid']);
+          return (
+            <div key={uuid}>
+              {log.getIn(['edited', 'editing']) ? (
+                <LogItemEditing
+                  uuid={uuid}
+                  content={log.getIn(['edited', 'content'])}
+                  updating={log.getIn(['edited', 'updating'])}
+                  onEditContent={actions.edit}
+                  onCancel={actions.stopEditing}
+                  onUpdate={actions.onUpdate}
+                />
+              ) : (
+                <LogItem
+                  log={log.get('source')}
+                  onEdit={actions.startEditing}
+                  onDelete={actions.deleteLog}
+                  comments={comments.get(uuid)}
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
     );
   }
@@ -83,6 +92,7 @@ export class LogList extends PureComponent {
 LogList.propTypes = {
   logs: ImmutablePropTypes.list.isRequired,
   q: PropTypes.string.isRequired,
+  comments: ImmutablePropTypes.map.isRequired,
   actions: PropTypes.shape({
     deleteLog: PropTypes.func.isRequired,
     fetchLogs: PropTypes.func.isRequired,

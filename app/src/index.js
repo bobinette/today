@@ -26,6 +26,7 @@ import App from 'router';
 import rootSaga from 'sagas';
 
 // Reducers
+import commentsReducer from 'modules/comments/reducer';
 import logListReducer from 'modules/log-list/reducer';
 import newLogReducer from 'modules/new-log/reducer';
 
@@ -34,6 +35,7 @@ import './fontawesome';
 
 // Create store
 const reducers = {
+  comments: commentsReducer,
   logList: logListReducer,
   newLog: newLogReducer,
   toastr: toastrReducer,

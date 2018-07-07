@@ -88,6 +88,7 @@ textarea {
   }
 }
 
+// Buttons
 .btn.btn-icon,
 .btn.btn-no-padding {
   padding: 0;
@@ -95,4 +96,19 @@ textarea {
 
 .btn-spinner {
   margin-left: 0.3rem;
+}
+
+.btn.btn-action {
+  color: $gray-400;
+
+  &:hover {
+    color: $gray-600;
+  }
+}
+
+// Decoration elements
+.v-line {
+  height: 1px;
+  margin: 0.5rem;
+  background: $gray-400;
 }
