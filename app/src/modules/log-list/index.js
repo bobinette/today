@@ -2,11 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
-import { List } from 'immutable';
 
 import SearchBar from 'components/searchbar';
-
-import { selectComments } from 'modules/comments/selectors';
 
 import NewLogInput from 'modules/new-log';
 
@@ -31,7 +28,6 @@ import './log-list.scss';
 const mapStateToProps = state => ({
   logs: selectLogs(state),
   q: selectQ(state),
-  comments: selectComments(state),
 });
 
 const mapDispatchToProps = {
@@ -50,7 +46,7 @@ export class LogList extends PureComponent {
   }
 
   render() {
-    const { q, actions, logs, comments } = this.props;
+    const { q, actions, logs } = this.props;
 
     return (
       <div className="container">
@@ -78,7 +74,6 @@ export class LogList extends PureComponent {
                   log={log.get('source')}
                   onEdit={actions.startEditing}
                   onDelete={actions.deleteLog}
-                  comments={comments.get(uuid)}
                 />
               )}
             </div>
@@ -92,7 +87,6 @@ export class LogList extends PureComponent {
 LogList.propTypes = {
   logs: ImmutablePropTypes.list.isRequired,
   q: PropTypes.string.isRequired,
-  comments: ImmutablePropTypes.map.isRequired,
   actions: PropTypes.shape({
     deleteLog: PropTypes.func.isRequired,
     fetchLogs: PropTypes.func.isRequired,

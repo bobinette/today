@@ -56,13 +56,13 @@ ShallowWrapper {
               >
                 <em>
                   04/03/2018
-                   
+                   
                   5:55 PM
                 </em>
               </Tooltip>
             </small>
             <button
-              className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+              className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionEdit"
               onClick={[Function]}
             >
               <i
@@ -70,7 +70,7 @@ ShallowWrapper {
               />
             </button>
             <button
-              className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+              className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionDelete"
               onClick={[Function]}
             >
               <i
@@ -82,6 +82,9 @@ ShallowWrapper {
             autoLoadReferences={true}
             className=""
             text="content 1"
+          />
+          <Comments
+            logUuid="1"
           />
         </div>
       </div>,
@@ -119,13 +122,13 @@ ShallowWrapper {
               >
                 <em>
                   04/03/2018
-                   
+                   
                   5:55 PM
                 </em>
               </Tooltip>
             </small>
             <button
-              className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+              className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionEdit"
               onClick={[Function]}
             >
               <i
@@ -133,7 +136,7 @@ ShallowWrapper {
               />
             </button>
             <button
-              className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+              className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionDelete"
               onClick={[Function]}
             >
               <i
@@ -145,6 +148,9 @@ ShallowWrapper {
             autoLoadReferences={true}
             className=""
             text="content 1"
+          />
+          <Comments
+            logUuid="1"
           />
         </div>,
         "className": "card-body",
@@ -179,13 +185,13 @@ ShallowWrapper {
                 >
                   <em>
                     04/03/2018
-                     
+                     
                     5:55 PM
                   </em>
                 </Tooltip>
               </small>
               <button
-                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionEdit"
                 onClick={[Function]}
               >
                 <i
@@ -193,7 +199,7 @@ ShallowWrapper {
                 />
               </button>
               <button
-                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionDelete"
                 onClick={[Function]}
               >
                 <i
@@ -205,6 +211,9 @@ ShallowWrapper {
               autoLoadReferences={true}
               className=""
               text="content 1"
+            />,
+            <Comments
+              logUuid="1"
             />,
           ],
           "className": "card-text",
@@ -237,13 +246,13 @@ ShallowWrapper {
                   >
                     <em>
                       04/03/2018
-                       
+                       
                       5:55 PM
                     </em>
                   </Tooltip>
                 </small>,
                 <button
-                  className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                  className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionEdit"
                   onClick={[Function]}
                 >
                   <i
@@ -251,7 +260,7 @@ ShallowWrapper {
                   />
                 </button>,
                 <button
-                  className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                  className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionDelete"
                   onClick={[Function]}
                 >
                   <i
@@ -285,7 +294,7 @@ ShallowWrapper {
                   >
                     <em>
                       04/03/2018
-                       
+                       
                       5:55 PM
                     </em>
                   </Tooltip>,
@@ -301,7 +310,7 @@ ShallowWrapper {
                     "arrowContent": null,
                     "children": <em>
                       04/03/2018
-                       
+                       
                       5:55 PM
                     </em>,
                     "destroyTooltipOnHide": false,
@@ -322,14 +331,14 @@ ShallowWrapper {
                     "props": Object {
                       "children": Array [
                         "04/03/2018",
-                        " ",
+                        " ",
                         "5:55 PM",
                       ],
                     },
                     "ref": null,
                     "rendered": Array [
                       "04/03/2018",
-                      " ",
+                      " ",
                       "5:55 PM",
                     ],
                     "type": "em",
@@ -346,7 +355,7 @@ ShallowWrapper {
                   "children": <i
                     className="fas fa-edit"
                   />,
-                  "className": "btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit",
+                  "className": "btn btn-link btn-sm btn-icon btn-action LogItem__ActionEdit",
                   "onClick": [Function],
                 },
                 "ref": null,
@@ -371,7 +380,7 @@ ShallowWrapper {
                   "children": <i
                     className="fas fa-trash-alt"
                   />,
-                  "className": "btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete",
+                  "className": "btn btn-link btn-sm btn-icon btn-action LogItem__ActionDelete",
                   "onClick": [Function],
                 },
                 "ref": null,
@@ -403,6 +412,17 @@ ShallowWrapper {
             "ref": null,
             "rendered": null,
             "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "logUuid": "1",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "Comments",
           },
         ],
         "type": "div",
@@ -446,13 +466,13 @@ ShallowWrapper {
                 >
                   <em>
                     04/03/2018
-                     
+                     
                     5:55 PM
                   </em>
                 </Tooltip>
               </small>
               <button
-                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionEdit"
                 onClick={[Function]}
               >
                 <i
@@ -460,7 +480,7 @@ ShallowWrapper {
                 />
               </button>
               <button
-                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionDelete"
                 onClick={[Function]}
               >
                 <i
@@ -472,6 +492,9 @@ ShallowWrapper {
               autoLoadReferences={true}
               className=""
               text="content 1"
+            />
+            <Comments
+              logUuid="1"
             />
           </div>
         </div>,
@@ -509,13 +532,13 @@ ShallowWrapper {
                 >
                   <em>
                     04/03/2018
-                     
+                     
                     5:55 PM
                   </em>
                 </Tooltip>
               </small>
               <button
-                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionEdit"
                 onClick={[Function]}
               >
                 <i
@@ -523,7 +546,7 @@ ShallowWrapper {
                 />
               </button>
               <button
-                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionDelete"
                 onClick={[Function]}
               >
                 <i
@@ -535,6 +558,9 @@ ShallowWrapper {
               autoLoadReferences={true}
               className=""
               text="content 1"
+            />
+            <Comments
+              logUuid="1"
             />
           </div>,
           "className": "card-body",
@@ -569,13 +595,13 @@ ShallowWrapper {
                   >
                     <em>
                       04/03/2018
-                       
+                       
                       5:55 PM
                     </em>
                   </Tooltip>
                 </small>
                 <button
-                  className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                  className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionEdit"
                   onClick={[Function]}
                 >
                   <i
@@ -583,7 +609,7 @@ ShallowWrapper {
                   />
                 </button>
                 <button
-                  className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                  className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionDelete"
                   onClick={[Function]}
                 >
                   <i
@@ -595,6 +621,9 @@ ShallowWrapper {
                 autoLoadReferences={true}
                 className=""
                 text="content 1"
+              />,
+              <Comments
+                logUuid="1"
               />,
             ],
             "className": "card-text",
@@ -627,13 +656,13 @@ ShallowWrapper {
                     >
                       <em>
                         04/03/2018
-                         
+                         
                         5:55 PM
                       </em>
                     </Tooltip>
                   </small>,
                   <button
-                    className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                    className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionEdit"
                     onClick={[Function]}
                   >
                     <i
@@ -641,7 +670,7 @@ ShallowWrapper {
                     />
                   </button>,
                   <button
-                    className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                    className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionDelete"
                     onClick={[Function]}
                   >
                     <i
@@ -675,7 +704,7 @@ ShallowWrapper {
                     >
                       <em>
                         04/03/2018
-                         
+                         
                         5:55 PM
                       </em>
                     </Tooltip>,
@@ -691,7 +720,7 @@ ShallowWrapper {
                       "arrowContent": null,
                       "children": <em>
                         04/03/2018
-                         
+                         
                         5:55 PM
                       </em>,
                       "destroyTooltipOnHide": false,
@@ -712,14 +741,14 @@ ShallowWrapper {
                       "props": Object {
                         "children": Array [
                           "04/03/2018",
-                          " ",
+                          " ",
                           "5:55 PM",
                         ],
                       },
                       "ref": null,
                       "rendered": Array [
                         "04/03/2018",
-                        " ",
+                        " ",
                         "5:55 PM",
                       ],
                       "type": "em",
@@ -736,7 +765,7 @@ ShallowWrapper {
                     "children": <i
                       className="fas fa-edit"
                     />,
-                    "className": "btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit",
+                    "className": "btn btn-link btn-sm btn-icon btn-action LogItem__ActionEdit",
                     "onClick": [Function],
                   },
                   "ref": null,
@@ -761,7 +790,7 @@ ShallowWrapper {
                     "children": <i
                       className="fas fa-trash-alt"
                     />,
-                    "className": "btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete",
+                    "className": "btn btn-link btn-sm btn-icon btn-action LogItem__ActionDelete",
                     "onClick": [Function],
                   },
                   "ref": null,
@@ -793,6 +822,17 @@ ShallowWrapper {
               "ref": null,
               "rendered": null,
               "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "logUuid": "1",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "Comments",
             },
           ],
           "type": "div",

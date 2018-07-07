@@ -6,7 +6,7 @@ import moment from 'moment';
 import Tooltip from 'rc-tooltip';
 
 import Markdown from 'components/markdown';
-import Comments from 'modules/comments/component';
+import Comments from 'modules/comments';
 
 import './log-item.scss';
 

@@ -1,5 +1,5 @@
 import { createReducer } from 'redux-create-reducer';
-import { fromJS } from 'immutable';
+import { fromJS, List } from 'immutable';
 
 import * as events from './events';
 
@@ -24,7 +24,7 @@ export default createReducer(initialState, {
     state.setIn(['comments', logUuid, 'edited', 'content'], comment),
   [events.APPEND_COMMENT]: (state, { logUuid, comment }) =>
     state.updateIn(['comments', logUuid, 'source'], comments =>
-      comments.push(fromJS(comment)),
+      (comments || List()).push(fromJS(comment)),
     ),
   [events.SAVING_COMMENT]: (state, { logUuid, saving }) =>
     state.setIn(['comments', logUuid, 'edited', 'updating'], saving),

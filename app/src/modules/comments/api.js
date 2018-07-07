@@ -21,7 +21,7 @@ export default {
         logUuid,
         content: comment,
       });
-      return { comment: response.data };
+      return { data: response.data };
     } catch (error) {
       return { error: formatError(error) };
     }

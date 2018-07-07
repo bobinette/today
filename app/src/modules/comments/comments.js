@@ -4,29 +4,33 @@ import { List } from 'immutable';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
 
+import { toastr } from 'react-redux-toastr';
+
 import moment from 'moment';
 
-import Textarea from 'components/textarea';
+import CommentInput from './components/input';
 
-import { saveComment, updateNewCommentValue } from './actions';
+import { appendComment, updateNewCommentValue } from './actions';
+import actions from './api';
 import { selectComments } from './selectors';
 
 const mapStateToProps = (state, ownProps) => ({
   comments: selectComments(state).getIn([ownProps.logUuid, 'source']) || List(),
-  creating:
-    selectComments(state).getIn([ownProps.logUuid, 'edited', 'saving']) ||
-    false,
-  newCommentValue:
-    selectComments(state).getIn([ownProps.logUuid, 'edited', 'content']) || '',
 });
 
 const mapDispatchToProps = {
-  onAddComment: saveComment,
+  appendComment,
+  onError: toastr.error,
   onUpdateNewCommentValue: updateNewCommentValue,
 };
 
 export class Comments extends PureComponent {
-  state = { commentsVisible: false, editorVisible: false };
+  constructor(props) {
+    super(props);
+
+    this.onAddComment = this.onAddComment.bind(this);
+    this.state = { commentsVisible: false, editorVisible: false };
+  }
 
   onHideComments = () => {
     this.setState({ commentsVisible: false });
@@ -63,10 +67,18 @@ export class Comments extends PureComponent {
     }
   };
 
-  onAddComment = () => {
-    const { logUuid, onAddComment, newCommentValue } = this.props;
-    onAddComment(logUuid, newCommentValue);
-  };
+  async onAddComment(comment) {
+    const { logUuid } = this.props;
+    const { data, error } = await actions.saveComment(logUuid, comment);
+
+    if (error) {
+      const { message } = error;
+      this.props.onError('', `Could not save your comment: ${message}`);
+      return;
+    }
+
+    this.props.appendComment(logUuid, data);
+  }
 
   renderComment(comment) {
     return (
@@ -104,16 +116,14 @@ export class Comments extends PureComponent {
 
     return (
       <div>
-        <div className="flex flex-align-items-center">
+        <button
+          className="btn btn-link btn-sm btn-no-padding btn-action flex flex-align-items-center w-100"
+          onClick={this.onHideComments}
+        >
           <div className="v-line flex-1" />
-          <button
-            className="btn btn-link btn-sm btn-no-padding btn-action"
-            onClick={this.onHideComments}
-          >
-            <em className="text-muted">Hide comments</em>
-          </button>
+          <em className="text-muted">Hide comments</em>
           <div className="v-line flex-1" />
-        </div>
+        </button>
         {comments.map(comment => (
           <div key={comment.get('uuid')}>{this.renderComment(comment)}</div>
         ))}
@@ -122,7 +132,6 @@ export class Comments extends PureComponent {
   }
 
   renderEditor() {
-    const { newCommentValue, creating } = this.props;
     const { editorVisible } = this.state;
 
     if (!editorVisible) {
@@ -137,26 +146,12 @@ export class Comments extends PureComponent {
     }
 
     return (
-      <div>
-        <Textarea
-          value={newCommentValue}
-          placeholder="Enter a new comment"
-          onChange={this.onUpdateNewCommentValue}
-          onKeyDown={this.onEditorKeyDown}
+      <div className="Comments__Input">
+        <CommentInput
+          placeholder="Type your comment here..."
+          onSave={this.onAddComment}
+          onCancel={this.onHideEditor}
         />
-        <button
-          className="btn btn-primary btn-sm LogItemEditing__Update"
-          onClick={this.onAddComment}
-          disabled={creating}
-        >
-          {creating ? (
-            <span>
-              Commenting...<i className="fas fa-circle-notch fa-spin btn-spinner" />
-            </span>
-          ) : (
-            'Comment'
-          )}
-        </button>
       </div>
     );
   }
@@ -175,10 +170,9 @@ export class Comments extends PureComponent {
 
 Comments.propTypes = {
   logUuid: PropType.string.isRequired,
-  newCommentValue: PropType.string.isRequired,
-  creating: PropType.bool.isRequired,
   comments: ImmutablePropTypes.list.isRequired,
-  onAddComment: PropType.func.isRequired,
+  appendComment: PropType.func.isRequired,
+  onError: PropType.func.isRequired,
   onUpdateNewCommentValue: PropType.func.isRequired,
 };
 

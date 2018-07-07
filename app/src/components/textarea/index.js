@@ -159,7 +159,7 @@ class Textarea extends Component {
   }
 
   renderInputComponent(inputProps) {
-    const { className } = inputProps;
+    const { className, disabled } = inputProps;
 
     return (
       <AutosizeTextarea
@@ -177,6 +177,7 @@ class Textarea extends Component {
           className: classNames(className, 'Textarea__Content'),
           ref: null,
         })}
+        disabled={disabled}
       />
     );
   }
@@ -244,11 +245,13 @@ Textarea.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onKeyDown: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 Textarea.defaultProps = {
   placeholder: '',
   onKeyDown: () => {},
+  disabled: false,
 };
 
 export default Textarea;
