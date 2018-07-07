@@ -20,7 +20,7 @@ func TestEventStore(t *testing.T) {
 		env = "travis"
 	}
 
-	cfgData, err := ioutil.ReadFile(fmt.Sprintf("../../conf.%s.toml", env))
+	cfgData, err := ioutil.ReadFile(fmt.Sprintf("../conf.%s.toml", env))
 	if err != nil {
 		require.NoError(t, err)
 	}
