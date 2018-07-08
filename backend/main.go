@@ -15,10 +15,11 @@ import (
 	"github.com/sandalwing/echo-logrusmiddleware"
 	"github.com/spf13/viper"
 
+	"github.com/bobinette/today/backend/comments"
 	"github.com/bobinette/today/backend/eventsourcing"
 	"github.com/bobinette/today/backend/logs"
 	"github.com/bobinette/today/backend/logs/bleve"
-	"github.com/bobinette/today/backend/logs/mysql"
+	"github.com/bobinette/today/backend/mysql"
 )
 
 func main() {
@@ -151,7 +152,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if err := eventsourcing.Register(db, logService, srv); err != nil {
+	commentService, err := comments.Register(mysql.NewCommentRepository(db), srv)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if err := eventsourcing.Register(db, logService, commentService, srv); err != nil {
 		log.Fatal(err)
 	}
 

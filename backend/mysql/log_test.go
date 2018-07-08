@@ -10,17 +10,18 @@ import (
 
 	"github.com/BurntSushi/toml"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/looplab/eventhorizon/eventstore/testutil"
 	"github.com/stretchr/testify/require"
+
+	"github.com/bobinette/today/backend/logs/testutil"
 )
 
-func TestEventStore(t *testing.T) {
+func TestLogRepository(t *testing.T) {
 	env := "test"
 	if os.Getenv("TRAVIS") == "true" {
 		env = "travis"
 	}
 
-	cfgData, err := ioutil.ReadFile(fmt.Sprintf("../../conf.%s.toml", env))
+	cfgData, err := ioutil.ReadFile(fmt.Sprintf("../conf.%s.toml", env))
 	if err != nil {
 		require.NoError(t, err)
 	}
@@ -54,13 +55,15 @@ func TestEventStore(t *testing.T) {
 
 	ctx := context.Background()
 	defer func() {
-		// db.ExecContext(ctx, "TRUNCATE logs")
+		// db.ExecContext(ctx, "DELETE FROM tags")
+		// db.ExecContext(ctx, "DELETE FROM logs")
 		db.Close()
 	}()
 
-	_, err = db.ExecContext(ctx, "TRUNCATE events")
+	_, err = db.ExecContext(ctx, "DELETE FROM tags")
+	require.NoError(t, err)
+	_, err = db.ExecContext(ctx, "DELETE FROM logs")
 	require.NoError(t, err)
 
-	store := NewEventStore(db)
-	testutil.EventStoreCommonTests(t, ctx, store)
+	testutil.TestLogRepository(t, NewLogRepository(db))
 }

@@ -20,4 +20,6 @@ COMMIT;
 
 BEGIN;
 
+DROP TABLE `tags`;
+
 COMMIT;

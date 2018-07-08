@@ -11,8 +11,11 @@ import (
 	bus "github.com/looplab/eventhorizon/eventbus/local"
 	publisher "github.com/looplab/eventhorizon/publisher/local"
 
+	escomments "github.com/bobinette/today/backend/eventsourcing/comments"
 	eslogs "github.com/bobinette/today/backend/eventsourcing/logs"
-	"github.com/bobinette/today/backend/eventsourcing/mysql"
+	"github.com/bobinette/today/backend/mysql"
+
+	"github.com/bobinette/today/backend/comments"
 	"github.com/bobinette/today/backend/logs"
 )
 
@@ -24,7 +27,7 @@ func (l *Logger) Notify(ctx context.Context, event eh.Event) {
 	log.Printf("EVENT %s", event)
 }
 
-func Register(db *sql.DB, logService *logs.Service, srv *echo.Echo) error {
+func Register(db *sql.DB, logService *logs.Service, commentsService *comments.Service, srv *echo.Echo) error {
 	// Let's use the local publisher to start with
 	publisher := publisher.NewEventPublisher()
 	publisher.AddObserver(&Logger{})
@@ -39,6 +42,10 @@ func Register(db *sql.DB, logService *logs.Service, srv *echo.Echo) error {
 	}
 
 	if err := eslogs.Register(logService, bus, aggregateStore, srv); err != nil {
+		return err
+	}
+
+	if err := escomments.Register(commentsService, logService, bus, aggregateStore, srv); err != nil {
 		return err
 	}
 

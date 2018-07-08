@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import SearchBar from 'components/searchbar';
 
 import NewLogInput from 'modules/new-log';
+
 import { separateActions } from 'utils/redux';
 
 import {
@@ -55,26 +56,29 @@ export class LogList extends PureComponent {
           q={q}
           onChange={actions.onSearchChange}
         />
-        {logs.map(log => (
-          <div key={log.getIn(['source', 'uuid'])}>
-            {log.getIn(['edited', 'editing']) ? (
-              <LogItemEditing
-                uuid={log.getIn(['source', 'uuid'])}
-                content={log.getIn(['edited', 'content'])}
-                updating={log.getIn(['edited', 'updating'])}
-                onEditContent={actions.edit}
-                onCancel={actions.stopEditing}
-                onUpdate={actions.onUpdate}
-              />
-            ) : (
-              <LogItem
-                log={log.get('source')}
-                onEdit={actions.startEditing}
-                onDelete={actions.deleteLog}
-              />
-            )}
-          </div>
-        ))}
+        {logs.map(log => {
+          const uuid = log.getIn(['source', 'uuid']);
+          return (
+            <div key={uuid}>
+              {log.getIn(['edited', 'editing']) ? (
+                <LogItemEditing
+                  uuid={uuid}
+                  content={log.getIn(['edited', 'content'])}
+                  updating={log.getIn(['edited', 'updating'])}
+                  onEditContent={actions.edit}
+                  onCancel={actions.stopEditing}
+                  onUpdate={actions.onUpdate}
+                />
+              ) : (
+                <LogItem
+                  log={log.get('source')}
+                  onEdit={actions.startEditing}
+                  onDelete={actions.deleteLog}
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
     );
   }

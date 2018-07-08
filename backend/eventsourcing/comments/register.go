@@ -1,4 +1,4 @@
-package logs
+package comments
 
 import (
 	"github.com/labstack/echo"
@@ -9,16 +9,17 @@ import (
 )
 
 func Register(
-	service LogService,
+	service CommentService,
+	logService LogService,
 	bus eh.EventBus,
 	store eh.AggregateStore,
 	srv *echo.Echo,
 ) error {
-	logsService := Service{
+	commentsService := Service{
 		service: service,
 	}
-	projector := projector.NewEventHandler(&Projector{}, &logsService)
-	projector.SetEntityFactory(func() eh.Entity { return &Log{} })
+	projector := projector.NewEventHandler(&Projector{}, &commentsService)
+	projector.SetEntityFactory(func() eh.Entity { return &Comment{} })
 	bus.AddHandler(projector, Created)
 	bus.AddHandler(projector, Updated)
 	bus.AddHandler(projector, Removed)
@@ -30,10 +31,11 @@ func Register(
 
 	handler := httpHandler{
 		commandHandler: commandHandler,
-		logService:     service,
+		commentService: service,
+		logService:     logService,
 	}
-	srv.POST("/api/logs", handler.create)
-	srv.POST("/api/logs/:uuid", handler.update)
-	srv.DELETE("/api/logs/:uuid", handler.remove)
+	srv.POST("/api/comments", handler.create)
+	srv.POST("/api/comments/:uuid", handler.update)
+	srv.DELETE("/api/comments/:uuid", handler.remove)
 	return nil
 }

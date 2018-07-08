@@ -6,6 +6,7 @@ import moment from 'moment';
 import Tooltip from 'rc-tooltip';
 
 import Markdown from 'components/markdown';
+import Comments from 'modules/comments';
 
 import './log-item.scss';
 
@@ -25,25 +26,26 @@ class LogItem extends PureComponent {
                   overlay={log.get('uuid')}
                 >
                   <em>
-                    {moment(log.get('createdAt')).format('L')}{' '}
+                    {moment(log.get('createdAt')).format('L')}&nbsp;
                     {moment(log.get('createdAt')).format('LT')}
                   </em>
                 </Tooltip>
               </small>
               <button
-                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionEdit"
+                className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionEdit"
                 onClick={() => onEdit(log.get('uuid'))}
               >
                 <i className="fas fa-edit" />
               </button>
               <button
-                className="btn btn-link btn-sm btn-icon LogItem__ActionIcon LogItem__ActionDelete"
+                className="btn btn-link btn-sm btn-icon btn-action LogItem__ActionDelete"
                 onClick={() => onDelete(log.get('uuid'))}
               >
                 <i className="fas fa-trash-alt" />
               </button>
             </div>
             <Markdown text={log.get('content')} autoLoadReferences />
+            <Comments logUuid={log.get('uuid')} />
           </div>
         </div>
       </div>

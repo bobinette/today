@@ -1,8 +1,10 @@
 import React from 'react';
 import { fromJS } from 'immutable';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import LogItem from '.';
+
+jest.mock('modules/comments', () => 'Comments');
 
 test('render a log item', () => {
   const props = {
@@ -26,7 +28,7 @@ test('call actions', () => {
     onDelete: jest.fn(),
   };
 
-  const wrapper = mount(<LogItem {...props} />);
+  const wrapper = shallow(<LogItem {...props} />);
 
   wrapper.find('.LogItem__ActionEdit').simulate('click');
   expect(props.onEdit).toHaveBeenCalledWith('1');
